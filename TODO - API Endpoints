@@ -1,6 +1,6 @@
 ### Cash Book
 - [ ] Bank Account Types
-- [ ] -- [ ] GET Bank Account Types
+-- [ ] GET Bank Account Types
 - [ ] Bank Entry Types
 -- [ ] GET Bank Entry Types
 - [ ] Bank Payment
@@ -28,3 +28,13 @@
 -- [ ] GET Electronic Bank Function Types
 - [ ] Lookup Banks
 -- [ ] GET Lookup Banks
+
+### Commercials
+- [ ] Confirmation Intent Types
+-- [ ] GET Confirmation Intent Types
+- [ ] Intrastat Date Types
+-- [ ] GET Intrastat Date Types
+- [ ] Intrastat Terms Of Delivery Types
+-- [ ] GET Intrastat Terms Of Delivery Types
+- [ ] Order Return Line Types
+-- [ ] GET Order Return Line Types
