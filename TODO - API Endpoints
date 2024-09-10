@@ -107,3 +107,63 @@
 -- [ ] GET Trader Transaction Types
 - [ ] Trading Revaluation Allocation Entry Types
 -- [ ] GET Tax Account Entry Location Types
+
+### General
+- [ ] Accounting Period Validation Types
+-- [ ] GET Accounting Period Validation Types
+- [ ] Analysis Code Mappings
+-- [ ] GET Analysis Code Mappings
+-- [ ] GET Analysis Code Mapping
+- [ ] Company Details
+-- [ ] GET Company Details
+-- [ ] GET Company Details
+-- [ ] PUT Company Details
+- [ ] Configurable Terms
+-- [ ] GET Configurable Terms For The Application
+- [ ] Couriers
+-- [ ] GET Couriers
+-- [ ] PUT Couriers
+-- [ ] POST Couriers
+-- [ ] GET Courier
+-- [ ] PUT Courier
+-- [ ] DEL Courier
+- [ ] Current User
+-- [ ] GET Current User
+- [ ] Flow States
+-- [ ] GET Flow States
+-- [ ] POST Flow States
+-- [ ] GET Flow State
+-- [ ] DEL Flow State
+-- [ ] PUT Flow State
+- [ ] Ledger Types
+-- [ ] GET Ledger Types
+- [ ] Licence
+-- [ ] GET Licence For The Application
+- [ ] Pending Emails
+-- [ ] GET Pending Emails
+-- [ ] POST Pending Emails
+-- [ ] GET Pending Email
+-- [ ] DEL Pending Email
+-- [ ] PUT Pending Email
+- [ ] Salutations
+-- [ ] GET Salutations
+-- [ ] GET Salutation
+- [X] Sites
+-- [X] GET Sites
+- [ ] System Settings
+-- [ ] GET System Settings
+-- [ ] GET System Setting
+-- [ ] PUT System Setting
+- [ ] Time Unit Types
+-- [ ] GET Time Unit Types
+- [ ] Transaction Date Validation
+-- [ ] POST Transaction Date Validation
+- [ ] Transaction Date Validation Classifications
+-- [ ] GET Transaction Date Validation Classifications
+- [ ] Transaction Date Validation Types
+-- [ ] GET Transaction Date Validation Types
+- [ ] Update Modes
+-- [ ] GET Update Modes
+- [ ] Users
+-- [ ] GET Users
+-- [ ] GET User
