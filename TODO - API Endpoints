@@ -38,3 +38,72 @@
 -- [ ] GET Intrastat Terms Of Delivery Types
 - [ ] Order Return Line Types
 -- [ ] GET Order Return Line Types
+
+### Financials
+- [ ] Account Status Types
+-- [ ] GET Account Status Types
+- [ ] Aged Balances Ageing Types
+-- [ ] GET Aged Balances Ageing Types
+- [ ] Allocation Status Types
+-- [ ] GET Allocation Status Types
+- [ ] Contact Number Types
+-- [ ] GET Contact Number Types
+- [ ] Country Codes
+-- [ ] GET Country Codes
+-- [ ] GET Country Code
+- [ ] Credit Bureaus
+-- [ ] GET Credit Bureaus
+-- [ ] GET Credit Bureau
+- [ ] Credit Positions
+-- [ ] GET Credit Positions
+-- [ ] GET Credit Position
+- [ ] Currencies
+-- [ ] GET Currencies Collection
+-- [ ] GET Single Currency Resource
+- [ ] Currency Exchange Rates
+-- [ ] POST Currency Exchange Rates
+- [ ] Currency Iso Codes
+-- [ ] GET Currency ISO Codes
+-- [ ] GET Currency ISO Code
+- [ ] Currency Transaction Types
+-- [ ] GET Currency Transaction Types
+- [ ] Document Layouts
+-- [ ] GET Document Layouts
+-- [ ] GET Document Layout
+- [ ] Document Types
+-- [ ] GET Document Types
+-- [ ] GET Document Types
+- [ ] Exchange Rate Amendability Types
+-- [ ] GET Exchange Rate Amendability Types
+- [ ] Exchange Rate Types
+-- [ ] GET Exchange Rate Types
+- [ ] Financial Report Layout Types
+-- [ ] GET Financial Report Layout Types
+- [ ] Financial Report Layout Views
+-- [ ] GET Financial Report Layout Views
+- [ ] Financial Report Row Layout Debit Or Credit Types
+-- [ ] GET Financial Report Row Layout Debit Or Credit Types
+- [ ] Financial Report Row Layout Position Types
+-- [ ] GET Financial Report Row Layout Position Types
+- [ ] Financial Report Row Line Types
+-- [ ] GET Financial Report Row Line Types
+- [ ] Financial Year Period Views
+-- [ ] GET Financial Year Period Views
+- [ ] Tax Account Entry Types
+-- [ ] GET Tax Account Entry Location Types
+- [ ] Tax Codes
+-- [ ] GET Tax Codes
+-- [ ] GET Tax Code
+- [ ] Trader Account Types
+-- [ ] GET Trader Account Types
+- [ ] Trader Contact Roles
+-- [ ] GET Trader Contact Roles
+-- [ ] GET Trader Contact Role
+- [ ] Trader Location Types
+-- [ ] GET Trader Location Types
+- [ ] Trader Payment Terms
+-- [ ] GET Trader Payment Terms
+- [ ] Trader Transaction Types
+-- [ ] GET Trader Transaction Types
+- [ ] Trading Revaluation Allocation Entry Types
+-- [ ] GET Tax Account Entry Location Types
