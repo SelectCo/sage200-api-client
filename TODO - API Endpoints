@@ -167,3 +167,74 @@
 - [ ] Users
 -- [ ] GET Users
 -- [ ] GET User
+
+### Nominal
+- [ ] Consolidated Nominal Codes
+-- [ ] GET Consolidated Nominal Codes
+-- [ ] GET Consolidated Nominal Code
+- [ ] Control Nominal Code Types
+-- [ ] GET Control Nominal Code Types
+- [ ] Control (Default) Nominal Codes
+-- [ ] GET Control (Default) Nominal Codes
+-- [ ] GET Control (Default) Nominal Code
+- [ ] Cost Centres
+-- [ ] GET Cost Centres
+-- [ ] PUT Cost Centres
+-- [ ] POST Cost Centres
+-- [ ] GET Cost Centre
+-- [ ] PUT Cost Centre
+-- [ ] DEL Cost Centre
+- [ ] Departments
+-- [ ] GET Departments
+-- [ ] PUT Departments
+-- [ ] POST Departments
+-- [ ] GET Department
+-- [ ] PUT Department
+-- [ ] DEL Department
+- [ ] Lookup Nominal Codes
+-- [ ] GET Lookup Nominal Codes
+- [ ] Nominal Account Entry Location Types
+-- [ ] GET Nominal Account Entry Location Types
+- [ ] Nominal Account Types
+-- [ ] GET Nominal Account Types
+- [ ] Nominal Budget Profiles
+-- [ ] GET Nominal Budget Profiles
+-- [ ] GET Nominal Budget Profile
+- [ ] Nominal Budget Types
+-- [ ] GET Nominal Budget Types
+- [ ] Nominal Code Memos
+-- [ ] GET Nominal Code Memos
+-- [ ] POST Nominal Code Memos
+-- [ ] GET Nominal Code Memo
+-- [ ] PUT Nominal Code Memo
+-- [ ] DEL Nominal Code Memo
+- [ ] Nominal Code Views
+-- [ ] GET Nominal Code Views
+- [ ] Nominal Codes
+-- [ ] GET Nominal Codes
+-- [ ] POST Nominal Codes
+-- [ ] GET Nominal Code
+-- [ ] PUT Nominal Code
+-- [ ] DEL Nominal Code
+-- [ ] POST New Nominal Code With Defaults
+- [ ] Nominal Ledger Settings
+-- [ ] GET Nominal Ledger Settings
+-- [ ] GET Nominal Ledger Setting
+- [ ] Nominal Period Value Views
+-- [ ] GET Nominal Period Value Views
+- [ ] Nominal Report Categories
+-- [ ] GET Nominal Report Categories
+-- [ ] POST Nominal Report Categories
+-- [ ] GET Nominal Code
+-- [ ] PUT Nominal Code
+-- [ ] DEL Nominal Code
+- [ ] Nominal Report Category Types
+-- [ ] GET Nominal Report Category Types
+- [ ] Nominal Reporting Types
+-- [ ] GET Nominal Reporting Types
+- [ ] Nominal Transaction Analysis Codes
+-- [ ] GET Nominal Transaction Analysis Codes
+- [ ] Nominal Transaction Enquiry Views
+-- [ ] GET Nominal Transaction Enquiry Views
+-- [ ] GET Nominal Transaction Enquiry View
+-- [ ] GET Nominal Transaction Enquiry Views Transactions For Nominal Account
