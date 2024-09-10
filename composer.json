@@ -1,0 +1,27 @@
+{
+  "name": "selectco/sage-api",
+  "description": "Sage200 PHP API client.",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/SelectCo/sage200-api-client/issues",
+    "source": "https://github.com/SelectCo/sage200-api-client"
+  },
+  "autoload": {
+    "psr-4": {
+      "Selectco\\SageApi\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Selectco\\SageApi\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "saloonphp/saloon": "^3.10",
+    "symfony/validator": "^6.4"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^6.4"
+  }
+}
