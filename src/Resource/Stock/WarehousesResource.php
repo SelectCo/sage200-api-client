@@ -9,7 +9,7 @@ use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Selectco\SageApi\DataObjects\Stock\Warehouse;
 use Selectco\SageApi\Exception\DataValidationException;
-use Selectco\SageApi\Requests\Stock\WarehouseHolding\PostWarehouses;
+use Selectco\SageApi\Requests\Stock\Warehouses\PostWarehouses;
 use Selectco\SageApi\Requests\Stock\Warehouses\DelWarehouse;
 use Selectco\SageApi\Requests\Stock\Warehouses\GetWarehouse;
 use Selectco\SageApi\Requests\Stock\Warehouses\GetWarehouses;
