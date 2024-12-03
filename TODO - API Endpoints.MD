@@ -443,12 +443,12 @@
 - [ ] Units
   - [ ] GET Units
   - [ ] GET Unit
-- [ ] Warehouse Holdings
+- [X] Warehouse Holdings
   - [X] GET Warehouse Holdings
-  - [ ] POST Warehouse Holdings
+  - [X] POST Warehouse Holdings
   - [X] GET Warehouse Holding
-  - [ ] PUT Warehouse Holding
-  - [ ] DEL Warehouse Holding
+  - [X] PUT Warehouse Holding
+  - [X] DEL Warehouse Holding
   - [X] GET Warehouse Holdings For Warehouse
   - [X] GET Warehouse Holdings For Product
   - [X] GET Warehouse Holdings For Warehouse And Product
