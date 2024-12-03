@@ -18,7 +18,7 @@ use Symfony\Component\Validator\Validation;
  * All stock within Sage 200, regardless of type (Stock, Service/labour, or Miscellaneous), requires a holding
  * location. By default, the HOME warehouse is created within Sage 200, you can then create your own warehouses.
  */
-class PostWarehouse extends Request implements HasBody
+class PostWarehouses extends Request implements HasBody
 {
     use HasJsonBody;
 

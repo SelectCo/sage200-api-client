@@ -22,17 +22,15 @@ class PutWarehouse extends Request implements HasBody
 {
     use HasJsonBody;
 
-	protected Method $method = Method::POST;
+	protected Method $method = Method::PUT;
     private string $endPoint;
 
     /**
      * @param int $id
      * @param array $data
      */
-    public function __construct(
-        protected int $id,
-        public array $data
-    ) {
+    public function __construct(protected int $id, public array $data)
+    {
         $this->endPoint = "/warehouses/{$id}";
     }
 

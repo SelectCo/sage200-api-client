@@ -19,7 +19,7 @@ class GetWarehousesForProduct extends Request
     private string $endPoint;
 
     /**
-     * @param mixed $productId Unique Id of a product.
+     * @param mixed $productId Unique id of a product.
      */
     public function __construct(protected string|int $productId) {
         $this->endPoint = "/products/{$this->productId}/warehouses";
