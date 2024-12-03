@@ -453,8 +453,8 @@
   - [X] GET Warehouse Holdings For Product
   - [X] GET Warehouse Holdings For Warehouse And Product
   - [X] GET Warehouse Holdings For Product And Warehouse
-- [ ] Warehouse Types
-  - [ ] GET Warehouse Types
+- [X] Warehouse Types
+  - [X] GET Warehouse Types
 - [ ] Warehouses
   - [X] GET Warehouses
   - [X] POST Warehouses
