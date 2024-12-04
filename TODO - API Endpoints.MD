@@ -248,7 +248,134 @@
 ### Sales
 
 ### SOP (Sales Orders)
-
+- [ ] Current User SOP User Permissions
+  - [ ] GET Current User Invoice And Order User Permissions
+- [ ] Lookup SOP Orders
+  - [ ] GET Lookup Sales Orders
+- [ ] Lookup SOP Quotes
+  - [ ] GET Lookup Sales Quotes
+- [ ] Order Line Item Types
+  - [ ] GET Order Line Item Types
+- [ ] SOP Additional Charges
+  - [ ] GET SOP Additional Charges
+  - [ ] GET SOP Additional Charge
+- [ ] SOP Allocation Line Views
+  - [ ] GET Sales Allocation Line Views
+- [ ] SOP Back To Back Status Types
+  - [ ] GET SOP Back To Back Status Types
+- [ ] SOP Cancelled Lines
+  - [ ] GET Cancelled Lines For Sales Orders And Returns.
+  - [ ] GET Cancelled Line For Sales Orders And Returns.
+- [ ] SOP Confirm Despatch
+  - [ ] GET Sales Order Lines Available For Despatch.
+  - [ ] POST Sales Order Lines Available For Despatch.
+- [ ] SOP Confirm Despatch Bin Items
+  - [ ] POST Sales Order Bin Items Available For Despatch
+- [ ] SOP Confirm Despatch Traceable Items
+  - [ ] POST Sales Order Traceable Lines Available For Despatch
+- [ ] SOP Confirmation Intent Types
+  - [ ] GET Sales Order Confirmation Intent Types
+- [ ] SOP Customer Types
+  - [ ] GET SOP Customer Types
+- [ ] SOP Despatch Discrete Orders
+  - [ ] GET SOP Despatch Discrete Orders
+- [ ] SOP Despatch Receipts
+  - [ ] GET SOP Despatch Receipts
+  - [ ] GET SOP Despatch Receipt
+  - [ ] PUT SOP Despatch Receipt
+- [ ] SOP Document Print Status Types
+  - [ ] GET SOP Document Print Status Types
+- [ ] SOP Document Process Status Types
+  - [ ] GET SOP Document Process Status Types
+- [ ] SOP Document Status Types
+  - [ ] GET SOP Document Status Types
+- [ ] SOP Document Types
+  - [ ] GET Sales Document Types
+- [ ] SOP Export Reasons
+  - [ ] GET SOP Reasons For Export
+  - [ ] PUT SOP Reasons For Export
+  - [ ] POST SOP Reasons For Export
+  - [ ] GET SOP Reason For Export
+  - [ ] PUT SOP Reason For Export
+  - [ ] POST SOP Reason For Export
+- [ ] SOP Incoterms
+  - [ ] GET SOP Incoterms
+  - [ ] PUT SOP Incoterms
+  - [ ] POST SOP Incoterms
+  - [ ] GET SOP Incoterm
+  - [ ] PUT SOP Incoterm
+  - [ ] DEL SOP Incoterm
+- [ ] SOP Intrastat Status Types
+  - [ ] GET SOP Intrastat Status Types
+- [ ] SOP Invoice Credit Types
+  - [ ] GET SOP Invoice Credit Types
+- [ ] SOP Order Despatch Line Views
+  - [ ] GET SOP Despatch Line Views
+- [ ] SOP Order Despatch Views
+  - [ ] GET SOP Despatch Note Views
+- [ ] SOP Order Entry Types
+  - [ ] GET Sales Order Entry Types
+- [ ] SOP Order Line Traceable Items
+  - [ ] POST Sales Order Line Traceable Items
+- [ ] SOP Order Line Views
+  - [ ] GET SOP Order Line Views
+- [ ] SOP Order Lines
+  - [ ] GET Sales Order Line
+  - [ ] GET Sales Order Lines For A Sales Order
+  - [ ] GET Sales Order Line From Sales Order
+- [ ] SOP Order Payment Types
+  - [ ] GET SOP Order Payment Types
+- [ ] SOP Order Return Invoice Credit Views
+  - [ ] GET Sales Order Return Invoice Credit Views
+- [ ] SOP Order Return Line Invoice Credit Views
+  - [ ] GET Sales Order Return Line Invoice Credit Views
+- [ ] SOP Order Return Views
+  - [ ] GET SOP Order Return Views
+- [ ] SOP Orders
+  - [ ] GET Sales Orders
+  - [ ] POST Sales Orders
+  - [ ] GET Sales Order
+  - [ ] PUT Sales Order
+  - [ ] DEL Sales Order
+  - [ ] POST New Sales Order With Defaults
+  - [ ] PUT New Sales Order With Defaults
+  - [ ] GET Sales Orders For A Customer
+- [ ] SOP Orders Duplicate
+  - [ ] POST Duplicate Sales Order.
+- [ ] SOP Payment Methods
+  - [ ] GET SOP Payment Methods
+  - [ ] GET SOP Payment Method
+- [ ] SOP Pro Forma Line Views
+  - [ ] GET SOP Pro Forma Line Views
+- [ ] SOP Quote Line Views
+  - [ ] GET SOP Quote Line Views
+- [ ] SOP Quote Views
+  - [ ] GET SOP Quote Views
+- [ ] SOP Quotes
+  - [ ] GET Sales Quotes
+  - [ ] POST Sales Quotes
+  - [ ] GET Sales Quote
+  - [ ] PUT Sales Quote
+  - [ ] DEL Sales Quote
+  - [ ] POST New Sales Quote With Defaults
+  - [ ] PUT New Sales Quote With Defaults
+- [ ] SOP Quotes Duplicate
+  - [ ] POST Duplicate Sales Quote.
+- [ ] SOP Return Line Views
+  - [ ] GET SOP Return Line Views
+- [ ] SOP Settings
+  - [ ] GET SOP Settings
+  - [ ] GET SOP Setting
+- [ ] SOP Show On Picking List Types
+  - [ ] GET SOP Show On Picking List Types
+- [ ] SOP Trade Line Status Types
+  - [ ] GET Trade Line Status Types
+- [ ] SOP User Permissions
+  - [ ] GET Invoice And Order User Permissions
+  - [ ] GET Invoice And Order Permissions For A Single User.
+- [ ] Suggested Products
+  - [ ] POST Suggested Products
+  - 
 ### Stock
 - [ ] Alternative Product Views
   - [ ] GET Alternative Product Views
