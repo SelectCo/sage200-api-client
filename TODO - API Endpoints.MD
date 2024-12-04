@@ -317,8 +317,8 @@
   - [ ] GET Sales Order Entry Types
 - [ ] SOP Order Line Traceable Items
   - [ ] POST Sales Order Line Traceable Items
-- [ ] SOP Order Line Views
-  - [ ] GET SOP Order Line Views
+- [X] SOP Order Line Views
+  - [X] GET SOP Order Line Views
 - [ ] SOP Order Lines
   - [ ] GET Sales Order Line
   - [ ] GET Sales Order Lines For A Sales Order
