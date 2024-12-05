@@ -107,13 +107,58 @@ class Sage200Connector extends Connector
         return new TokenAuthenticator($this->bearerToken);
     }
 
-    public function stock(): Resource\Stock
+    public function cashBook(): Resource\CashBook
     {
-        return new Resource\Stock($this);
+        return new Resource\CashBook($this);
+    }
+
+    public function commercials(): Resource\Commercials
+    {
+        return new Resource\Commercials($this);
+    }
+
+    public function financials(): Resource\Financials
+    {
+        return new Resource\Financials($this);
     }
 
     public function general(): Resource\General
     {
         return new Resource\General($this);
+    }
+
+    public function nominal(): Resource\Nominal
+    {
+        return new Resource\Nominal($this);
+    }
+
+    public function popPurchaseOrders(): Resource\POPPurchaseOrders
+    {
+        return new Resource\POPPurchaseOrders($this);
+    }
+
+    public function priceBook(): Resource\PriceBook
+    {
+        return new Resource\PriceBook($this);
+    }
+
+    public function purchases(): Resource\Purchases
+    {
+        return new Resource\Purchases($this);
+    }
+
+    public function sales(): Resource\Sales
+    {
+        return new Resource\Sales($this);
+    }
+
+    public function sopSalesOrders(): Resource\SOPSalesOrders
+    {
+        return new Resource\SOPSalesOrders($this);
+    }
+
+    public function stock(): Resource\Stock
+    {
+        return new Resource\Stock($this);
     }
 }
