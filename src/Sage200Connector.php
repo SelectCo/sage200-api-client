@@ -5,7 +5,13 @@ namespace Selectco\SageApi;
 
 use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
+use Saloon\Http\Response;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
+use Selectco\SageApi\Exception\ForbiddenException;
+use Selectco\SageApi\Exception\NotFoundException;
+use Selectco\SageApi\Exception\SageException;
+use Selectco\SageApi\Exception\UnauthorizedException;
+use Throwable;
 
 class Sage200Connector extends Connector
 {
@@ -25,6 +31,35 @@ class Sage200Connector extends Connector
         private string|null $xCompany = null,
     ) {
         $this->baseUrl = $baseUrl;
+    }
+
+    /**
+     * @param Response $response
+     * @param Throwable|null $senderException
+     * @return Throwable|null
+     * @throws SageException
+     */
+    public function getRequestException(Response $response, Throwable|null $senderException): Throwable|null
+    {
+        switch ($response->status()) {
+            case 401:
+                throw new UnauthorizedException(
+                    response: $response,
+                    previous: $senderException
+                );
+            case 403:
+                throw new ForbiddenException(
+                    response: $response,
+                    previous: $senderException
+                );
+            case 404:
+                throw new NotFoundException(
+                    response: $response,
+                    previous: $senderException
+                );
+            default:
+                return $senderException;
+        }
     }
 
     /**
