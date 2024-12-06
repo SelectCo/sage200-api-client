@@ -12,7 +12,7 @@ class General
     {
     }
 
-    public function warehouses(): SitesResource
+    public function sites(): SitesResource
     {
         return new SitesResource($this->connector);
     }
