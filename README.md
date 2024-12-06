@@ -43,6 +43,43 @@ composer require selectco\sage-api
 Each API endpoint can be located in the same location as the official documents.
 Most endpoints require the X-Company and X-Site header be set.  These can be set when initializing the Sage200Connector or by using the connector methods `setCompany($company)` and `setSite($site)`.
 
+### Responses
+All endpoints return a Saloon\Http\Response class.  This response class contains many helpful methods for interacting with your HTTP response like seeing the HTTP status code and retrieving the body.
+```php
+try {
+    $response = $sage200->general()->warehouses()->getSites();
+    $response->status();
+    $response->body();
+    $response->dto();
+} catch (FatalRequestException|RequestException $e) {
+    //$e->getMessage();
+}
+```
+
+Below are some of the key methods provided by Saloon's Response class.
+
+|                           Method                           | Description                                                                                                             |
+|:----------------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------|
+|                           status                           | Returns the response status code.                                                                                       |
+|                          headers                           | Returns all response headers                                                                                            |
+|                           header                           | Returns a given header                                                                                                  |
+|                            body                            | Returns the raw response body as a string                                                                               |
+|                            json                            | Retrieves a JSON response body and json_decodes it into an array.                                                       |
+|                           array                            | Alias of json                                                                                                           |
+|                          collect                           | Retrieves a JSON response body and json_decodes it into a Laravel Collection. Requires illuminate/collections.          |
+|                           object                           | Retrieves a JSON response body and json_decodes it into an object.                                                      |
+|                         xmlReader                          | Used for XML responses - returns a XML Wrangler reader. Requires saloonphp/xml-wrangler.                                |
+|                            dom                             | Used for HTML responses - returns a Symfony DOM Crawler instance. Requires symfony/dom-crawler.                         |
+|                           stream                           | Returns the response body as an instance of StreamInterface                                                             |
+|                       saveBodyToFile                       | Allows you to save the raw body to a file or open file resource.                                                        |
+|                            dto                             | Converts the response into a data-transfer object. You must define your DTO first, click here to read more.             |
+|                         dtoOrFail                          | Will work just like dto but will throw an exception if the response is considered "failed".                             |
+| ok, successful, redirect, failed, clientError, serverError | Methods used to determine if a request was successful or not based on status code. The failed method can be customised. |
+|                           throw                            | Will throw an exception if the response is considered "failed".                                                         |
+|                     getPendingRequest                      | Returns the PendingRequest class that was built up for the request.                                                     |
+|                       getPsrRequest                        | Returns the PSR-7 request that was built up by Saloon                                                                   |
+|                       getPsrResponse                       | Return the PSR-7 response that was built up by the HTTP client/sender.                                                  |
+
 ### Sage OData Query Builder
 To aid in the creation of query strings, an OData builder has been included.  Only queries that are accepted by the API have been added.
 
@@ -77,7 +114,7 @@ $sage200 = new Sage200Connector(
 
 try {
     /** @var Sites[] $sites */
-$sites = $sage200->general()->warehouses()->getSites();
+$sites = $sage200->general()->warehouses()->getSites()->dto();
 } catch (FatalRequestException|RequestException $e) {
     //$e->getMessage();
 }
@@ -91,6 +128,7 @@ foreach ($sites as $site ) {
 ```php
 use Selectco\SageApi\Sage200Connector;
 use Selectco\SageApi\DataObjects\Stock\Warehouse;
+use Selectco\SageApi\Requests\Stock\Warehouses\GetWarehouses;
 
 $sage200 = new Sage200Connector(
    developerSubscriptionKey: $key,
@@ -101,7 +139,7 @@ $sage200 = new Sage200Connector(
 
 try {
     /** @var Warehouse[] $warehouses */
-    $warehouses = $sage200->stock()->warehouses()->getWarehouses();
+    $warehouses = $sage200->send(new GetWarehouses())->dto();
 } catch (FatalRequestException|RequestException) {
     //$e->getMessage();
 }
@@ -125,7 +163,7 @@ $sage200 = new Sage200Connector(
 
 try {
     /** @var Warehouse $warehouses */
-    $warehouses = $sage200->stock()->warehouses()->getWarehouse($id);
+    $warehouses = $sage200->stock()->warehouses()->getWarehouse($id)->dto();
 } catch (FatalRequestException|RequestException) {
     //$e->getMessage();
 }
@@ -151,7 +189,7 @@ $queryParameters->select(['id', 'name'])->orderBy('name')->top(5);
 
 try {
     /** @var Warehouse[] $warehouses */
-    $warehouses = $sage200->stock()->warehouses()->getWarehouses($queryParameters->buildQueryString());
+    $warehouses = $sage200->stock()->warehouses()->getWarehouses($queryParameters->buildQueryString())->dto();
 } catch (FatalRequestException|RequestException) {
     //$e->getMessage();
 }
