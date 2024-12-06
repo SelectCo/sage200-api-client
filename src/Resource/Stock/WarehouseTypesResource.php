@@ -26,8 +26,6 @@ class WarehouseTypesResource
      */
     public function getWarehouses(string|null $queryParameters = ''): array
     {
-        $warehouses = new GetWarehouseTypes();
-        $warehouses->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouses)->dto();
+        return $this->connector->send(new GetWarehouseTypes($queryParameters))->dto();
     }
 }

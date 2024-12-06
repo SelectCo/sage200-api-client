@@ -36,9 +36,7 @@ class WarehouseHoldingsResource
      */
     public function getWarehouseHoldings(string|null $queryParameters = ''): array
     {
-        $warehouseHolding = new GetWarehouseHoldings();
-        $warehouseHolding->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouseHolding)->dto();
+        return $this->connector->send(new GetWarehouseHoldings($queryParameters))->dto();
     }
 
     /**
@@ -71,9 +69,7 @@ class WarehouseHoldingsResource
      */
     public function getWarehouseHolding(int $id, string|null $queryParameters = ''): WarehouseHolding
     {
-        $warehouseHolding = new GetWarehouseHolding($id);
-        $warehouseHolding->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouseHolding)->dto();
+        return $this->connector->send(new GetWarehouseHolding($id, $queryParameters))->dto();
     }
 
     /**
@@ -118,9 +114,7 @@ class WarehouseHoldingsResource
      */
     public function getWarehouseHoldingsForProduct(int $productId, string|null $queryParameters = ''): array
     {
-        $warehouseHolding = new GetWarehouseHoldingsForProduct($productId);
-        $warehouseHolding->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouseHolding)->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForProduct($productId, $queryParameters))->dto();
     }
 
     /**
@@ -133,9 +127,7 @@ class WarehouseHoldingsResource
      */
     public function getWarehouseHoldingsForProductAndWarehouse(int $productId, int $warehouseId, string|null $queryParameters = ''): array
     {
-        $warehouseHolding = new GetWarehouseHoldingsForProductAndWarehouse($productId, $warehouseId);
-        $warehouseHolding->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouseHolding)->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForProductAndWarehouse($productId, $warehouseId, $queryParameters))->dto();
     }
 
     /**
@@ -147,9 +139,7 @@ class WarehouseHoldingsResource
      */
     public function getWarehouseHoldingsForWarehouse(int $warehouseId, string|null $queryParameters = ''): array
     {
-        $warehouseHolding = new GetWarehouseHoldingsForWarehouse($warehouseId);
-        $warehouseHolding->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouseHolding)->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForWarehouse($warehouseId, $queryParameters))->dto();
     }
 
     /**
@@ -162,8 +152,6 @@ class WarehouseHoldingsResource
      */
     public function getWarehouseHoldingsForWarehouseAndProduct(int $warehouseId, int $productId, string|null $queryParameters = ''): array
     {
-        $warehouseHolding = new GetWarehouseHoldingsForWarehouseAndProduct($warehouseId, $productId);
-        $warehouseHolding->setQueryParameters($queryParameters);
-        return $this->connector->send($warehouseHolding)->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForWarehouseAndProduct($warehouseId, $productId, $queryParameters))->dto();
     }
 }

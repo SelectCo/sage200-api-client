@@ -20,8 +20,8 @@ class SOPOrderLineViewsResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getSOPOrderLineViews(): array
+    public function getSOPOrderLineViews(string|null $queryParameters = ''): array
     {
-        return $this->connector->send(new GetSOPOrderLineViews())->dto();
+        return $this->connector->send(new GetSOPOrderLineViews($queryParameters))->dto();
     }
 }
