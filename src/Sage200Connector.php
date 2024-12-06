@@ -7,6 +7,7 @@ use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
+use Selectco\SageApi\Exception\BadRequestException;
 use Selectco\SageApi\Exception\ForbiddenException;
 use Selectco\SageApi\Exception\NotFoundException;
 use Selectco\SageApi\Exception\SageException;
@@ -42,6 +43,11 @@ class Sage200Connector extends Connector
     public function getRequestException(Response $response, Throwable|null $senderException): Throwable|null
     {
         switch ($response->status()) {
+            case 400:
+                throw new BadRequestException(
+                    response: $response,
+                    previous: $senderException
+                );
             case 401:
                 throw new UnauthorizedException(
                     response: $response,
