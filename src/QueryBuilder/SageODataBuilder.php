@@ -67,6 +67,8 @@ class SageODataBuilder
 
     public function filter(): self
     {
+
+        //TODO - ADD FILTER
         return $this;
     }
 
@@ -153,7 +155,7 @@ class SageODataBuilder
      */
     public function count(bool $enable = true): self
     {
-        $this->countParameter = '$count=' . $enable;
+        $this->countParameter = '$count=' . json_encode($enable);
         return $this;
     }
 
@@ -172,7 +174,7 @@ class SageODataBuilder
      */
     public function metadata(bool $enable = true): self
     {
-        $this->metadataParameter = '$metadata=' . $enable;
+        $this->metadataParameter = '$metadata=' . json_encode($enable);
         return $this;
     }
 
