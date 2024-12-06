@@ -17,10 +17,12 @@ class GetWarehouseHoldingsForProductAndWarehouse extends Request
     /**
      * @param int $productId Unique id of the product.
      * @param int $warehouseId Unique id of the warehouse.
+     * @param string|null $queryParameters
      */
-    public function __construct(protected int $productId, protected int $warehouseId)
+    public function __construct(protected int $productId, protected int $warehouseId, string|null $queryParameters = null)
     {
         $this->endPoint = "/products/{$this->productId}/warehouses/{$this->warehouseId}/warehouse_holdings";
+        $this->setQueryParameters($queryParameters);
     }
 
     /**
@@ -32,10 +34,10 @@ class GetWarehouseHoldingsForProductAndWarehouse extends Request
     }
 
     /**
-     * @param string $queryParameters
+     * @param string|null $queryParameters
      * @return void
      */
-    public function setQueryParameters(string $queryParameters): void
+    public function setQueryParameters(string|null $queryParameters = ''): void
     {
         $this->endPoint .= $queryParameters;
     }

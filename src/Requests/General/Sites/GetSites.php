@@ -28,6 +28,9 @@ class GetSites extends Request
         $this->endPoint = '/sites';
     }
 
+    /**
+     * @return string
+     */
     public function resolveEndpoint(): string
     {
         return $this->endPoint;

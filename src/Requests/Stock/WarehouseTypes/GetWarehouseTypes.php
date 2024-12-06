@@ -14,17 +14,28 @@ class GetWarehouseTypes extends Request
     protected Method $method = Method::GET;
     private string $endPoint;
 
-    public function __construct()
+    /**
+     * @param string|null $queryParameters
+     */
+    public function __construct(string|null $queryParameters = null)
     {
         $this->endPoint = '/warehouse_types';
+        $this->setQueryParameters($queryParameters);
     }
 
+    /**
+     * @return string
+     */
     public function resolveEndpoint(): string
     {
         return $this->endPoint;
     }
 
-    public function setQueryParameters(string $queryParameters): void
+    /**
+     * @param string|null $queryParameters
+     * @return void
+     */
+    public function setQueryParameters(string|null $queryParameters = ''): void
     {
         $this->endPoint .= $queryParameters;
     }

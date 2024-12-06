@@ -14,9 +14,13 @@ class GetSOPOrderLineViews extends Request
     protected Method $method = Method::GET;
     private string $endPoint;
 
-    public function __construct()
+    /**
+     * @param string|null $queryParameters
+     */
+    public function __construct(string|null $queryParameters = null)
     {
         $this->endPoint = '/sop_order_line_views';
+        $this->setQueryParameters($queryParameters);
     }
 
     /**
@@ -28,10 +32,10 @@ class GetSOPOrderLineViews extends Request
     }
 
     /**
-     * @param string $queryParameters
+     * @param string|null $queryParameters
      * @return void
      */
-    public function setQueryParameters(string $queryParameters): void
+    public function setQueryParameters(string|null $queryParameters = ''): void
     {
         $this->endPoint .= $queryParameters;
     }

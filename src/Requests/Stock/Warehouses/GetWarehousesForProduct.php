@@ -20,16 +20,24 @@ class GetWarehousesForProduct extends Request
 
     /**
      * @param mixed $productId Unique id of a product.
+     * @param string|null $queryParameters
      */
-    public function __construct(protected string|int $productId) {
+    public function __construct(protected string|int $productId, string|null $queryParameters = null) {
         $this->endPoint = "/products/{$this->productId}/warehouses";
     }
 
+    /**
+     * @return string
+     */
 	public function resolveEndpoint(): string
 	{
         return $this->endPoint;
 	}
 
+    /**
+     * @param string|null $queryParameters
+     * @return void
+     */
     public function setQueryParameters(string|null $queryParameters = ''): void
     {
         $this->endPoint .= $queryParameters;

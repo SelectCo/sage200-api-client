@@ -16,10 +16,12 @@ class GetWarehouseHolding extends Request
 
     /**
      * @param int $id Unique id of the warehouse.
+     * @param string|null $queryParameters
      */
-    public function __construct(protected int $id)
+    public function __construct(protected int $id, string|null $queryParameters = null)
     {
         $this->endPoint = "/warehouse_holdings/{$this->id}";
+        $this->setQueryParameters($queryParameters);
     }
 
     /**
@@ -31,10 +33,10 @@ class GetWarehouseHolding extends Request
     }
 
     /**
-     * @param string $queryParameters
+     * @param string|null $queryParameters
      * @return void
      */
-    public function setQueryParameters(string $queryParameters): void
+    public function setQueryParameters(string|null $queryParameters = ''): void
     {
         $this->endPoint .= $queryParameters;
     }
