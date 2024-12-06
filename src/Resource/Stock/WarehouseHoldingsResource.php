@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Selectco\SageApi\Resource\Stock;
 
 use Saloon\Http\Response;
-use Selectco\SageApi\DataObjects\Stock\WarehouseHolding;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
@@ -30,23 +29,23 @@ class WarehouseHoldingsResource
 
     /**
      * @param string|null $queryParameters
-     * @return WarehouseHolding[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldings(string|null $queryParameters = ''): array
+    public function getWarehouseHoldings(string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseHoldings($queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseHoldings($queryParameters));
     }
 
     /**
      * @param array $data
-     * @return WarehouseHolding
+     * @return Response
      * @throws DataValidationException
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function postWarehouseHoldings(array $data): WarehouseHolding
+    public function postWarehouseHoldings(array $data): Response
     {
         $warehouse = new PostWarehouseHoldings($data);
         $errors = $warehouse->verifyData();
@@ -57,30 +56,30 @@ class WarehouseHoldingsResource
             throw new DataValidationException($errorsString);
         }
 
-        return $this->connector->send($warehouse)->dto();
+        return $this->connector->send($warehouse);
     }
 
     /**
      * @param int $id
      * @param string|null $queryParameters
-     * @return WarehouseHolding
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHolding(int $id, string|null $queryParameters = ''): WarehouseHolding
+    public function getWarehouseHolding(int $id, string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseHolding($id, $queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseHolding($id, $queryParameters));
     }
 
     /**
      * @param int $id
      * @param array $data
-     * @return WarehouseHolding
+     * @return Response
      * @throws DataValidationException
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function putWarehouseHolding(int $id, array $data): WarehouseHolding
+    public function putWarehouseHolding(int $id, array $data): Response
     {
         $warehouse = new PutWarehouseHolding($id, $data);
         $errors = $warehouse->verifyData();
@@ -91,7 +90,7 @@ class WarehouseHoldingsResource
             throw new DataValidationException($errorsString);
         }
 
-        return $this->connector->send($warehouse)->dto();
+        return $this->connector->send($warehouse);
     }
 
     /**
@@ -108,50 +107,50 @@ class WarehouseHoldingsResource
     /**
      * @param int $productId
      * @param string|null $queryParameters
-     * @return WarehouseHolding[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForProduct(int $productId, string|null $queryParameters = ''): array
+    public function getWarehouseHoldingsForProduct(int $productId, string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseHoldingsForProduct($productId, $queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForProduct($productId, $queryParameters));
     }
 
     /**
      * @param int $productId
      * @param int $warehouseId
      * @param string|null $queryParameters
-     * @return WarehouseHolding[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForProductAndWarehouse(int $productId, int $warehouseId, string|null $queryParameters = ''): array
+    public function getWarehouseHoldingsForProductAndWarehouse(int $productId, int $warehouseId, string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseHoldingsForProductAndWarehouse($productId, $warehouseId, $queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForProductAndWarehouse($productId, $warehouseId, $queryParameters));
     }
 
     /**
      * @param int $warehouseId
      * @param string|null $queryParameters
-     * @return WarehouseHolding[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForWarehouse(int $warehouseId, string|null $queryParameters = ''): array
+    public function getWarehouseHoldingsForWarehouse(int $warehouseId, string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseHoldingsForWarehouse($warehouseId, $queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForWarehouse($warehouseId, $queryParameters));
     }
 
     /**
      * @param int $warehouseId
      * @param int $productId
      * @param string|null $queryParameters
-     * @return WarehouseHolding[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForWarehouseAndProduct(int $warehouseId, int $productId, string|null $queryParameters = ''): array
+    public function getWarehouseHoldingsForWarehouseAndProduct(int $warehouseId, int $productId, string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseHoldingsForWarehouseAndProduct($warehouseId, $productId, $queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseHoldingsForWarehouseAndProduct($warehouseId, $productId, $queryParameters));
     }
 }

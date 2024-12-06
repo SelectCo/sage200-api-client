@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Selectco\SageApi\Resource\General;
 
-use Selectco\SageApi\DataObjects\General\Sites;
+use Saloon\Http\Response;
 use Selectco\SageApi\Requests\General\Sites\GetSites;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
@@ -16,12 +16,12 @@ class SitesResource
     }
 
     /**
-     * @return Sites[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getSites(): array
+    public function getSites(): Response
     {
-        return $this->connector->send(new GetSites())->dto();
+        return $this->connector->send(new GetSites());
     }
 }

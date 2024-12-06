@@ -6,7 +6,7 @@ namespace Selectco\SageApi\Resource\Stock;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
-use Selectco\SageApi\DataObjects\Stock\WarehouseTypes;
+use Saloon\Http\Response;
 use Selectco\SageApi\Requests\Stock\WarehouseTypes\GetWarehouseTypes;
 
 class WarehouseTypesResource
@@ -20,12 +20,12 @@ class WarehouseTypesResource
 
     /**
      * @param string|null $queryParameters
-     * @return WarehouseTypes[]
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouses(string|null $queryParameters = ''): array
+    public function getWarehouses(string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetWarehouseTypes($queryParameters))->dto();
+        return $this->connector->send(new GetWarehouseTypes($queryParameters));
     }
 }

@@ -6,7 +6,7 @@ namespace Selectco\SageApi\Resource\SOPSalesOrders;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
-use Selectco\SageApi\DataObjects\SOPSalesOrders\SOPOrderLineViews;
+use Saloon\Http\Response;
 use Selectco\SageApi\Requests\SopSalesOrders\SOPOrderLineViews\GetSOPOrderLineViews;
 
 class SOPOrderLineViewsResource
@@ -16,12 +16,13 @@ class SOPOrderLineViewsResource
     }
 
     /**
-     * @return SOPOrderLineViews[]
+     * @param string|null $queryParameters
+     * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getSOPOrderLineViews(string|null $queryParameters = ''): array
+    public function getSOPOrderLineViews(string|null $queryParameters = ''): Response
     {
-        return $this->connector->send(new GetSOPOrderLineViews($queryParameters))->dto();
+        return $this->connector->send(new GetSOPOrderLineViews($queryParameters));
     }
 }
