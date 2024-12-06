@@ -8,7 +8,7 @@ use Throwable;
 
 class ForbiddenException extends SageException
 {
-    public function __construct(Response $response, string|null $message = null, int $code = 0, Throwable|null $previous = null)
+    public function __construct(Response $response, string|null $message = null, int $code = 403, Throwable|null $previous = null)
     {
         $message = '403 (Forbidden): Does the user have access to the module?';
         parent::__construct($response, $message, $code, $previous);

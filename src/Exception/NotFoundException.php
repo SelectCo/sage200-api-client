@@ -8,7 +8,7 @@ use Throwable;
 
 class NotFoundException extends SageException
 {
-    public function __construct(Response $response, string|null $message = null, int $code = 0, Throwable|null $previous = null)
+    public function __construct(Response $response, string|null $message = null, int $code = 404, Throwable|null $previous = null)
     {
         $message = '404 (Not Found): Is the endpoint available for your version of Sage 200?';
         parent::__construct($response, $message, $code, $previous);

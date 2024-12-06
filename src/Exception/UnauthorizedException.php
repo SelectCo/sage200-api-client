@@ -8,7 +8,7 @@ use Throwable;
 
 class UnauthorizedException extends SageException
 {
-    public function __construct(Response $response, string|null $message = null, int $code = 0, Throwable|null $previous = null)
+    public function __construct(Response $response, string|null $message = null, int $code = 401, Throwable|null $previous = null)
     {
         $message = '401 (Unauthorized): Has the access token expired, are the X-Site and X-Company values invalid or been omitted from the request header?';
         parent::__construct($response, $message, $code, $previous);
