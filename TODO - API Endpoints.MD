@@ -285,15 +285,15 @@
   - [ ] GET Purchase Order Return Line Receipt Return Views
 - [ ] POP Order Return Views
   - [ ] GET POP Order Return Views
-- [ ] POP Orders
-  - [ ] GET Purchase Orders
-  - [ ] POST Purchase Orders
-  - [ ] GET Purchase Order
-  - [ ] PUT Purchase Order
-  - [ ] DEL Purchase Order
-  - [ ] POST New Purchase Order With Defaults
-  - [ ] PUT New Purchase Order With Defaults
-  - [ ] GET Purchase Orders For A Supplier
+- [X] POP Orders
+  - [X] GET Purchase Orders
+  - [X] POST Purchase Orders
+  - [X] GET Purchase Order
+  - [X] PUT Purchase Order
+  - [X] DEL Purchase Order
+  - [X] POST New Purchase Order With Defaults
+  - [X] PUT New Purchase Order With Defaults
+  - [X] GET Purchase Orders For A Supplier
 - [ ] POP Orders Duplicate
   - [ ] POST Duplicate Purchase Order.
 - [ ] POP Requisition Fulfilment Line Views
