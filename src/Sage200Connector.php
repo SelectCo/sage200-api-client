@@ -34,6 +34,13 @@ class Sage200Connector extends Connector
         $this->baseUrl = $baseUrl;
     }
 
+    public function defaultConfig(): array
+    {
+        return [
+            'verify' => false,
+        ];
+    }
+
     /**
      * @param Response $response
      * @param Throwable|null $senderException
