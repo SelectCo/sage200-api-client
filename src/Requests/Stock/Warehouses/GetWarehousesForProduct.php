@@ -24,6 +24,7 @@ class GetWarehousesForProduct extends Request
      */
     public function __construct(protected string|int $productId, string|null $queryParameters = null) {
         $this->endPoint = "/products/{$this->productId}/warehouses";
+        $this->setQueryParameters($queryParameters);
     }
 
     /**
