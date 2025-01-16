@@ -4,13 +4,17 @@ declare(strict_types=1);
 namespace Selectco\SageApi\Requests\POPPurchaseOrders\POPOrders;
 
 use JsonException;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use Selectco\SageApi\DataObjects\POPPurchaseOrders\PurchaseOrder;
+use Selectco\SageApi\Exception\DataValidationException;
+use Symfony\Component\Validator\Mapping\Loader\AttributeLoader;
+use Symfony\Component\Validator\Validation;
 
-class PostNewPurchaseOrderWithDefaults extends Request
+class PostNewPurchaseOrderWithDefaults extends Request implements HasBody
 {
     use HasJsonBody;
 
@@ -27,11 +31,14 @@ class PostNewPurchaseOrderWithDefaults extends Request
 
     /**
      * @param int $supplier_id
+     * @throws DataValidationException
      */
     public function __construct(public int $supplier_id)
     {
         $this->endPoint = "/pop_orders_new";
         $this->data = ['supplier_id' => $this->supplier_id];
+
+        $this->verifyData();
     }
 
     /**
@@ -45,6 +52,26 @@ class PostNewPurchaseOrderWithDefaults extends Request
     public function defaultBody(): array
     {
         return $this->data;
+    }
+
+    /**
+     * @throws DataValidationException
+     */
+    public function verifyData(): void
+    {
+        $entity = new PurchaseOrder(...$this->data);
+        $validator = Validation::createValidatorBuilder()
+            ->addMethodMapping('postPurchaseOrders')
+            ->addLoader(new AttributeLoader())
+            ->getValidator();
+
+        $errors = $validator->validate($entity);
+
+        if (count($errors) > 0)
+        {
+            $errorsString = (string) $errors;
+            throw new DataValidationException($errorsString);
+        }
     }
 
     /**

@@ -47,16 +47,7 @@ class WarehouseHoldingsResource
      */
     public function postWarehouseHoldings(array $data): Response
     {
-        $warehouse = new PostWarehouseHoldings($data);
-        $errors = $warehouse->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($warehouse);
+        return $this->connector->send(new PostWarehouseHoldings($data));
     }
 
     /**
@@ -81,16 +72,7 @@ class WarehouseHoldingsResource
      */
     public function putWarehouseHolding(int $id, array $data): Response
     {
-        $warehouse = new PutWarehouseHolding($id, $data);
-        $errors = $warehouse->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($warehouse);
+        return $this->connector->send(new PutWarehouseHolding($id, $data));
     }
 
     /**

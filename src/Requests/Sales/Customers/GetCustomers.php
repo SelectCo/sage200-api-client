@@ -8,18 +8,21 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Selectco\SageApi\DataObjects\Sales\Customer;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
 class GetCustomers extends Request
 {
     protected Method $method = Method::GET;
     private string $endPoint;
+    private string $queryString;
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      */
-    public function __construct(string|null $queryParameters = null)
+    public function __construct(SageODataBuilder|null $queryParameters = null)
     {
         $this->endPoint = "/customers";
+        $this->queryString = '';
         $this->setQueryParameters($queryParameters);
     }
 
@@ -28,25 +31,31 @@ class GetCustomers extends Request
      */
     public function resolveEndpoint(): string
     {
-        return $this->endPoint;
+        return $this->endPoint . $this->queryString;
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return void
      */
-    public function setQueryParameters(string|null $queryParameters = ''): void
+    public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
     {
-        $this->endPoint .= $queryParameters;
+        if ($queryParameters) {
+            $this->queryString = $queryParameters->buildQueryString();
+        }
     }
 
     /**
      * @param Response $response
-     * @return Customer
+     * @return Customer[]
      * @throws JsonException
      */
-    public function createDtoFromResponse(Response $response): Customer
+    public function createDtoFromResponse(Response $response): array
     {
-        return new Customer(...$response->json());
+        $returnArray = [];
+        foreach ($response->json() as $data) {
+            $returnArray[] = new Customer(...$data);
+        }
+        return $returnArray;
     }
 }

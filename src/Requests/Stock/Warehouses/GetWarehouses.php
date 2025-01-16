@@ -7,6 +7,7 @@ use Selectco\SageApi\DataObjects\Stock\Warehouse;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
 /**
  * GetWarehouses - Lists all warehouses for given Site and Company
@@ -18,13 +19,15 @@ class GetWarehouses extends Request
 {
 	protected Method $method = Method::GET;
     private string $endPoint;
+    private string $queryString;
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      */
-    public function __construct(string|null $queryParameters = null)
+    public function __construct(SageODataBuilder|null $queryParameters = null)
     {
         $this->endPoint = '/warehouses';
+        $this->queryString = '';
         $this->setQueryParameters($queryParameters);
     }
 
@@ -33,16 +36,18 @@ class GetWarehouses extends Request
      */
     public function resolveEndpoint(): string
     {
-        return $this->endPoint;
+        return $this->endPoint . $this->queryString;
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return void
      */
-    public function setQueryParameters(string|null $queryParameters = ''): void
+    public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
     {
-        $this->endPoint .= $queryParameters;
+        if ($queryParameters) {
+            $this->queryString = $queryParameters->buildQueryString();
+        }
     }
 
     /**

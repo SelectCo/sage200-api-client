@@ -44,16 +44,7 @@ class CustomersResource
      */
     public function postCustomers(array $data): Response
     {
-        $customer = new PostCustomers($data);
-        $errors = $customer->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($customer);
+        return $this->connector->send(new PostCustomers($data));
     }
 
     /**
@@ -78,16 +69,7 @@ class CustomersResource
      */
     public function putCustomer(int $customerId, array $data): Response
     {
-        $customer = new PutCustomer($customerId, $data);
-        $errors = $customer->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($customer);
+        return $this->connector->send(new PutCustomer($customerId, $data));
     }
 
     /**
@@ -110,15 +92,6 @@ class CustomersResource
      */
     public function postNewCustomerWithDefaults(array $data): Response
     {
-        $customer = new PostNewCustomerWithDefaults($data);
-        $errors = $customer->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($customer);
+        return $this->connector->send(new PostNewCustomerWithDefaults($data));
     }
 }

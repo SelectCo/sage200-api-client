@@ -22,14 +22,22 @@ test('connector', function () {
 /**
  * TEST REQUEST WITH ID AND MULTIPLE RESULTS
  */
-test('id', function() {
-    return 1;
+test('Request Class', function () {
+    expect(true)->toBeTrue();
+    return new GetWarehouseHoldingsForWarehouse(getWarehouseId());
 })->depends('connector');
 
-test('request', function () {
-    return GetWarehouseHoldingsForWarehouse::class;
+test('Data Object', function () {
+    expect(true)->toBeTrue();
+    return WarehouseHolding::class;
 });
 
-test('object', function () {
-    return WarehouseHolding::class;
+test('ID Key', function() {
+    expect(true)->toBeTrue();
+    return 'id';
+});
+
+test('Key Array', function () {
+    expect(true)->toBeTrue();
+    return ['id', 'warehouse_id'];
 });

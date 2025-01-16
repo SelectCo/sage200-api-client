@@ -31,7 +31,6 @@ namespace Selectco\SageApi\QueryBuilder;
 class SageODataBuilder
 {
     private string $selectParameter = '$select=';
-
     private string $orderByParameter = '';
     private string $topParameter = '';
     private string $skipParameter = '';
@@ -224,6 +223,33 @@ class SageODataBuilder
                 $queryString .= '&';
             }
             $queryString .= $this->countParameter;
+        }
+        if ($this->metadataParameter !== '')
+        {
+            if ($queryString !== '?')
+            {
+                $queryString .= '&';
+            }
+            $queryString .= $this->metadataParameter;
+        }
+
+        return $queryString;
+    }
+
+    public function buildSingleObjectQueryString(): string
+    {
+        $queryString = '?';
+        if ($this->selectParameter !== '$select=')
+        {
+            $queryString .= $this->selectParameter;
+        }
+        if ($this->expandParameter !== '')
+        {
+            if ($queryString !== '?')
+            {
+                $queryString .= '&';
+            }
+            $queryString .= $this->expandParameter;
         }
         if ($this->metadataParameter !== '')
         {

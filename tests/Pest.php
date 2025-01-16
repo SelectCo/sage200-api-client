@@ -53,11 +53,26 @@ expect()->extend('toBeOne', function () {
 */
 function getDefaultMultipleObjectTestPath(): string
 {
-    return __DIR__ . '/Feature/DefaultGETMultipleObjectTest.php';
+    return __DIR__ . '/Feature/DefaultGETMultipleObject.php';
 }
 function getDefaultSingleObjectTestPath(): string
 {
-    return __DIR__ . '/Feature/DefaultGETSingleObjectTest.php';
+    return __DIR__ . '/Feature/DefaultGETSingleObject.php';
+}
+
+function getDefaultPOSTSingleObjectTestPath(): string
+{
+    return __DIR__ . '/Feature/DefaultPOSTSingleObject.php';
+}
+
+function getDefaultPUTSingleObjectTestPath(): string
+{
+    return __DIR__ . '/Feature/DefaultPUTSingleObject.php';
+}
+
+function getDefaultDELSingleObjectTestPath(): string
+{
+    return __DIR__ . '/Feature/DefaultDELSingleObject.php';
 }
 
 function connector(): Sage200Connector

@@ -8,7 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Selectco\SageApi\Exception\DataValidationException;
 use Symfony\Component\Validator\Mapping\Loader\AttributeLoader;
 use Symfony\Component\Validator\Validation;
 
@@ -27,11 +27,14 @@ class PostWarehouses extends Request implements HasBody
 
     /**
      * @param array $data
+     * @throws DataValidationException
      */
     public function __construct(
         public array $data
     ) {
         $this->endPoint = "/warehouses";
+
+        $this->verifyData();
     }
 
     public function resolveEndpoint(): string
@@ -44,7 +47,10 @@ class PostWarehouses extends Request implements HasBody
         return $this->data;
     }
 
-    public function verifyData(): ConstraintViolationListInterface
+    /**
+     * @throws DataValidationException
+     */
+    public function verifyData(): void
     {
         $entity = new Warehouse(...$this->data);
         $validator = Validation::createValidatorBuilder()
@@ -52,7 +58,13 @@ class PostWarehouses extends Request implements HasBody
             ->addLoader(new AttributeLoader())
             ->getValidator();
 
-        return $validator->validate($entity);
+        $errors = $validator->validate($entity);
+
+        if (count($errors) > 0)
+        {
+            $errorsString = (string) $errors;
+            throw new DataValidationException($errorsString);
+        }
     }
 
     public function createDtoFromResponse(Response $response): Warehouse

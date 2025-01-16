@@ -8,20 +8,23 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Selectco\SageApi\DataObjects\Stock\WarehouseHolding;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
 class GetWarehouseHoldingsForWarehouseAndProduct extends Request
 {
     protected Method $method = Method::GET;
     private string $endPoint;
+    private string $queryString;
 
     /**
      * @param int $warehouseId Unique id of the warehouse.
      * @param int $productId Unique id of the product.
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      */
-    public function __construct(protected int $warehouseId, protected int $productId, string|null $queryParameters = null)
+    public function __construct(protected int $warehouseId, protected int $productId, SageODataBuilder|null $queryParameters = null)
     {
         $this->endPoint = "/warehouses/{$this->warehouseId}/products/{$this->productId}/warehouse_holdings";
+        $this->queryString = '';
         $this->setQueryParameters($queryParameters);
     }
 
@@ -30,16 +33,18 @@ class GetWarehouseHoldingsForWarehouseAndProduct extends Request
      */
     public function resolveEndpoint(): string
     {
-        return $this->endPoint;
+        return $this->endPoint . $this->queryString;
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return void
      */
-    public function setQueryParameters(string|null $queryParameters = ''): void
+    public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
     {
-        $this->endPoint .= $queryParameters;
+        if ($queryParameters) {
+            $this->queryString = $queryParameters->buildQueryString();
+        }
     }
 
     /**

@@ -41,16 +41,7 @@ class POPOrdersResource
      */
     public function postPurchaseOrders(array $data): Response
     {
-        $warehouse = new PostPurchaseOrders($data);
-        $errors = $warehouse->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($warehouse);
+        return $this->connector->send(new PostPurchaseOrders($data));
     }
 
     /**
@@ -75,16 +66,7 @@ class POPOrdersResource
      */
     public function putPurchaseOrder(int $id, array $data): Response
     {
-        $warehouse = new PutPurchaseOrder($id, $data);
-        $errors = $warehouse->verifyData();
-
-        if (count($errors) > 0)
-        {
-            $errorsString = (string) $errors;
-            throw new DataValidationException($errorsString);
-        }
-
-        return $this->connector->send($warehouse);
+        return $this->connector->send(new PutPurchaseOrder($id, $data));
     }
 
     /**
@@ -103,6 +85,7 @@ class POPOrdersResource
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws DataValidationException
      */
     public function postNewPurchaseOrderWithDefaults(int $supplier_id): Response
     {

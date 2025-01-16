@@ -22,14 +22,17 @@ test('connector', function () {
 /**
  * TEST REQUEST WITH ID AND MULTIPLE RESULTS
  */
-test('id', function() {
-    return 1;
+test('Request Class', function () {
+    expect(true)->toBeTrue();
+    return new GetPurchaseOrder(getPurchaseOrderId());
 })->depends('connector');
 
-test('request', function () {
-    return GetPurchaseOrder::class;
+test('Data Object', function () {
+    expect(true)->toBeTrue();
+    return PurchaseOrder::class;
 });
 
-test('object', function () {
-    return PurchaseOrder::class;
+test('Key Array', function () {
+    expect(true)->toBeTrue();
+    return ['id', 'document_no'];
 });

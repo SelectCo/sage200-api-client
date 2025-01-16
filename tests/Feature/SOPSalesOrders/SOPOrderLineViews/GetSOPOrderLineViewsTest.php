@@ -22,14 +22,22 @@ test('connector', function () {
 /**
  * TEST REQUEST WITH ID AND MULTIPLE RESULTS
  */
-test('id', function() {
-    return 1;
+test('Request Class', function () {
+    expect(true)->toBeTrue();
+    return new GetSOPOrderLineViews();
 })->depends('connector');
 
-test('request', function () {
-    return GetSOPOrderLineViews::class;
+test('Data Object', function () {
+    expect(true)->toBeTrue();
+    return SOPOrderLineViews::class;
 });
 
-test('object', function () {
-    return SOPOrderLineViews::class;
+test('ID Key', function() {
+    expect(true)->toBeTrue();
+    return 'sop_order_id';
+});
+
+test('Key Array', function () {
+    expect(true)->toBeTrue();
+    return ['sop_order_id', 'sop_order_document_no'];
 });
