@@ -312,6 +312,205 @@
 ### Purchases
 
 ### Sales
+- [ ] Customer Alerts
+  - [ ] GET Customer Alerts
+  - [ ] POST Customer Alert
+  - [ ] GET Customer Alert
+  - [ ] PUT Customer Alert
+  - [ ] DEL Customer Alert
+  - [ ] GET Customer Alerts For Customer
+- [ ] Customer Cards
+  - [ ] GET Customer Cards
+  - [ ] GET Customer Card
+  - [ ] PUT Customer Card
+  - [ ] DEL Customer Card
+  - [ ] GET Customer Cards For Customer
+- [ ] Customer Contact Roles
+  - [ ] GET Customer Contact Roles
+  - [ ] GET Customer Contact Roles By Contact
+  - [ ] GET Customer Contact Role
+- [ ] Customer Contacts
+  - [ ] GET Customer Contacts
+  - [ ] GET Customer Contact
+  - [ ] DEL Customer Contact
+  - [ ] PUT Customer Contact
+  - [ ] GET Customer Contacts For Customer
+  - [ ] POST Customer Contacts For Customer
+  - [ ] GET Customer Contacts For Customer
+  - [ ] DEL Customer Contacts For Customer
+  - [ ] PUT Customer Contacts For Customer
+- [ ] Customer Delivery Addresses
+  - [ ] GET Customer Delivery Addresses Collection
+  - [ ] POST Customer Delivery Addresses Collection
+  - [ ] GET Single Customer Delivery Address Resource
+  - [ ] PUT Single Customer Delivery Address Resource
+  - [ ] DEL Single Customer Delivery Address Resource
+  - [ ] GET Customer Delivery Addresses For Customer
+- [ ] Customer Emails
+  - [ ] GET Customer Emails
+  - [ ] GET Customer Emails By Contact
+  - [ ] POST Customer Emails By Contact
+  - [ ] GET Customer Emails For Customer And Customer Contact
+  - [ ] POST Customer Emails For Customer And Customer Contact
+  - [ ] GET Customer Email
+  - [ ] PUT Customer Email
+  - [ ] DEL Customer Email
+  - [ ] GET Customer Email For Customer Contact
+  - [ ] PUT Customer Email For Customer Contact
+  - [ ] DEL Customer Email For Customer Contact
+  - [ ] GET Customer Email For Customer And Customer Contact
+  - [ ] PUT Customer Email For Customer And Customer Contact
+  - [ ] DEL Customer Email For Customer And Customer Contact
+- [ ] Customer Faxes
+  - [ ] GET Customer Faxes
+  - [ ] GET Customer Faxes By Contact
+  - [ ] POST Customer Faxes By Contact
+  - [ ] GET Customer Faxes For Customer And Customer Contact
+  - [ ] POST Customer Faxes For Customer And Customer Contact
+  - [ ] GET Customer Fax
+  - [ ] PUT Customer Fax
+  - [ ] DEL Customer Fax
+  - [ ] GET Customer Fax For Customer Contact
+  - [ ] PUT Customer Fax For Customer Contact
+  - [ ] DEL Customer Fax For Customer Contact
+  - [ ] GET Customer Fax For Customer And Customer Contact
+  - [ ] PUT Customer Fax For Customer And Customer Contact
+  - [ ] DEL Customer Fax For Customer And Customer Contact
+- [ ] Customer Memos
+  - [ ] GET Customer Memos
+  - [ ] POST Customer Memos
+  - [ ] GET Customer Memo
+  - [ ] PUT Customer Memo
+  - [ ] DEL Customer Memo
+  - [ ] GET Customer Memos For Customer
+- [ ] Customer Mobiles
+  - [ ] GET Customer Mobiles
+  - [ ] GET Customer Mobiles By Contact
+  - [ ] POST Customer Mobiles By Contact
+  - [ ] GET Customer Mobiles For Customer And Customer Contact
+  - [ ] POST Customer Mobiles For Customer And Customer Contact
+  - [ ] GET Customer Mobile
+  - [ ] PUT Customer Mobile
+  - [ ] DEL Customer Mobile
+  - [ ] GET Customer Mobile For Customer Contact
+  - [ ] PUT Customer Mobile For Customer Contact
+  - [ ] DEL Customer Mobile For Customer Contact
+  - [ ] GET Customer Mobile For Customer And Customer Contact
+  - [ ] PUT Customer Mobile For Customer And Customer Contact
+  - [ ] DEL Customer Mobile For Customer And Customer Contact
+- [ ] Customer Period Value Views
+  - [ ] GET Customer Period Value Views
+- [ ] Customer Price Bands
+  - [ ] GET Customer Price Bands
+  - [ ] GET Customer Price Band
+- [ ] Customer Price Enquiry
+  - [ ] POST Customer Price Enquiry
+- [ ] Customer SOP Invoice Credit Line Views
+  - [ ] GET Customer SOP Invoice Credit Line Views
+- [ ] Customer Telephones
+  - [ ] GET Customer Telephones
+  - [ ] GET Customer Telephones By Contact
+  - [ ] POST Customer Telephones By Contact
+  - [ ] GET Customer Telephones For Customer And Customer Contact
+  - [ ] POST Customer Telephones For Customer And Customer Contact
+  - [ ] GET Customer Telephone
+  - [ ] PUT Customer Telephone
+  - [ ] DEL Customer Telephone
+  - [ ] GET Customer Telephone For Customer Contact
+  - [ ] PUT Customer Telephone For Customer Contact
+  - [ ] DEL Customer Telephone For Customer Contact
+  - [ ] GET Customer Telephone For Customer And Customer Contact
+  - [ ] PUT Customer Telephone For Customer And Customer Contact
+  - [ ] DEL Customer Telephone For Customer And Customer Contact
+- [ ] Customer Views
+  - [ ] GET Customer Views
+- [ ] Customer Websites
+  - [ ] GET Customer Websites
+  - [ ] GET Customer Websites By Contact
+  - [ ] POST Customer Websites By Contact
+  - [ ] GET Customer Websites For Customer And Customer Contact
+  - [ ] POST Customer Websites For Customer And Customer Contact
+  - [ ] GET Customer Website
+  - [ ] PUT Customer Website
+  - [ ] DEL Customer Website
+  - [ ] GET Customer Website For Customer Contact
+  - [ ] PUT Customer Website For Customer Contact
+  - [ ] DEL Customer Website For Customer Contact
+  - [ ] GET Customer Website For Customer And Customer Contact
+  - [ ] PUT Customer Website For Customer And Customer Contact
+  - [ ] DEL Customer Website For Customer And Customer Contact
+- [ ] Customer Year Value Views
+  - [ ] GET Customer Year Value Views
+- [ ] Customers
+  - [ ] GET Customers
+  - [ ] POST Customers
+  - [ ] GET Customer
+  - [ ] PUT Customer
+  - [ ] DEL Customer
+  - [ ] POST New Customer With Defaults
+- [ ] Document Transmission Method Types
+  - [ ] GET Document Transmission Method Types
+- [ ] Finance Charges
+  - [ ] GET Finance Charges
+  - [ ] GET Finance Charge
+  - [ ] PUT Finance Charge
+- [ ] Head Office Types
+  - [ ] GET Head Office Types
+- [ ] Lookup Customers
+  - [ ] GET Lookup Customers
+- [ ] Sales Aged Debtor Detailed Views
+  - [ ] GET Sales Aged Debtor Detailed Views
+- [ ] Sales Aged Debtor Summary Views
+  - [ ] GET Sales Aged Debtor Summary Views
+- [ ] Sales Aged Transaction Period Views
+  - [ ] GET View Of Sales Aged Transaction Periods
+- [ ] Sales Allocations
+  - [ ] POST Sales Allocations
+- [ ] Sales Credit Notes
+  - [ ] POST Sales Credit Notes
+  - [ ] POST Sales Credit Notes New
+- [ ] Sales Historical Transactions
+  - [ ] GET Sales Historical Transactions
+  - [ ] GET Sales Historical Transaction
+  - [ ] GET Sales Historical Transactions For Customer
+- [ ] Sales Invoices
+  - [ ] POST Sales Invoices
+  - [ ] POST Sales Invoices New
+- [ ] Sales Ledger Settings
+  - [ ] GET Sales Ledger Settings
+  - [ ] GET Sales Ledger Setting
+  - [ ] PUT Sales Ledger Setting
+- [ ] Sales Payments
+  - [ ] POST Sales Payments
+- [ ] Sales Posted Transaction Memos
+  - [ ] GET Sales Posted Transaction Memos
+  - [ ] POST Sales Posted Transaction Memos
+  - [ ] GET Sales Posted Transaction Memo
+  - [ ] PUT Sales Posted Transaction Memo
+  - [ ] DEL Sales Posted Transaction Memo
+  - [ ] GET Sales Posted Transaction Memos For Sales Posted Transaction
+- [ ] Sales Posted Transactions
+  - [ ] GET Sales Posted Transactions
+  - [ ] GET Sales Posted Transaction
+  - [ ] PUT Sales Posted Transaction
+  - [ ] GET Sales Posted Transactions For Customer
+- [ ] Sales Receipts
+  - [ ] POST Sales Receipts
+- [ ] Sales Trading Periods
+  - [ ] GET Sales Trading Periods
+  - [ ] GET Sales Trading Period
+- [ ] Sales Transaction Enquiry Views
+  - [ ] GET Sales Transaction Enquiry Views
+  - [ ] GET Sales Transaction Enquiry View
+  - [ ] GET Sales Transaction Enquiry Views Transactions For Customer
+- [ ] Sales Transaction Views
+  - [ ] GET Sales Transaction Views
+- [ ] Statement Ageing Terms
+  - [ ] GET Statement Ageing Terms
+- [ ] Statement Layout Types
+  - [ ] GET Statement Layout Types
+- [ ] Statement Terms
+  - [ ] GET Statement Terms
 
 ### SOP (Sales Orders)
 - [ ] Current User SOP User Permissions
