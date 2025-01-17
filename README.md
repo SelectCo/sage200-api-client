@@ -83,7 +83,7 @@ Below are some of the key methods provided by Saloon's Response class.
 ### Sage OData Query Builder
 To aid in the creation of query strings, an OData builder has been included.  Only queries that are accepted by the API have been added.
 
-These are:
+For POST and PUT requests these are:
 
  - `filter(array|string $filter)` - TODO - Allows you to return records that match your specified criteria. You can use more than one $filter as part of your request by including the and/or operators.
  - `select(array|string $select)` - Limit the fields returned within a collection request.
@@ -92,6 +92,8 @@ These are:
  - `skip(int $number)` - The number of items in the collection be skipped and not included in the result.
  - `expand(string $field)` - Include child JSON resources that are linked to the parent JSON resource within your results.
  - `count(bool $enable = true)` - The number of entities within the collection.
+
+GET requests are limited to `select()`, `expand()`, and `metadata()` query string.
 
 ### Request Body Validation
 This client uses the symfony/validator package to validate entities sent via PUT/POST requests against the requirements set by Sage.  These can be found on each DataObject or referring to the Sage API documentation.
@@ -102,7 +104,7 @@ If any request does not pass these validation checks, a `DataValidationException
 
 ### Examples
 
-**To get list of all sites.**
+**To get list of all sites as DataObjects**
 ```php
 use Selectco\SageApi\Sage200Connector;
 use Selectco\SageApi\DataObjects\General\Sites;
@@ -124,7 +126,7 @@ foreach ($sites as $site ) {
 }
 ```
 
-**Get list of warehouses for specific Company & Site**
+**Get list of warehouses for specific Company & Site and return a DataObject**
 ```php
 use Selectco\SageApi\Sage200Connector;
 use Selectco\SageApi\DataObjects\Stock\Warehouse;
@@ -149,7 +151,7 @@ foreach ($warehouses as $warehouse ) {
 }
 ```
 
-**Get warehouse for specific Company & Site by id**
+**Get warehouse for specific Company & Site by id and return a DataObject**
 ```php
 use Selectco\SageApi\Sage200Connector;
 use Selectco\SageApi\DataObjects\Stock\Warehouse;
@@ -171,7 +173,7 @@ try {
 echo $warehouse->company_id;
 ```
 
-**Get list of warehouses for specific Company & Site with query filter using OData builder**
+**Get list of warehouses for specific Company & Site as DataObjects with query filter using OData builder**
 ```php
 use Selectco\SageApi\Sage200Connector;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
@@ -189,7 +191,7 @@ $queryParameters->select(['id', 'name'])->orderBy('name')->top(5);
 
 try {
     /** @var Warehouse[] $warehouses */
-    $warehouses = $sage200->stock()->warehouses()->getWarehouses($queryParameters->buildQueryString())->dto();
+    $warehouses = $sage200->stock()->warehouses()->getWarehouses($queryParameters)->dto();
 } catch (FatalRequestException|RequestException) {
     //$e->getMessage();
 }
