@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Selectco\SageApi\QueryBuilder;
 
+use Selectco\SageApi\Exception\ODataInvalidArgumentException;
+
 /**
  * To add query parameters to a request URL, append the question mark character (?) to the URL first. Each query
  * parameter is expressed as a key-value pair, and multiple query parameters must be separated by an ampersand
@@ -31,6 +33,7 @@ namespace Selectco\SageApi\QueryBuilder;
 class SageODataBuilder
 {
     private string $selectParameter = '$select=';
+    private string $filterParameter = '';
     private string $orderByParameter = '';
     private string $topParameter = '';
     private string $skipParameter = '';
@@ -46,6 +49,9 @@ class SageODataBuilder
      *
      * $select can be either a string or array.  Values of array are imploded into a comma separated string.
      * Parameters will be appended to select string if called previously.
+     *
+     * $select must be either a CSV string select('option1,option2,option3') or an array select(['option1', 'option2', 'option3'])
+     * Any additional select requests will be added to previous requests.
      *
      * @param array|string $select
      * @return $this
@@ -64,10 +70,112 @@ class SageODataBuilder
         return $this;
     }
 
-    public function filter(): self
+    /**
+     * /customers?$filter=reference eq 'ACME01' or balance gt 1000
+     * $filter returns only the entities that match the criteria set by the specified filter. This example request
+     * returns the entities where the value of the reference field is equal to 'ACME01' or the value of the balance
+     * field is greater than 1000. Note that clauses are combined with logical operators such as "and" or "or", and
+     * values of type string should be in single quotes.
+     *
+     * The following features apply to Sage 200 Standard and versions of Extra/Professional released after July
+     * 2017 only:
+     *
+     * The functions 'contains', 'startswith', and 'endswith' can be applied to strings. For example:
+     *
+     * /customers?$filter=contains(name, 'X')
+     * /customers?$filter=startswith(telephone_area_code, '01')
+     * /customers?$filter=endswith(reference, 'S')
+     * Filters can be applied to date fields. For example:
+     *
+     * /sop_orders?$filter=document_date gt 2016-02-23
+     * filter('document_date', 'gt', '2016-02-23')
+     * /sop_orders?$filter=date_time_updated gt 2016-02-24T09:52:11.452Z
+     * Note: when including the time, you must specify the UTC timezone (Z at the end as in the example).
+     *
+     * Filters can be applied to enum fields. For example:
+     *
+     * /sop_orders?$filter=document_status eq '2'
+     * /sop_orders?$filter=document_status eq 'EnumDocumentStatusComplete'
+     * Note: value must be inside single quote marks and must be either an int or enum value.
+     *
+     * Filters can be nested using brackets. For example:
+     *
+     * /sop_orders/?$filter=(document_date ge 2016-01-01 and document_date le 2016-12-31) or document_status eq '2'
+     *
+     * @param string $field
+     * @param string $operator
+     * @param string|int $value
+     * @return $this
+     * @throws ODataInvalidArgumentException
+     */
+    public function filter(string $field, string $operator, string|int $value): self
     {
+        $this->isOperatorValid($operator);
+        if (is_string($value)) {
+            $value = "'" . $value . "'";
+        }
+        $this->filterParameter = '$filter=' . "{$field} {$operator} {$value}";
 
-        //TODO - ADD FILTER
+        return $this;
+    }
+
+    /**
+     * @param string $field
+     * @param string $operator
+     * @param string|int $value
+     * @return $this
+     * @throws ODataInvalidArgumentException
+     */
+    public function andFilter(string $field, string $operator, string|int $value): self
+    {
+        $this->isOperatorValid($operator);
+        if (is_string($value)) {
+            $value = "'" . $value . "'";
+        }
+        if ($this->filterParameter === '') {
+            $this->filterParameter = '$filter=' . "{$field} {$operator} {$value}";
+        } else {
+            $this->filterParameter .= " and {$field} {$operator} {$value}";
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $field
+     * @param string $operator
+     * @param string|int $value
+     * @return $this
+     * @throws ODataInvalidArgumentException
+     */
+    public function orFilter(string $field, string $operator, string|int $value): self
+    {
+        $this->isOperatorValid($operator);
+        if (is_string($value)) {
+            $value = "'" . $value . "'";
+        }
+        if ($this->filterParameter === '') {
+            $this->filterParameter = '$filter=' . "{$field} {$operator} {$value}";
+        } else {
+            $this->filterParameter .= " or {$field} {$operator} {$value}";
+        }
+
+        return $this;
+    }
+
+    /**
+     * see filter()
+     *
+     * This is a simple filter which only accepts a single filter string.  Using this method will overwrite
+     * any existing filter created.
+     *
+     * @param string $filter
+     * @return $this
+     */
+    public function simpleFilter(string $filter): self
+    {
+        $this->filterParameter = '$filter=' . $filter;
+
         return $this;
     }
 
@@ -78,13 +186,21 @@ class SageODataBuilder
      * specified field name and the keywords asc for ascending and desc for descending. This example orders the results
      * by the short_name field in ascending order.
      *
+     * Calling this method multiple times will add additional orderby strings.
+     * e.g. orderBy('id')->orderBy('name', 'desc') will output ?$orderby id asc, name desc
+     *
      * @param string $field
      * @param string $order
      * @return $this
      */
     public function orderBy(string $field, string $order = 'asc'): self
     {
-        $this->orderByParameter = '$orderby=' . "{$field} {$order}";
+        if ($this->orderByParameter === '') {
+            $this->orderByParameter = '$orderby=' . "{$field} {$order}";
+        } else {
+            $this->orderByParameter .= ", {$field} {$order}";
+        }
+
         return $this;
     }
 
@@ -100,9 +216,13 @@ class SageODataBuilder
      *
      * @param int $number
      * @return $this
+     * @throws ODataInvalidArgumentException
      */
     public function top(int $number): self
     {
+        if ($number > 5000) {
+            throw new ODataInvalidArgumentException('The maximum value that can be specified for $top is 5000.');
+        }
         $this->topParameter = '$top=' . $number;
         return $this;
     }
@@ -135,11 +255,18 @@ class SageODataBuilder
      * $expand enables you to include child JSON resources that are linked to the parent JSON resource within your
      * results.
      *
-     * @param string $field
+     * $field must be either a CSV string expand('option1,option2,option3') or an array expand(['option1', 'option2', 'option3'])
+     * Any additional select requests will be added to previous requests.
+     *
+     * @param array|string $field
      * @return $this
      */
-    public function expand(string $field): self
+    public function expand(array|string $field): self
     {
+        if (is_array($field)) {
+            $field = implode(',', $field);
+        }
+
         $this->expandParameter = '$expand=' . $field;
         return $this;
     }
@@ -177,6 +304,9 @@ class SageODataBuilder
         return $this;
     }
 
+    /**
+     * @throws ODataInvalidArgumentException
+     */
     public function buildQueryString(): string
     {
         $queryString = '?';
@@ -202,6 +332,10 @@ class SageODataBuilder
         }
         if ($this->skipParameter !== '')
         {
+            if ($this->orderByParameter === '')
+            {
+                throw new ODataInvalidArgumentException('When using $skip, you must also use the $orderby parameter.');
+            }
             if ($queryString !== '?')
             {
                 $queryString .= '&';
@@ -236,6 +370,11 @@ class SageODataBuilder
         return $queryString;
     }
 
+    /**
+     * Simple query string for POST/PUT requests
+     *
+     * @return string
+     */
     public function buildSingleObjectQueryString(): string
     {
         $queryString = '?';
@@ -261,5 +400,20 @@ class SageODataBuilder
         }
 
         return $queryString;
+    }
+
+    /**
+     * @param string $operator
+     * @return void
+     * @throws ODataInvalidArgumentException
+     */
+    private function isOperatorValid(string $operator): void
+    {
+        match ($operator) {
+            'lt', 'eq', 'gt' => true,
+            'le', 'ge', 'ne' => true,
+            'and', 'or', 'not', 'has' => true,
+            default => throw new ODataInvalidArgumentException('An unknown operator has been provided.'),
+        };
     }
 }
