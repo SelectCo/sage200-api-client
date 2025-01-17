@@ -96,9 +96,9 @@
   - [ ] GET Tax Code
 - [ ] Trader Account Types
   - [ ] GET Trader Account Types
-- [ ] Trader Contact Roles
-  - [ ] GET Trader Contact Roles
-  - [ ] GET Trader Contact Role
+- [X] Trader Contact Roles
+  - [X] GET Trader Contact Roles
+  - [X] GET Trader Contact Role
 - [ ] Trader Location Types
   - [ ] GET Trader Location Types
 - [ ] Trader Payment Terms

@@ -37,6 +37,14 @@ function getWarehouseHoldingId(): int
     }
     return 1;
 }
+
+function getTraderContactId(): int
+{
+    if (getenv('SAGE200_API_TEST_GET_TRADER_CONTACT_ROLE_ID')) {
+        return (int)getenv('SAGE200_API_TEST_GET_TRADER_CONTACT_ROLE_ID');
+    }
+    return 1;
+}
 function getDeveloperSubscriptionKey(): string
 {
     if (getenv('SAGE200_API_TEST_DEVELOPER_SUBSCRIPTION_KEY')) {
