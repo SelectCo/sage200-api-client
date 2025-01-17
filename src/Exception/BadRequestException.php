@@ -10,7 +10,9 @@ class BadRequestException extends SageException
 {
     public function __construct(Response $response, string|null $message = null, int $code = 400, Throwable|null $previous = null)
     {
-        $message = '400 (Bad Request): Are all query parameters supplied correct?';
+        if ($message === null) {
+            $message = '400 (Bad Request): Are all query parameters supplied correct?';
+        }
         parent::__construct($response, $message, $code, $previous);
     }
 
