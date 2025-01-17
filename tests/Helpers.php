@@ -8,7 +8,6 @@ function getWarehouseId(): int
     }
     return 1;
 }
-
 function getProductId(): int
 {
     if (getenv('SAGE200_API_TEST_GET_PRODUCT_ID')) {
@@ -37,7 +36,6 @@ function getWarehouseHoldingId(): int
     }
     return 1;
 }
-
 function getTraderContactId(): int
 {
     if (getenv('SAGE200_API_TEST_GET_TRADER_CONTACT_ROLE_ID')) {
@@ -45,6 +43,16 @@ function getTraderContactId(): int
     }
     return 1;
 }
+function getSalesPostedTransactionId(): int
+{
+    if (getenv('SAGE200_API_TEST_GET_SALES_POSTED_TRANSACTI0N_ID')) {
+        return (int)getenv('SAGE200_API_TEST_GET_SALES_POSTED_TRANSACTI0N_ID');
+    }
+    return 1;
+}
+
+
+
 function getDeveloperSubscriptionKey(): string
 {
     if (getenv('SAGE200_API_TEST_DEVELOPER_SUBSCRIPTION_KEY')) {
@@ -73,6 +81,8 @@ function getxCompany(): string
     }
     return '';
 }
+
+
 
 function getCustomerData(): array
 {

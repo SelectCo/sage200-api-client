@@ -489,11 +489,11 @@
   - [ ] PUT Sales Posted Transaction Memo
   - [ ] DEL Sales Posted Transaction Memo
   - [ ] GET Sales Posted Transaction Memos For Sales Posted Transaction
-- [ ] Sales Posted Transactions
-  - [ ] GET Sales Posted Transactions
-  - [ ] GET Sales Posted Transaction
-  - [ ] PUT Sales Posted Transaction
-  - [ ] GET Sales Posted Transactions For Customer
+- [X] Sales Posted Transactions
+  - [X] GET Sales Posted Transactions
+  - [X] GET Sales Posted Transaction
+  - [X] PUT Sales Posted Transaction
+  - [X] GET Sales Posted Transactions For Customer
 - [ ] Sales Receipts
   - [ ] POST Sales Receipts
 - [ ] Sales Trading Periods
