@@ -18,10 +18,23 @@
   },
   "require": {
     "php": "^8.1",
-    "saloonphp/saloon": "^3.10",
-    "symfony/validator": "^6.4"
+    "selectco/sage-dto": "@dev",
+    "saloonphp/saloon": "^2.0 || ^3.0"
   },
   "require-dev": {
-    "symfony/var-dumper": "^6.4"
+    "symfony/var-dumper": "^6.1 || ^7.0",
+    "pestphp/pest": "^2.0 || ^3.0",
+    "pestphp/pest-plugin-type-coverage": "^2.8"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/SelectCo/sage200-data-objects.git"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
   }
 }

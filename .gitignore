@@ -2,3 +2,5 @@
 /vendor/
 /client.php
 /.env.local
+/composer.lock
+/.php-version
