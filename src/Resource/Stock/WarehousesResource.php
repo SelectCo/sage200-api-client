@@ -8,6 +8,7 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Selectco\SageApi\Exception\DataValidationException;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\Stock\Warehouses\PostWarehouses;
 use Selectco\SageApi\Requests\Stock\Warehouses\DelWarehouse;
 use Selectco\SageApi\Requests\Stock\Warehouses\GetWarehouse;
@@ -25,12 +26,12 @@ class WarehousesResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouses(string|null $queryParameters = ''): Response
+    public function getWarehouses(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouses($queryParameters));
     }
@@ -49,12 +50,12 @@ class WarehousesResource
 
     /**
      * @param int $id
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouse(int $id, string|null $queryParameters = ''): Response
+    public function getWarehouse(int $id, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouse($id, $queryParameters));
     }
@@ -74,12 +75,12 @@ class WarehousesResource
 
     /**
      * @param string|int $productId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehousesForProduct(string|int $productId, string|null $queryParameters = ''): Response
+    public function getWarehousesForProduct(string|int $productId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehousesForProduct($productId, $queryParameters));
     }

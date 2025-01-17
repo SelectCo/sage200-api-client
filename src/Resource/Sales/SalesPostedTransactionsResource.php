@@ -8,6 +8,7 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Selectco\SageApi\Exception\DataValidationException;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\Sales\SalesPostedTransactions\GetSalesPostedTransaction;
 use Selectco\SageApi\Requests\Sales\SalesPostedTransactions\GetSalesPostedTransactions;
 use Selectco\SageApi\Requests\Sales\SalesPostedTransactions\GetSalesPostedTransactionsForCustomer;
@@ -23,24 +24,24 @@ class SalesPostedTransactionsResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getSalesPostedTransactions(string|null $queryParameters = ''): Response
+    public function getSalesPostedTransactions(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetSalesPostedTransactions($queryParameters));
     }
 
     /**
      * @param int $transactionId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getSalesPostedTransaction(int $transactionId, string|null $queryParameters = ''): Response
+    public function getSalesPostedTransaction(int $transactionId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetSalesPostedTransaction($transactionId, $queryParameters));
     }
@@ -60,12 +61,12 @@ class SalesPostedTransactionsResource
 
     /**
      * @param int $customerId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getSalesPostedTransactionsForCustomer(int $customerId, string|null $queryParameters = ''): Response
+    public function getSalesPostedTransactionsForCustomer(int $customerId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetSalesPostedTransactionsForCustomer($customerId, $queryParameters));
     }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Selectco\SageApi\Resource\Financials;
 
 use Saloon\Http\Response;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\Financials\TraderContactRoles\GetTraderContactRole;
 use Selectco\SageApi\Requests\Financials\TraderContactRoles\GetTraderContactRoles;
 use Saloon\Exceptions\Request\FatalRequestException;
@@ -17,24 +18,24 @@ class TraderContactRolesResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getPurchaseOrders(string|null $queryParameters = ''): Response
+    public function getPurchaseOrders(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetTraderContactRoles($queryParameters));
     }
 
     /**
      * @param int $id
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getPurchaseOrder(int $id, string|null $queryParameters = ''): Response
+    public function getPurchaseOrder(int $id, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetTraderContactRole($id, $queryParameters));
     }

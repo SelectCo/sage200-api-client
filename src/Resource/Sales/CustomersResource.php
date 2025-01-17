@@ -8,6 +8,7 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Selectco\SageApi\Exception\DataValidationException;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\Sales\Customers\DelCustomer;
 use Selectco\SageApi\Requests\Sales\Customers\GetCustomer;
 use Selectco\SageApi\Requests\Sales\Customers\GetCustomers;
@@ -25,12 +26,12 @@ class CustomersResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getCustomers(string|null $queryParameters = ''): Response
+    public function getCustomers(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetCustomers($queryParameters));
     }
@@ -49,12 +50,12 @@ class CustomersResource
 
     /**
      * @param int $customerId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function GetCustomer(int $customerId, string|null $queryParameters = ''): Response
+    public function GetCustomer(int $customerId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetCustomer($customerId, $queryParameters));
     }

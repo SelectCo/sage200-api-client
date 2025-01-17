@@ -8,6 +8,7 @@ use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
 use Selectco\SageApi\Exception\DataValidationException;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\Stock\WarehouseHolding\DelWarehouseHolding;
 use Selectco\SageApi\Requests\Stock\WarehouseHolding\GetWarehouseHolding;
 use Selectco\SageApi\Requests\Stock\WarehouseHolding\GetWarehouseHoldings;
@@ -28,12 +29,12 @@ class WarehouseHoldingsResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldings(string|null $queryParameters = ''): Response
+    public function getWarehouseHoldings(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseHoldings($queryParameters));
     }
@@ -52,12 +53,12 @@ class WarehouseHoldingsResource
 
     /**
      * @param int $id
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHolding(int $id, string|null $queryParameters = ''): Response
+    public function getWarehouseHolding(int $id, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseHolding($id, $queryParameters));
     }
@@ -88,12 +89,12 @@ class WarehouseHoldingsResource
 
     /**
      * @param int $productId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForProduct(int $productId, string|null $queryParameters = ''): Response
+    public function getWarehouseHoldingsForProduct(int $productId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseHoldingsForProduct($productId, $queryParameters));
     }
@@ -101,24 +102,24 @@ class WarehouseHoldingsResource
     /**
      * @param int $productId
      * @param int $warehouseId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForProductAndWarehouse(int $productId, int $warehouseId, string|null $queryParameters = ''): Response
+    public function getWarehouseHoldingsForProductAndWarehouse(int $productId, int $warehouseId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseHoldingsForProductAndWarehouse($productId, $warehouseId, $queryParameters));
     }
 
     /**
      * @param int $warehouseId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForWarehouse(int $warehouseId, string|null $queryParameters = ''): Response
+    public function getWarehouseHoldingsForWarehouse(int $warehouseId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseHoldingsForWarehouse($warehouseId, $queryParameters));
     }
@@ -126,12 +127,12 @@ class WarehouseHoldingsResource
     /**
      * @param int $warehouseId
      * @param int $productId
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouseHoldingsForWarehouseAndProduct(int $warehouseId, int $productId, string|null $queryParameters = ''): Response
+    public function getWarehouseHoldingsForWarehouseAndProduct(int $warehouseId, int $productId, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseHoldingsForWarehouseAndProduct($warehouseId, $productId, $queryParameters));
     }

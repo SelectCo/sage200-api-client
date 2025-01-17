@@ -8,6 +8,7 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Selectco\SageApi\Exception\DataValidationException;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\POPPurchaseOrders\POPOrders\DelPurchaseOrder;
 use Selectco\SageApi\Requests\POPPurchaseOrders\POPOrders\GetPurchaseOrder;
 use Selectco\SageApi\Requests\POPPurchaseOrders\POPOrders\GetPurchaseOrders;
@@ -22,12 +23,12 @@ class POPOrdersResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getPurchaseOrders(string|null $queryParameters = ''): Response
+    public function getPurchaseOrders(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetPurchaseOrders($queryParameters));
     }
@@ -46,12 +47,12 @@ class POPOrdersResource
 
     /**
      * @param int $id
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getPurchaseOrder(int $id, string|null $queryParameters = ''): Response
+    public function getPurchaseOrder(int $id, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetPurchaseOrder($id, $queryParameters));
     }

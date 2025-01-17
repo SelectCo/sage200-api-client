@@ -7,6 +7,7 @@ use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 use Selectco\SageApi\Requests\Stock\WarehouseTypes\GetWarehouseTypes;
 
 class WarehouseTypesResource
@@ -19,12 +20,12 @@ class WarehouseTypesResource
     }
 
     /**
-     * @param string|null $queryParameters
+     * @param SageODataBuilder|null $queryParameters
      * @return Response
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getWarehouses(string|null $queryParameters = ''): Response
+    public function getWarehouses(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetWarehouseTypes($queryParameters));
     }
