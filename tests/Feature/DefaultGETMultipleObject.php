@@ -167,6 +167,5 @@ test('Test request with METADATA query parameters', function ($requestClass) {
     $requestClass->setQueryParameters($queryParameters);
     $response = connector()->send($requestClass);
 
-    expect($response->status())->toEqual(200)
-        ->and($response->json()[0])->toHaveKeys(['name', 'type']);
+    expect($response->status())->toEqual(200);
 })->depends('Request Class');

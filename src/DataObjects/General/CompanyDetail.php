@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Selectco\SageApi\DataObjects\General;
 
-class CompanyDetail
+use Selectco\SageDTO\General\CompanyDetailDTO;
+
+class CompanyDetail extends CompanyDetailDTO
 {
 
 }
