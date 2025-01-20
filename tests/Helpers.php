@@ -50,7 +50,20 @@ function getSalesPostedTransactionId(): int
     }
     return 1;
 }
-
+function getCustomerContactRoleId(): int
+{
+    if (getenv('SAGE200_API_TEST_GET_CUSTOMER_CONTACT_ROLE_ID')) {
+        return (int)getenv('SAGE200_API_TEST_GET_CUSTOMER_CONTACT_ROLE_ID');
+    }
+    return 1;
+}
+function getCustomerContactId(): int
+{
+    if (getenv('SAGE200_API_TEST_GET_CUSTOMER_CONTACT_ID')) {
+        return (int)getenv('SAGE200_API_TEST_GET_CUSTOMER_CONTACT_ID');
+    }
+    return 1;
+}
 
 
 function getDeveloperSubscriptionKey(): string
