@@ -23,7 +23,7 @@ class TraderContactRolesResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getPurchaseOrders(SageODataBuilder|null $queryParameters = null): Response
+    public function getTraderContactRoles(SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetTraderContactRoles($queryParameters));
     }
@@ -35,7 +35,7 @@ class TraderContactRolesResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function getPurchaseOrder(int $id, SageODataBuilder|null $queryParameters = null): Response
+    public function getTraderContactRole(int $id, SageODataBuilder|null $queryParameters = null): Response
     {
         return $this->connector->send(new GetTraderContactRole($id, $queryParameters));
     }
