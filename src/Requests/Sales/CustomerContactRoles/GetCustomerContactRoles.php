@@ -2,8 +2,11 @@
 
 namespace Selectco\SageApi\Requests\Sales\CustomerContactRoles;
 
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use Selectco\SageApi\DataObjects\Sales\CustomerContactRole;
 use Selectco\SageApi\Exception\ODataInvalidArgumentException;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
@@ -53,4 +56,19 @@ class GetCustomerContactRoles extends Request
 	{
 		return $this->endPoint . $this->queryString;
 	}
+
+
+    /**
+     * @param Response $response
+     * @return CustomerContactRole[]
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): array
+    {
+        $returnArray = [];
+        foreach ($response->json() as $data) {
+            $returnArray[] = new CustomerContactRole(...$data);
+        }
+        return $returnArray;
+    }
 }
