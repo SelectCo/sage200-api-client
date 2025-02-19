@@ -96,9 +96,9 @@
   - [ ] GET Tax Code
 - [ ] Trader Account Types
   - [ ] GET Trader Account Types
-- [X] Trader Contact Roles
-  - [X] GET Trader Contact Roles
-  - [X] GET Trader Contact Role
+- [ ] Trader Contact Roles
+  - [ ] GET Trader Contact Roles
+  - [ ] GET Trader Contact Role
 - [ ] Trader Location Types
   - [ ] GET Trader Location Types
 - [ ] Trader Payment Terms
@@ -148,8 +148,8 @@
 - [ ] Salutations
   - [ ] GET Salutations
   - [ ] GET Salutation
-- [X] Sites
-  - [X] GET Sites
+- [ ] Sites
+  - [ ] GET Sites
 - [ ] System Settings
   - [ ] GET System Settings
   - [ ] GET System Setting
@@ -285,15 +285,15 @@
   - [ ] GET Purchase Order Return Line Receipt Return Views
 - [ ] POP Order Return Views
   - [ ] GET POP Order Return Views
-- [X] POP Orders
-  - [X] GET Purchase Orders
-  - [X] POST Purchase Orders
-  - [X] GET Purchase Order
-  - [X] PUT Purchase Order
-  - [X] DEL Purchase Order
-  - [X] POST New Purchase Order With Defaults
-  - [X] PUT New Purchase Order With Defaults
-  - [X] GET Purchase Orders For A Supplier
+- [ ] POP Orders
+  - [ ] GET Purchase Orders
+  - [ ] POST Purchase Orders
+  - [ ] GET Purchase Order
+  - [ ] PUT Purchase Order
+  - [ ] DEL Purchase Order
+  - [ ] POST New Purchase Order With Defaults
+  - [ ] PUT New Purchase Order With Defaults
+  - [ ] GET Purchase Orders For A Supplier
 - [ ] POP Orders Duplicate
   - [ ] POST Duplicate Purchase Order.
 - [ ] POP Requisition Fulfilment Line Views
@@ -308,8 +308,201 @@
   - [ ] GET Trade Line Status Types
 
 ### Price Book
+- [ ] Customer Discount Groups
+  - [ ] GET Customer Discount Groups
+  - [ ] GET Customer Discount Group
+- [ ] Customer Price Bands
+  - [ ] GET Customer Price Bands
+  - [ ] GET Customer Price Band
+- [ ] Discount Or Surcharge Types
+  - [ ] GET Discount Or Surcharge Types
+- [ ] Flat Rate Or Quantity Break Types
+  - [ ] GET Flat Rate Or Quantity Break Types
+- [ ] Order Value Discounts
+  - [ ] GET Order Value Discounts
+  - [ ] GET Order Value Discount
+- [ ] Price Band Types
+  - [ ] GET Price Band Types
+- [ ] Price Bands
+  - [ ] GET Price Bands
+  - [ ] GET Price Band
+- [ ] Price Book Settings
+  - [ ] GET Price Book Settings
+  - [ ] GET Price Book Setting
+- [ ] Pricing Types
+  - [ ] GET Pricing Types
+- [ ] Product Price Views
+  - [ ] GET Product Price Views
+- [ ] Source Of Price Types
+  - [ ] GET Source Of Price Types
 
 ### Purchases
+- [ ] Authorisation Types
+  - [ ] GET Authorisation Types
+- [ ] Factor Houses
+  - [ ] GET Factor Houses
+  - [ ] GET Factor House
+- [ ] Lookup Suppliers
+  - [ ] GET Lookup Suppliers
+- [ ] Payment Groups
+  - [ ] GET Payment Groups
+  - [ ] GET Payment Group
+  - [ ] PUT Payment Group
+- [ ] Payment Types
+  - [ ] GET Payment Group Payment Types
+- [ ] Purchase Aged Creditor Detailed Views
+  - [ ] GET Purchase Aged Creditor Detailed Views
+- [ ] Purchase Aged Creditor Summary Views
+  - [ ] GET Purchase Aged Creditor Summary Views
+- [ ] Purchase Authorisations
+  - [ ] GET Purchase Authorisation
+  - [ ] PUT Purchase Authorisation
+- [ ] Purchase Credit Notes
+  - [ ] POST Purchase Credit Notes
+  - [ ] POST Purchase Credit Notes New
+- [ ] Purchase Invoices
+  - [ ] POST Purchase Invoices
+  - [ ] POST Purchase Invoices New
+- [ ] Purchase Ledger Settings
+  - [ ] GET Purchase Ledger Settings
+  - [ ] GET Purchase Ledger Setting
+  - [ ] PUT Purchase Ledger Setting
+- [ ] Purchase Payments
+  - [ ] POST Purchase Payments
+- [ ] Purchase Posted Transaction Memos
+  - [ ] GET Purchase Posted Transaction Memos
+  - [ ] POST Purchase Posted Transaction Memos
+  - [ ] GET Purchase Posted Transaction Memo
+  - [ ] PUT Purchase Posted Transaction Memo
+  - [ ] DEL Purchase Posted Transaction Memo
+  - [ ] GET Purchase Posted Transaction Memos For Purchase Posted Transaction
+- [ ] Purchase Posted Transactions
+  - [ ] GET Purchase Posted Transactions
+  - [ ] GET Purchase Posted Transaction
+  - [ ] PUT Purchase Posted Transaction
+  - [ ] GET Purchase Posted Transactions For Supplier
+- [ ] Purchase Receipts
+  - [ ] PUT Purchase Receipts
+- [ ] Purchase Trading Periods
+  - [ ] GET Purchase Trading Periods
+  - [ ] GET Purchase Trading Period
+- [ ] Purchase Transaction Enquiry Views
+  - [ ] GET Purchase Transaction Enquiry Views
+  - [ ] GET Purchase Transaction Enquiry View
+  - [ ] GET Purchase Transaction Enquiry Views Transactions For Supplier
+- [ ] Purchase Transaction Views
+  - [ ] GET Purchase Transaction Views
+- [ ] Sage Payments Supplier Status Types
+  - [ ] GET Sage Payments Supplier Status Types
+- [ ] Supplier Contact Roles
+  - [ ] GET Supplier Contact Roles
+  - [ ] GET Supplier Contact Roles By Contact
+  - [ ] GET Supplier Contact Role
+- [ ] Supplier Contacts
+  - [ ] GET Supplier Contacts
+  - [ ] GET Supplier Contact
+  - [ ] DEL Supplier Contact
+  - [ ] PUT Supplier Contact
+  - [ ] GET Supplier Contacts For Supplier
+  - [ ] POST Supplier Contacts For Supplier
+  - [ ] GET Supplier Contact For Supplier
+  - [ ] DEL Supplier Contact For Supplier
+  - [ ] PUT Supplier Contact For Supplier
+- [ ] Supplier Emails
+  - [ ] GET Supplier Emails
+  - [ ] GET Supplier Emails By Contact
+  - [ ] POST Supplier Emails By Contact
+  - [ ] GET Supplier Emails For Supplier And Supplier Contact
+  - [ ] POST Supplier Emails For Supplier And Supplier Contact
+  - [ ] GET Supplier Email
+  - [ ] GET Supplier Email
+  - [ ] PUT Supplier Email
+  - [ ] DEL Supplier Email For Supplier Contact
+  - [ ] GET Supplier Email For Supplier Contact
+  - [ ] PUT Supplier Email For Supplier Contact
+  - [ ] DEL Supplier Email For Supplier And Supplier Contact
+  - [ ] GET Supplier Email For Supplier And Supplier Contact
+  - [ ] PUT Supplier Email For Supplier And Supplier Contact
+- [ ] Supplier Faxes
+  - [ ] GET Supplier Faxes
+  - [ ] GET Supplier Faxes By Contact
+  - [ ] POST Supplier Faxes By Contact
+  - [ ] GET Supplier Faxes For Supplier And Supplier Contact
+  - [ ] POST Supplier Faxes For Supplier And Supplier Contact
+  - [ ] GET Supplier Fax
+  - [ ] PUT Supplier Fax
+  - [ ] DEL Supplier Fax
+  - [ ] GET Supplier Fax For Supplier Contact
+  - [ ] PUT Supplier Fax For Supplier Contact
+  - [ ] DEL Supplier Fax For Supplier Contact
+  - [ ] GET Supplier Fax For Supplier And Supplier Contact
+  - [ ] PUT Supplier Fax For Supplier And Supplier Contact
+  - [ ] DEL Supplier Fax For Supplier And Supplier Contact
+- [ ] Supplier Memos
+  - [ ] GET Supplier Memos
+  - [ ] POST Supplier Memos
+  - [ ] GET Supplier Memo
+  - [ ] PUT Supplier Memo
+  - [ ] DEL Supplier Memo
+  - [ ] GET Supplier Memos For A Supplier
+- [ ] Supplier Mobiles
+  - [ ] GET Supplier Mobiles
+  - [ ] GET Supplier Mobiles By Contact
+  - [ ] POST Supplier Mobiles By Contact
+  - [ ] GET Supplier Mobiles For Supplier And Supplier Contact
+  - [ ] POST Supplier Mobiles For Supplier And Supplier Contact
+  - [ ] GET Supplier Mobile
+  - [ ] PUT Supplier Mobile
+  - [ ] DEL Supplier Mobile
+  - [ ] GET Supplier Mobile For Supplier Contact
+  - [ ] PUT Supplier Mobile For Supplier Contact
+  - [ ] DEL Supplier Mobile For Supplier Contact
+  - [ ] GET Supplier Mobile For Supplier And Supplier Contact
+  - [ ] PUT Supplier Mobile For Supplier And Supplier Contact
+  - [ ] DEL Supplier Mobile For Supplier And Supplier Contact
+- [ ] Supplier Period Value Views
+  - [ ] GET Supplier Period Value Views
+- [ ] Supplier Telephones
+  - [ ] GET Supplier Telephones
+  - [ ] GET Supplier Telephones By Contact
+  - [ ] POST Supplier Telephones By Contact
+  - [ ] GET Supplier Telephones For Supplier And Supplier Contact
+  - [ ] POST Supplier Telephones For Supplier And Supplier Contact
+  - [ ] GET Supplier Telephone
+  - [ ] PUT Supplier Telephone
+  - [ ] DEL Supplier Telephone
+  - [ ] GET Supplier Telephone For Supplier Contact
+  - [ ] PUT Supplier Telephone For Supplier Contact
+  - [ ] DEL Supplier Telephone For Supplier Contact
+  - [ ] GET Supplier Telephone For Supplier And Supplier Contact
+  - [ ] PUT Supplier Telephone For Supplier And Supplier Contact
+  - [ ] DEL Supplier Telephone For Supplier And Supplier Contact
+- [ ] Supplier Views
+  - [ ] GET Supplier Views
+- [ ] Supplier Websites
+  - [ ] GET Supplier Websites
+  - [ ] GET Supplier Websites By Contact
+  - [ ] POST Supplier Websites By Contact
+  - [ ] GET Supplier Websites For Supplier And Supplier Contact
+  - [ ] POST Supplier Websites For Supplier And Supplier Contact
+  - [ ] GET Supplier Website
+  - [ ] PUT Supplier Website
+  - [ ] DEL Supplier Website
+  - [ ] GET Supplier Website For Supplier Contact
+  - [ ] PUT Supplier Website For Supplier Contact
+  - [ ] DEL Supplier Website For Supplier Contact
+  - [ ] GET Supplier Website For Supplier And Supplier Contact
+  - [ ] PUT Supplier Website For Supplier And Supplier Contact
+  - [ ] DEL Supplier Website For Supplier And Supplier Contact
+- [ ] Supplier Year Value Views
+  - [ ] GET Supplier Year Value Views
+- [ ] Suppliers
+  - [ ] GET Suppliers
+  - [ ] GET Suppliers
+  - [ ] GET Supplier
+  - [ ] GET Supplier
+  - [ ] GET Supplier
+  - [ ] GET New Supplier With Defaults
 
 ### Sales
 - [ ] Customer Alerts
@@ -640,7 +833,7 @@
   - [ ] GET Invoice And Order Permissions For A Single User.
 - [ ] Suggested Products
   - [ ] POST Suggested Products
-  - 
+
 ### Stock
 - [ ] Alternative Product Views
   - [ ] GET Alternative Product Views
@@ -835,22 +1028,22 @@
 - [ ] Units
   - [ ] GET Units
   - [ ] GET Unit
-- [X] Warehouse Holdings
-  - [X] GET Warehouse Holdings
-  - [X] POST Warehouse Holdings
-  - [X] GET Warehouse Holding
-  - [X] PUT Warehouse Holding
-  - [X] DEL Warehouse Holding
-  - [X] GET Warehouse Holdings For Warehouse
-  - [X] GET Warehouse Holdings For Product
-  - [X] GET Warehouse Holdings For Warehouse And Product
-  - [X] GET Warehouse Holdings For Product And Warehouse
-- [X] Warehouse Types
-  - [X] GET Warehouse Types
-- [X] Warehouses
-  - [X] GET Warehouses
-  - [X] POST Warehouses
-  - [X] GET Warehouse
-  - [X] PUT Warehouse
-  - [X] DEL Warehouse
-  - [X] GET Warehouses For A Product
+- [ ] Warehouse Holdings
+  - [ ] GET Warehouse Holdings
+  - [ ] POST Warehouse Holdings
+  - [ ] GET Warehouse Holding
+  - [ ] PUT Warehouse Holding
+  - [ ] DEL Warehouse Holding
+  - [ ] GET Warehouse Holdings For Warehouse
+  - [ ] GET Warehouse Holdings For Product
+  - [ ] GET Warehouse Holdings For Warehouse And Product
+  - [ ] GET Warehouse Holdings For Product And Warehouse
+- [ ] Warehouse Types
+  - [ ] GET Warehouse Types
+- [ ] Warehouses
+  - [ ] GET Warehouses
+  - [ ] POST Warehouses
+  - [ ] GET Warehouse
+  - [ ] PUT Warehouse
+  - [ ] DEL Warehouse
+  - [ ] GET Warehouses For A Product
