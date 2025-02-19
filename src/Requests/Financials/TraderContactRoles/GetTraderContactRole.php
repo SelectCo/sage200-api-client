@@ -2,8 +2,11 @@
 
 namespace Selectco\SageApi\Requests\Financials\TraderContactRoles;
 
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use Selectco\SageApi\DataObjects\Financials\TraderContactRole;
 use Selectco\SageApi\Exception\ODataInvalidArgumentException;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
@@ -54,4 +57,15 @@ class GetTraderContactRole extends Request
 	{
 		return $this->endPoint . $this->queryString;
 	}
+
+
+    /**
+     * @param Response $response
+     * @return TraderContactRole
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): TraderContactRole
+    {
+        return new TraderContactRole(...$response->json());
+    }
 }
