@@ -2,8 +2,11 @@
 
 namespace Selectco\SageApi\Requests\Sales\Customers;
 
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use Selectco\SageApi\DataObjects\Sales\Customer;
 use Selectco\SageApi\Exception\ODataInvalidArgumentException;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
@@ -56,4 +59,14 @@ class GetCustomer extends Request
 	{
 		return $this->endPoint . $this->queryString;
 	}
+
+    /**
+     * @param Response $response
+     * @return Customer
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): Customer
+    {
+        return new Customer(...$response->json());
+    }
 }
