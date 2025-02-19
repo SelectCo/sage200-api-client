@@ -1,0 +1,261 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sage 200 v1 Extra Commercials",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.columbus.sage.com/uk/sage200extra/accounts/v1/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Confirmation Intent Types",
+      "description": ""
+    },
+    {
+      "name": "Intrastat Date Types",
+      "description": ""
+    },
+    {
+      "name": "Intrastat Terms Of Delivery Types",
+      "description": ""
+    },
+    {
+      "name": "Order Return Line Types",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/confirmation_intent_types": {
+      "get": {
+        "tags": [
+          "Confirmation Intent Types"
+        ],
+        "summary": "Confirmation Intent Types",
+        "description": "Specifies the confirmation type intended.",
+        "operationId": "GetConfirmationIntentTypes",
+        "responses": {
+          "200": {
+            "description": "The list of different confirmation types.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/confirmation_intent_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Confirmation Intent Types"
+    },
+    "/intrastat_date_types": {
+      "get": {
+        "tags": [
+          "Intrastat Date Types"
+        ],
+        "summary": "Intrastat Date Types",
+        "description": "In Northern Ireland (for HMRC), you can choose when to include transactions on your Intrastat declaration; either on the despatch/receipt of goods, or the date VAT was applied.<P>The API endpoint returns details of the intrastat date types that are used to determine when an order is included on the Intrastat declaration.</P>",
+        "operationId": "GetIntrastatDateTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the intrastat date types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/intrastat_date_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Intrastat Date Types",
+      "x-sage-changelog": [
+        {
+          "date": "05/02/2024",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/intrastat_terms_of_delivery_types": {
+      "get": {
+        "tags": [
+          "Intrastat Terms Of Delivery Types"
+        ],
+        "summary": "Intrastat Terms Of Delivery Types",
+        "description": "If the delivery threshold set by HMRC or the Revenue Commissioners has been (or will be) exceeded, terms of delivery must be included on the Intrastat declaration.<P>The API endpoint returns details of the intrastat terms of delivery types that are used on an Intrastat declaration.</P>",
+        "operationId": "GetIntrastatTermsOfDeliveryTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the intrastat terms of delivery types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/intrastat_terms_of_delivery_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Intrastat Terms Of Delivery Types",
+      "x-sage-changelog": [
+        {
+          "date": "05/02/2024",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/order_return_line_types": {
+      "get": {
+        "tags": [
+          "Order Return Line Types"
+        ],
+        "summary": "Order Return Line Types",
+        "description": "All orders and returns within Sage 200 contain 'line items' that define what an order consists of (e.g. items on an order). Each item on the order will have an associated 'line type' which specifies the line type; standard, free text, charge or comment.<P>The API endpoint returns details of the order/return line types that can be used when reading and writing orders/returns.</P>",
+        "operationId": "GetOrderReturnLineTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the order return line types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/order_return_line_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Order return line types"
+    }
+  },
+  "components": {
+    "schemas": {
+      "confirmation_intent_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Enum description."
+          },
+          "value": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Enum value."
+          }
+        },
+        "description": "The list of different confirmation types."
+      },
+      "intrastat_date_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Enum description."
+          },
+          "value": {
+            "maxLength": 40,
+            "type": "string",
+            "description": "Enum value."
+          }
+        },
+        "description": "In Northern Ireland (for HMRC), you can choose when to include transactions on your Intrastat declaration; either on the despatch/receipt of goods, or the date VAT was applied.<P>The API endpoint returns details of the intrastat date types that are used to determine when an order is included on the Intrastat declaration.</P>"
+      },
+      "intrastat_terms_of_delivery_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Enum description."
+          },
+          "value": {
+            "maxLength": 40,
+            "type": "string",
+            "description": "Enum value."
+          }
+        },
+        "description": "If the delivery threshold set by HMRC or the Revenue Commissioners has been (or will be) exceeded, terms of delivery must be included on the Intrastat declaration.<P>The API endpoint returns details of the intrastat terms of delivery types that are used on an Intrastat declaration.</P>"
+      },
+      "order_return_line_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Order return line type Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "All orders and returns within Sage 200 contain 'line items' that define what an order consists of (e.g. items on an order). Each item on the order will have an associated 'line type' which specifies the line type; standard, free text, charge or comment.<P>The API endpoint returns details of the order/return line types that can be used when reading and writing orders/returns.</P>"
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}

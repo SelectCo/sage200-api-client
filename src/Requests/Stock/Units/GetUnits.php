@@ -1,0 +1,55 @@
+<?php
+
+namespace Selectco\SageApi\Requests\Stock\Units;
+
+use Saloon\Enums\Method;
+use Saloon\Http\Request;
+use Selectco\SageApi\Exception\ODataInvalidArgumentException;
+use Selectco\SageApi\QueryBuilder\SageODataBuilder;
+
+/**
+ * GetUnits
+ *
+ * The units of measure in which products are stored as well as those used when buying or selling
+ * products.
+ */
+class GetUnits extends Request
+{
+	protected Method $method = Method::GET;
+	private string $endPoint;
+	private string $queryString;
+
+
+	/**
+	 * @param SageODataBuilder|null $queryParameters
+	 * @throws ODataInvalidArgumentException
+	 */
+	public function __construct(?SageODataBuilder $queryParameters = null)
+	{
+		$this->endPoint = "/units";
+		$this->queryString = '';
+		$this->setQueryParameters($queryParameters);
+	}
+
+
+	/**
+	 * @param SageODataBuilder|null $queryParameters
+	 * @return void
+	 * @throws ODataInvalidArgumentException
+	 */
+	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	{
+		if ($queryParameters) {
+		    $this->queryString = $queryParameters->buildQueryString();
+		}
+	}
+
+
+	/**
+	 * Define the endpoint for the request.
+	 */
+	public function resolveEndpoint(): string
+	{
+		return $this->endPoint . $this->queryString;
+	}
+}

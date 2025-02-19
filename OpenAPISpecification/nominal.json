@@ -1,0 +1,4038 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sage 200 v1 Extra Nominal",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.columbus.sage.com/uk/sage200extra/accounts/v1/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Consolidated Nominal Codes",
+      "description": ""
+    },
+    {
+      "name": "Control Nominal Code Types",
+      "description": ""
+    },
+    {
+      "name": "Control Nominal Codes",
+      "description": ""
+    },
+    {
+      "name": "Cost Centres",
+      "description": ""
+    },
+    {
+      "name": "Departments",
+      "description": ""
+    },
+    {
+      "name": "Lookup Nominal Codes",
+      "description": ""
+    },
+    {
+      "name": "Nominal Account Entry Location Types",
+      "description": ""
+    },
+    {
+      "name": "Nominal Account Types",
+      "description": ""
+    },
+    {
+      "name": "Nominal Budget Profiles",
+      "description": ""
+    },
+    {
+      "name": "Nominal Budget Types",
+      "description": ""
+    },
+    {
+      "name": "Nominal Code Memos",
+      "description": ""
+    },
+    {
+      "name": "Nominal Code Views",
+      "description": ""
+    },
+    {
+      "name": "Nominal Codes",
+      "description": ""
+    },
+    {
+      "name": "Nominal Ledger Settings",
+      "description": ""
+    },
+    {
+      "name": "Nominal Period Value Views",
+      "description": ""
+    },
+    {
+      "name": "Nominal Report Categories",
+      "description": ""
+    },
+    {
+      "name": "Nominal Report Category Types",
+      "description": ""
+    },
+    {
+      "name": "Nominal Reporting Types",
+      "description": ""
+    },
+    {
+      "name": "Nominal Transaction Analysis Codes",
+      "description": ""
+    },
+    {
+      "name": "Nominal Transaction Enquiry Views",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/control_nominal_codes": {
+      "get": {
+        "tags": [
+          "Control Nominal Codes"
+        ],
+        "summary": "Control (Default) Nominal Codes",
+        "description": "The default nominal accounts are used to post transactions from all the modules in Sage 200 to the appropriate Profit and Loss and Balance Sheet nominal accounts in the Nominal Ledger.",
+        "operationId": "GetControlNominalCodes",
+        "responses": {
+          "200": {
+            "description": "The list of control nominal codes has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/control_nominal_code"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Control (Default) Nominal Codes",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        },
+        {
+          "date": "02/11/2020",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'account_number' and 'nominal_reporting_type'.<br />This operation has had the fields 'account_no' and 'account_report_type' removed."
+        }
+      ]
+    },
+    "/control_nominal_codes/{Id}": {
+      "get": {
+        "tags": [
+          "Control Nominal Codes"
+        ],
+        "summary": "Control (Default) Nominal Code",
+        "description": "The default nominal accounts are used to post transactions from all the modules in Sage 200 to the appropriate Profit and Loss and Balance Sheet nominal accounts in the Nominal Ledger.",
+        "operationId": "GetControlNominalCode",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the control nominal code.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The details of the control nominal code successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/control_nominal_code"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Control (Default) Nominal Code"
+    },
+    "/control_nominal_code_types": {
+      "get": {
+        "tags": [
+          "Control Nominal Code Types"
+        ],
+        "summary": "Control Nominal Code Types",
+        "description": "Control nominal code types define the types of default nominal codes. This list of available types is predefined by the system.</P><P>The API endpoint returns details of control nominal code types that can be used.",
+        "operationId": "GetControlNominalCodeTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the control nominal code types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/control_nominal_code_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Control nominal code types",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/cost_centres": {
+      "get": {
+        "tags": [
+          "Cost Centres"
+        ],
+        "summary": "Cost Centres",
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production.",
+        "operationId": "GetCostCentres",
+        "responses": {
+          "200": {
+            "description": "The list of cost centres has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/cost_centre"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cost Centres"
+        ],
+        "summary": "Cost Centres",
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production.",
+        "operationId": "PutCostCentres",
+        "requestBody": {
+          "description": "The cost centres to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/cost_centre"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The cost centres were updated. Response body will include the cost centre details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/cost_centre"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "CostCentres"
+      },
+      "post": {
+        "tags": [
+          "Cost Centres"
+        ],
+        "summary": "Cost Centres",
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production.",
+        "operationId": "PostCostCentre",
+        "requestBody": {
+          "description": "CostCentre to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cost_centre"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The cost centre was created. Response body will include the cost centre details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cost_centre"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "CostCentre"
+      },
+      "x-sage-pathtitle": "Cost centres",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Extended operations",
+          "description": "This endpoint was enhanced with POST, PUT and DELETE operations."
+        },
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'contact_name', 'contact_details', 'contact_email_address' and 'date_time_created'."
+        },
+        {
+          "date": "22/08/2022",
+          "title": "Extended operation",
+          "description": "This endpoint was enhanced with a PUT operation."
+        },
+        {
+          "date": "22/08/2022",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'is_to_delete'."
+        }
+      ]
+    },
+    "/cost_centres/{Id}": {
+      "get": {
+        "tags": [
+          "Cost Centres"
+        ],
+        "summary": "Cost Centre",
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production.",
+        "operationId": "GetCostCentre",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the cost centre.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of cost centre successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cost_centre"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cost Centres"
+        ],
+        "summary": "Cost Centre",
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production.",
+        "operationId": "PutCostCentre",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the cost centre.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Cost centre to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cost_centre"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The cost centre was updated. Response body will include the cost centre details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cost_centre"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "CostCentre"
+      },
+      "delete": {
+        "tags": [
+          "Cost Centres"
+        ],
+        "summary": "Cost Centre",
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production.",
+        "operationId": "DeleteCostCentre",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the cost centre.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cost centre was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Cost centre"
+    },
+    "/departments": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Departments",
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training.",
+        "operationId": "GetDepartments",
+        "responses": {
+          "200": {
+            "description": "The list of departments has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/department"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Departments",
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training.",
+        "operationId": "PutDepartments",
+        "requestBody": {
+          "description": "The departments to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/department"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The departments were updated. Response body will include the department details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/department"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Departments"
+      },
+      "post": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Departments",
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training.",
+        "operationId": "PostDepartment",
+        "requestBody": {
+          "description": "Department to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/department"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The department was created. Response body will include the department details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/department"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Department"
+      },
+      "x-sage-pathtitle": "Departments",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Extended operation",
+          "description": "This endpoint was enhanced with a DELETE operation."
+        },
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'contact_name', 'contact_details', 'contact_email_address' and 'date_time_created'."
+        },
+        {
+          "date": "22/08/2022",
+          "title": "Extended operation",
+          "description": "This endpoint was enhanced with a PUT operation."
+        },
+        {
+          "date": "22/08/2022",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'is_to_delete' and 'status'."
+        }
+      ]
+    },
+    "/departments/{Id}": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Department",
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training.",
+        "operationId": "GetDepartment",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the department.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of department successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/department"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Department",
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training.",
+        "operationId": "PutDepartment",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the department.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Department to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/department"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The department was updated. Response body will include the department details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/department"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Department"
+      },
+      "delete": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Department",
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training.",
+        "operationId": "DeleteDepartment",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the department.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Department was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Department"
+    },
+    "/nominal_account_types": {
+      "get": {
+        "tags": [
+          "Nominal Account Types"
+        ],
+        "summary": "Nominal Account Types",
+        "description": "Nominal accounts are fundamental to the successful management of company finances as they store every accounting transaction from all ledgers.</P><P>Each nominal account has an associated 'type' that is used to create levels in the chart of accounts. This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal account types that can be used.",
+        "operationId": "GetNominalAccountTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal account types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_account_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal account types"
+    },
+    "/nominal_budget_types": {
+      "get": {
+        "tags": [
+          "Nominal Budget Types"
+        ],
+        "summary": "Nominal Budget Types",
+        "description": "Budgets for different financial years can be recorded against nominal accounts. Each year has has an associated budget 'type'.",
+        "operationId": "GetNominalBudgetTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal budget types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_budget_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal budget types",
+      "x-sage-changelog": [
+        {
+          "date": "15/03/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_account_entry_location_types": {
+      "get": {
+        "tags": [
+          "Nominal Account Entry Location Types"
+        ],
+        "summary": "Nominal Account Entry Location Types",
+        "description": "This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal account entry location types that can be used.",
+        "operationId": "GetNominalAccountEntryLocationTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal account entry location types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_account_entry_location_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal account entry location types",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_reporting_types": {
+      "get": {
+        "tags": [
+          "Nominal Reporting Types"
+        ],
+        "summary": "Nominal Reporting Types",
+        "description": "Nominal reporting types are used by nominal codes. They determine whether the code is for the Balance Sheet, Profit and Loss, Cashflow or SOFA category. This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal reporting types that can be used.",
+        "operationId": "GetNominalReportingTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal reporting types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_reporting_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal reporting types",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_report_category_types": {
+      "get": {
+        "tags": [
+          "Nominal Report Category Types"
+        ],
+        "summary": "Nominal Report Category Types",
+        "description": "Nominal report category types are used in nominal report categories. They determine whether the category is for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal report category types that can be used.",
+        "operationId": "GetNominalReportCategoryTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal report category types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_report_category_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal report category types"
+    },
+    "/consolidated_nominal_codes": {
+      "get": {
+        "tags": [
+          "Consolidated Nominal Codes"
+        ],
+        "summary": "Consolidated Nominal Codes",
+        "description": "The consolidated nominal codes are the list of nominal codes from a parent company, used for consolidating accounts from subsidiary ledgers.",
+        "operationId": "GetConsolidatedNominalCodes",
+        "responses": {
+          "200": {
+            "description": "The details of the consolidated nominal codes have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/consolidated_nominal_code"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Consolidated Nominal codes",
+      "x-sage-changelog": [
+        {
+          "date": "15/03/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/consolidated_nominal_codes/{Id}": {
+      "get": {
+        "tags": [
+          "Consolidated Nominal Codes"
+        ],
+        "summary": "Consolidated Nominal Code",
+        "description": "The consolidated nominal codes are the list of nominal codes from a parent company, used for consolidating accounts from subsidiary ledgers.",
+        "operationId": "GetConsolidatedNominalCode",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the consolidated nominal code.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of consolidated nominal code successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/consolidated_nominal_code"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Consolidated nominal code"
+    },
+    "/nominal_codes": {
+      "get": {
+        "tags": [
+          "Nominal Codes"
+        ],
+        "summary": "Nominal Codes",
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>",
+        "operationId": "GetNominalCodes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal codes have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_code"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nominal Codes"
+        ],
+        "summary": "Nominal Codes",
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>",
+        "operationId": "PostNominalCode",
+        "requestBody": {
+          "description": "Nominal code to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_code"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal code was created. Response body will include the nominal code details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "NominalCode"
+      },
+      "x-sage-pathtitle": "Nominal codes",
+      "x-sage-changelog": [
+        {
+          "date": "25/04/2018",
+          "title": "Extended operation",
+          "description": "This operation now includes the field 'account_status_type', which represents the status of the nominal account. This can either be 'Active' or 'Hidden'. "
+        },
+        {
+          "date": "09/05/2019",
+          "title": "Extended operation",
+          "description": "The response object includes a property, 'display_balances_in_selection_list', which is true if balances for the nominal code should be displayed in lists. If true, the response object will include a property, 'balance_year_to_date', which is the balance for the nominal code."
+        },
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'date_time_created'."
+        },
+        {
+          "date": "14/12/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'brought_forward_balance'."
+        },
+        {
+          "date": "15/03/2021",
+          "title": "Extended operations",
+          "description": "This endpoint was enhanced with POST, PUT and DELETE operations."
+        },
+        {
+          "date": "15/03/2021",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'sofa_category_id', 'debit_balance_year_to_date', 'credit_balance_year_to_date', 'allow_manual_journal_entries', 'use_batch_postings', 'periods_to_keep_transactions', 'consolidated_nominal_account_number', 'consolidated_nominal_cost_centre', 'consolidated_nominal_department', 'analysis_code_1', 'analysis_code_2', 'analysis_code_3', 'analysis_code_4', 'analysis_code_5', 'analysis_code_6', 'analysis_code_7', 'analysis_code_8', 'analysis_code_9', 'analysis_code_10', 'analysis_code_11', 'analysis_code_12', 'analysis_code_13', 'analysis_code_14', 'analysis_code_15', 'analysis_code_16', 'analysis_code_17', 'analysis_code_18', 'analysis_code_19', 'analysis_code_20', 'consolidated_nominal_code', 'report_category', 'sofa_category', 'financial_years' and 'memos'."
+        },
+        {
+          "date": "14/08/2023",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'consolidated_nominal_code_id'."
+        }
+      ]
+    },
+    "/nominal_codes/{Id}": {
+      "get": {
+        "tags": [
+          "Nominal Codes"
+        ],
+        "summary": "Nominal Code",
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>",
+        "operationId": "GetNominalCode",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal code.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of nominal code successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nominal Codes"
+        ],
+        "summary": "Nominal Code",
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>",
+        "operationId": "PutNominalCode",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal code.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Nominal code to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_code"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal code was updated. Response body will include the nominal code details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Customer"
+      },
+      "delete": {
+        "tags": [
+          "Nominal Codes"
+        ],
+        "summary": "Nominal Code",
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>",
+        "operationId": "DeleteNominalCode",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal code.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nominal code was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal code"
+    },
+    "/nominal_code_views": {
+      "get": {
+        "tags": [
+          "Nominal Code Views"
+        ],
+        "summary": "Nominal Code Views",
+        "description": "\"This resource returns the details of all nominal codes. The default sort (orderby) fields are by 'reference', 'cost_centre_code' and 'department_code' ascending.\"",
+        "operationId": "GetNominalCodeViews",
+        "responses": {
+          "200": {
+            "description": "The list of nominal codes has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_code_view"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal code views",
+      "x-sage-changelog": [
+        {
+          "date": "26/07/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_codes_new": {
+      "post": {
+        "tags": [
+          "Nominal Codes"
+        ],
+        "summary": "New Nominal Code With Defaults",
+        "description": "Returns a nominal code with all the defaults that have been specified within the application. The API endpoint does not persist the nominal code.",
+        "operationId": "PostNominalCodesNew",
+        "requestBody": {
+          "description": "An empty request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_codes_new_request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal code with defaults was successfully returned. Response body will include the nominal code details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Empty"
+      },
+      "x-sage-pathtitle": "New nominal code with defaults",
+      "x-sage-changelog": [
+        {
+          "date": "15/03/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        },
+        {
+          "date": "14/08/2023",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'consolidated_nominal_code_id'."
+        }
+      ]
+    },
+    "/nominal_code_memos": {
+      "get": {
+        "tags": [
+          "Nominal Code Memos"
+        ],
+        "summary": "Nominal Code Memos",
+        "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them.",
+        "operationId": "GetNominalCodeMemos",
+        "responses": {
+          "200": {
+            "description": "The list of nominal code memos has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_code_memo"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nominal Code Memos"
+        ],
+        "summary": "Nominal Code Memos",
+        "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them.",
+        "operationId": "PostNominalCodeMemo",
+        "requestBody": {
+          "description": "Nominal code memo to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_code_memo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal code memo was created. Response body will include the nominal code memo details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code_memo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "NominalCodeMemo"
+      },
+      "x-sage-pathtitle": "Nominal code memos",
+      "x-sage-changelog": [
+        {
+          "date": "15/03/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_code_memos/{Id}": {
+      "get": {
+        "tags": [
+          "Nominal Code Memos"
+        ],
+        "summary": "Nominal Code Memo",
+        "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them.",
+        "operationId": "GetNominalCodeMemo",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal code memo.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of nominal code memo successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code_memo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nominal Code Memos"
+        ],
+        "summary": "Nominal Code Memo",
+        "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them.",
+        "operationId": "PutNominalCodeMemo",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal code memo.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Nominal code memo to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_code_memo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal code memo was updated. Response body will include the nominal code memo details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_code_memo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "NominalCodeMemo"
+      },
+      "delete": {
+        "tags": [
+          "Nominal Code Memos"
+        ],
+        "summary": "Nominal Code Memo",
+        "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them.",
+        "operationId": "DeleteNominalCodeMemo",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal code memo.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nominal code memo was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal code memo"
+    },
+    "/nominal_transaction_analysis_codes": {
+      "get": {
+        "tags": [
+          "Nominal Transaction Analysis Codes"
+        ],
+        "summary": "Nominal Transaction Analysis Codes",
+        "description": "Nominal transaction analysis codes are used to group nominal analysis items on various transaction types; this endpoint returns a list of existing nominal transaction analysis codes in the program.",
+        "operationId": "GetNominalTransactionAnalysisCodes",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal transaction analysis codes have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_transaction_analysis_code"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal transaction analysis codes"
+    },
+    "/nominal_period_value_views": {
+      "get": {
+        "tags": [
+          "Nominal Period Value Views"
+        ],
+        "summary": "Nominal Period Value Views",
+        "description": "This resource returns the details of all accounting period nominal values for all financial years held for the company. A company always has five future financial years and can have unlimited previous years, depending on how long the company has been operating. The default sort (orderby) field are by 'accounting_period_end_date', 'accounting_period_period_number' and 'nominal_code_id' descending.",
+        "operationId": "GetNominalPeriodValueViews",
+        "responses": {
+          "200": {
+            "description": "The details of the period values have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_period_value_view"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal period value views",
+      "x-sage-changelog": [
+        {
+          "date": "20/02/2023",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'nominal_period_value_adjustment_after_year_end_close'."
+        }
+      ]
+    },
+    "/nominal_report_categories": {
+      "get": {
+        "tags": [
+          "Nominal Report Categories"
+        ],
+        "summary": "Nominal Report Categories",
+        "description": "Nominal report categories are used in financial statements (PL, Balance Sheet) to group nominal codes under headings and to determine whether the nominal code value is reported on the layout for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).",
+        "operationId": "GetNominalReportCategories",
+        "responses": {
+          "200": {
+            "description": "The details of the nominal report categories have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_report_category"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nominal Report Categories"
+        ],
+        "summary": "Nominal Report Categories",
+        "description": "Nominal report categories are used in financial statements (PL, Balance Sheet) to group nominal codes under headings and to determine whether the nominal code value is reported on the layout for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).",
+        "operationId": "PostNominalReportCategory",
+        "requestBody": {
+          "description": "Nominal report category to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_report_category"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal report category was created. Response body will include the product details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_report_category"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Nominal report category"
+      },
+      "x-sage-pathtitle": "Nominal report categories",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Extended operations",
+          "description": "This endpoint was enhanced with POST, PUT and DELETE operations."
+        },
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'date_time_created'."
+        }
+      ]
+    },
+    "/nominal_report_categories/{Id}": {
+      "get": {
+        "tags": [
+          "Nominal Report Categories"
+        ],
+        "summary": "Nominal Code",
+        "description": "Nominal report categories are used in financial statements (PL, Balance Sheet) to group nominal codes under headings and to determine whether the nominal code value is reported on the layout for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).",
+        "operationId": "GetNominalReportCategory",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal report category.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of nominal report category successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_report_category"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nominal Report Categories"
+        ],
+        "summary": "Nominal Code",
+        "description": "Nominal report categories are used in financial statements (PL, Balance Sheet) to group nominal codes under headings and to determine whether the nominal code value is reported on the layout for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).",
+        "operationId": "PutNominalReportCategory",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal report category.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Nominal report category to update in Sage 200 Purchase Ledger.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/nominal_report_category"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The nominal report category was updated. Response body will include the supplier details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_report_category"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Nominal report category"
+      },
+      "delete": {
+        "tags": [
+          "Nominal Report Categories"
+        ],
+        "summary": "Nominal Code",
+        "description": "Nominal report categories are used in financial statements (PL, Balance Sheet) to group nominal codes under headings and to determine whether the nominal code value is reported on the layout for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).",
+        "operationId": "DeleteNominalReportCategory",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the product.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nominal report category was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal code"
+    },
+    "/nominal_budget_profiles": {
+      "get": {
+        "tags": [
+          "Nominal Budget Profiles"
+        ],
+        "summary": "Nominal Budget Profiles",
+        "description": "A budget profile that can be associated with a nominal budget, where the budget type is set to Profiled.",
+        "operationId": "GetNominalBudgetProfiles",
+        "responses": {
+          "200": {
+            "description": "The nominal budget profiles have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_budget_profile"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal budget profiles",
+      "x-sage-changelog": [
+        {
+          "date": "15/03/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_budget_profiles/{Id}": {
+      "get": {
+        "tags": [
+          "Nominal Budget Profiles"
+        ],
+        "summary": "Nominal Budget Profile",
+        "description": "A budget profile that can be associated with a nominal budget, where the budget type is set to Profiled.",
+        "operationId": "GetNominalBudgetProfile",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the nominal budget profile.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of nominal the budget profile successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_budget_profile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal budget profile"
+    },
+    "/lookup_nominal_codes": {
+      "get": {
+        "tags": [
+          "Lookup Nominal Codes"
+        ],
+        "summary": "Lookup Nominal Codes",
+        "description": "Gets a subset of nominal account information for populating a lookup.",
+        "operationId": "GetLookupNominalCodes",
+        "responses": {
+          "200": {
+            "description": "Get a collection of Nominal Accounts for populating a lookup.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/lookup_nominal_code"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Lookup Nominal Codes",
+      "x-sage-changelog": [
+        {
+          "date": "14/12/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/nominal_transaction_enquiry_views": {
+      "get": {
+        "tags": [
+          "Nominal Transaction Enquiry Views"
+        ],
+        "summary": "Nominal Transaction Enquiry Views",
+        "description": "Nominal transaction enquiry views represent nominal transactions posted to the Nominal Ledger.",
+        "operationId": "GetNominalTransactionEnquiryViews",
+        "responses": {
+          "200": {
+            "description": "Get a collection of nominal transaction enquiry views.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_transaction_enquiry_view"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal transaction enquiry views",
+      "x-sage-changelog": [
+        {
+          "date": "14/12/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        },
+        {
+          "date": "20/02/2023",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'accounting_period_id', 'financial_year_id', 'financial_year_start_date' and 'year_relative_to_current_year'."
+        }
+      ]
+    },
+    "/nominal_transaction_enquiry_views/{Id}": {
+      "get": {
+        "tags": [
+          "Nominal Transaction Enquiry Views"
+        ],
+        "summary": "Nominal Transaction Enquiry View",
+        "description": "Nominal transaction enquiry views represent nominal transactions posted to the Nominal Ledger.",
+        "operationId": "GetNominalTransactionEnquiryView",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the transaction.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get a single nominal transaction enquiry view.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_transaction_enquiry_view"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal transaction enquiry view"
+    },
+    "/nominal_codes/{nominalCodeId}/nominal_transaction_enquiry_views": {
+      "get": {
+        "tags": [
+          "Nominal Transaction Enquiry Views"
+        ],
+        "summary": "Nominal Transaction Enquiry Views Transactions For Nominal Account",
+        "description": "Nominal transaction enquiry views represent nominal transactions posted to the Nominal Ledger.",
+        "operationId": "GetNominalTransactionsEnquiryViewForNominal",
+        "parameters": [
+          {
+            "name": "nominalCodeId",
+            "in": "path",
+            "description": "Unique Id of the nominal account.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return transactions for a single nominal account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_transaction_enquiry_view"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal transaction enquiry views transactions for Nominal Account"
+    },
+    "/nominal_ledger_settings": {
+      "get": {
+        "tags": [
+          "Nominal Ledger Settings"
+        ],
+        "summary": "Nominal Ledger Settings",
+        "description": "The Nominal Ledger settings are used to configure application behaviour with respect to the Nominal Ledger module.<br/><br/>Settings include whether to include additional nominal transaction information for each transaction that is entered.",
+        "operationId": "GetNominalLedgerSettings",
+        "responses": {
+          "200": {
+            "description": "Nominal Ledger settings successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/nominal_ledger_settings"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal Ledger settings",
+      "x-sage-changelog": [
+        {
+          "date": "14/12/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        },
+        {
+          "date": "15/03/2021",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'is_consolidation_enabled', 'keep_nominal_transactions', 'months_to_keep_transactions', 'use_expanded_budgets', 'budget_titles' and 'budget_profiles'."
+        }
+      ]
+    },
+    "/nominal_ledger_settings/{Id}": {
+      "get": {
+        "tags": [
+          "Nominal Ledger Settings"
+        ],
+        "summary": "Nominal Ledger Setting",
+        "description": "The Nominal Ledger settings are used to configure application behaviour with respect to the Nominal Ledger module.<br/><br/>Settings include whether to include additional nominal transaction information for each transaction that is entered.",
+        "operationId": "GetNominalLedgerSetting",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the Nominal Ledger settings.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nominal Ledger settings successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/nominal_ledger_settings"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Nominal Ledger setting"
+    }
+  },
+  "components": {
+    "schemas": {
+      "control_nominal_code": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Control nominal code Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "The name of the default nominal account.",
+            "readOnly": true
+          },
+          "account_number": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "The account number of the Nominal Account associated with this nominal.",
+            "readOnly": true
+          },
+          "nominal_reporting_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The nominal report type for the control nominal code. For example, this can either be 'NominalReportingTypePnL', 'NominalReportingTypeBalance', 'NominalReportingTypeCashFlow' or 'NominalReportingTypeSOFA'.",
+            "readOnly": true
+          },
+          "control_nominal_code_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The control nominal type is a list of all pre-defined default nominal codes.",
+            "readOnly": true
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Control nominal codes are default nominal codes. This list of available types is predefined by the system.</P><P>The API endpoint returns details of control nominal code types that can be used."
+      },
+      "control_nominal_code_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Control nominal code Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Control nominal code types define the types of default nominal codes. This list of available types is predefined by the system.</P><P>The API endpoint returns details of control nominal code types that can be used."
+      },
+      "cost_centre": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Cost centre record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Cost centre code.",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Cost centre name."
+          },
+          "contact_name": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Contact name."
+          },
+          "contact_details": {
+            "maxLength": 235,
+            "type": "string",
+            "description": "Contact Details."
+          },
+          "contact_email_address": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Contact email address."
+          },
+          "is_to_delete": {
+            "type": "boolean",
+            "description": "When updating existing cost centres, whether to delete this cost centre from the collection of cost centres."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Cost centres are typically used to aid collating related costs and reporting on a specific segment of an organisation i.e. a company division such as sales or production."
+      },
+      "department": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Department record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Department code.",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Department name."
+          },
+          "contact_name": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Contact name."
+          },
+          "contact_details": {
+            "maxLength": 235,
+            "type": "string",
+            "description": "Contact Details."
+          },
+          "contact_email_address": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Contact email address."
+          },
+          "is_to_delete": {
+            "type": "boolean",
+            "description": "When updating existing departments, whether to delete this department from the collection of departments."
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "delete_exception_type": {
+                "type": "string",
+                "description": "The exception type thrown when attempting to remove a department which cannot be removed.",
+                "readOnly": true
+              }
+            },
+            "description": "The department status.",
+            "readOnly": true
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Departments are a subdivision of cost centres and are used where specific costs or revenue need to be collated and reported on separately. For example, a cost centre could be a sales area such as North East or South West and different departments could be Administration and Training."
+      },
+      "nominal_reporting_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal reporting type Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal reporting types are used by nominal codes. They determine whether the code is for the Balance Sheet, Profit and Loss, Cashflow or SOFA category. This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal account report types that can be used."
+      },
+      "nominal_report_category_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal report category type Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal report category types are used in nominal report categories. They determine whether the category is for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense).This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal report category types that can be used."
+      },
+      "nominal_account_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal account type Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal accounts are fundamental to the successful management of company finances as they store every accounting transaction from all ledgers.</P><P>Each nominal account has an associated 'type' that is used to create levels in the chart of accounts. This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal account types that can be used."
+      },
+      "nominal_budget_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal budget type Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Budgets for different financial years can be recorded against nominal accounts. Each year has has an associated budget 'type'."
+      },
+      "nominal_account_entry_location_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "This list of available types is predefined by the system.</P><P>The API endpoint returns details of nominal account entry location types that can be used."
+      },
+      "consolidated_nominal_code": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Consolidated nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Consolidated nominal code name.",
+            "readOnly": true
+          },
+          "reference": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Consolidated nominal code reference.",
+            "readOnly": true
+          },
+          "cost_centre_id": {
+            "type": "integer",
+            "description": "Consolidated nominal code cost centre record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "cost_centre_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Consolidated cost centre code.",
+            "readOnly": true
+          },
+          "department_id": {
+            "type": "integer",
+            "description": "Consolidated nominal code department record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "department_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Consolidated department code.",
+            "readOnly": true
+          },
+          "nominal_account_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The type of the consolidated nominal code.",
+            "readOnly": true
+          },
+          "account_status_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The status of the consolidated nominal code (Sage 200 Standard and versions of Professional released after February 2018). For example, this can either be 'Active' or 'Hidden'.",
+            "default": "AccountStatusActive"
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "The consolidated nominal codes are the list of nominal codes from a parent company, used for consolidating accounts from subsidiary ledgers."
+      },
+      "nominal_code": {
+        "required": [
+          "reference",
+          "report_category_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Nominal code name."
+          },
+          "reference": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Nominal code reference."
+          },
+          "cost_centre_id": {
+            "type": "integer",
+            "description": "Nominal code cost centre record Id.",
+            "format": "int64"
+          },
+          "cost_centre_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Cost centre code.",
+            "readOnly": true
+          },
+          "department_id": {
+            "type": "integer",
+            "description": "Nominal code department record Id.",
+            "format": "int64"
+          },
+          "department_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Department code.",
+            "readOnly": true
+          },
+          "nominal_account_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The type of the nominal code. (Sage 200 Professional only).",
+            "x-sage-professional-only": true
+          },
+          "account_status_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The status of the nominal code (Sage 200 Standard and versions of Professional released after February 2018). For example, this can either be 'Active' or 'Hidden'.",
+            "default": "AccountStatusActive"
+          },
+          "report_category_id": {
+            "type": "integer",
+            "description": "Financial report category record Id. This is ignored when the nominal account type is Group (Sage 200 Professional only).",
+            "format": "int64",
+            "x-sage-professional-only": true
+          },
+          "sofa_category_id": {
+            "type": "integer",
+            "description": "Sofa category record Id.",
+            "format": "int64"
+          },
+          "display_balances_in_selection_list": {
+            "type": "boolean",
+            "description": "Whether balances for the nominal code can be shown in selection lists."
+          },
+          "balance_year_to_date": {
+            "type": "number",
+            "description": "The nominal account balance, if balances can be shown for the nominal account.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "debit_balance_year_to_date": {
+            "type": "number",
+            "description": "The debit balance year to date.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "credit_balance_year_to_date": {
+            "type": "number",
+            "description": "The credit balance year to date.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "brought_forward_balance": {
+            "type": "number",
+            "description": "The nominal account brought forward balance, if balances can be shown for the nominal account.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "allow_manual_journal_entries": {
+            "type": "boolean",
+            "description": "Determines if manual journals can be entered using this nominal code. This is ignored when the nominal account type is Group (Sage200 Professional only)."
+          },
+          "use_batch_postings": {
+            "type": "boolean",
+            "description": "Determines if batch postings are to be made on this account when updating waiting postings. This is ignored when the nominal account type is Group (Sage200 Professional only)."
+          },
+          "periods_to_keep_transactions": {
+            "type": "integer",
+            "description": "Number of periods to keep transactions. This is ignored when the nominal account type is Group (Sage200 Professional only).",
+            "format": "int32"
+          },
+          "consolidated_nominal_code_id": {
+            "type": "integer",
+            "description": "Consolidated nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "consolidated_nominal_account_number": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Consolidated nominal account number. This is ignored when the nominal account type is Memo or Group (Sage200 Professional only)."
+          },
+          "consolidated_nominal_cost_centre": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Consolidated nominal cost centre. This is ignored when the nominal account type is Memo or Group (Sage200 Professional only)."
+          },
+          "consolidated_nominal_department": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Consolidated nominal department. This is ignored when the nominal account type is Memo or Group (Sage200 Professional only)."
+          },
+          "analysis_code_1": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 1."
+          },
+          "analysis_code_2": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 2."
+          },
+          "analysis_code_3": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 3."
+          },
+          "analysis_code_4": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 4."
+          },
+          "analysis_code_5": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 5."
+          },
+          "analysis_code_6": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 6."
+          },
+          "analysis_code_7": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 7."
+          },
+          "analysis_code_8": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 8."
+          },
+          "analysis_code_9": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 9."
+          },
+          "analysis_code_10": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 10."
+          },
+          "analysis_code_11": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 11."
+          },
+          "analysis_code_12": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 12."
+          },
+          "analysis_code_13": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 13."
+          },
+          "analysis_code_14": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 14."
+          },
+          "analysis_code_15": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 15."
+          },
+          "analysis_code_16": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 16."
+          },
+          "analysis_code_17": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 17."
+          },
+          "analysis_code_18": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 18."
+          },
+          "analysis_code_19": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 19."
+          },
+          "analysis_code_20": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 20."
+          },
+          "consolidated_nominal_code": {
+            "type": "object",
+            "properties": {},
+            "description": "Consolidated nominal code.",
+            "readOnly": true
+          },
+          "cost_centre": {
+            "type": "object",
+            "properties": {},
+            "description": "Cost centre.",
+            "readOnly": true
+          },
+          "department": {
+            "type": "object",
+            "properties": {},
+            "description": "Department.",
+            "readOnly": true
+          },
+          "report_category": {
+            "type": "object",
+            "properties": {},
+            "description": "Report category.",
+            "readOnly": true
+          },
+          "sofa_category": {
+            "type": "object",
+            "properties": {},
+            "description": "SOFA category.",
+            "readOnly": true
+          },
+          "financial_years": {
+            "type": "array",
+            "description": "The financial year breakdown where budgets can be entered and period balances can be viewed.",
+            "items": {
+              "$ref": "#/components/schemas/nominal_code_financial_year"
+            }
+          },
+          "memos": {
+            "type": "array",
+            "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them.",
+            "items": {
+              "$ref": "#/components/schemas/nominal_code_memo"
+            }
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>"
+      },
+      "nominal_code_view": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Nominal code name.",
+            "readOnly": true
+          },
+          "reference": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Nominal code reference.",
+            "readOnly": true
+          },
+          "cost_centre_id": {
+            "type": "integer",
+            "description": "Nominal code cost centre record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "cost_centre_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Nominal code cost centre code.",
+            "readOnly": true
+          },
+          "department_id": {
+            "type": "integer",
+            "description": "Nominal code department record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "department_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Nominal code department code.",
+            "readOnly": true
+          },
+          "nominal_account_type_id": {
+            "type": "integer",
+            "description": "The type of the nominal code.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "account_status_type_id": {
+            "type": "integer",
+            "description": "The status of the nominal code.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "report_category_id": {
+            "type": "integer",
+            "description": "The nominal account report category.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "report_category_code": {
+            "maxLength": 4,
+            "type": "string",
+            "description": "The nominal account report category code.",
+            "readOnly": true
+          },
+          "report_category_description": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "The nominal account report category description.",
+            "readOnly": true
+          },
+          "report_category_report_type_id": {
+            "type": "integer",
+            "description": "The nominal account report category report type.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "sofa_category_id": {
+            "type": "integer",
+            "description": "Sofa category.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "sofa_category_code": {
+            "maxLength": 4,
+            "type": "string",
+            "description": "The sofa category code.",
+            "readOnly": true
+          },
+          "sofa_category_description": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "The sofa category description.",
+            "readOnly": true
+          },
+          "sofa_category_report_type_id": {
+            "type": "integer",
+            "description": "The sofa category report type.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "year_value_budget_type_id": {
+            "type": "integer",
+            "description": "The budget type for the current year.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "year_value_budget_value": {
+            "type": "number",
+            "description": "The budget value for the current year.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "year_value_original_budget_value": {
+            "type": "number",
+            "description": "The original budget value for the current year.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "report_category_budget_name": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "The budget name for the current year.",
+            "readOnly": true
+          },
+          "allow_manual_journal_entries": {
+            "type": "boolean",
+            "description": "Determines if manual journals can be entered using this nominal code.",
+            "readOnly": true
+          },
+          "use_batch_postings": {
+            "type": "boolean",
+            "description": "Determines if batch postings are to be made on this account when updating waiting postings.",
+            "readOnly": true
+          },
+          "periods_to_keep_transactions": {
+            "type": "integer",
+            "description": "Number of periods to keep transactions.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "consolidated_nominal_account_number": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Consolidated nominal account number.",
+            "readOnly": true
+          },
+          "consolidated_nominal_cost_centre": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Consolidated nominal cost centre.",
+            "readOnly": true
+          },
+          "consolidated_nominal_department": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Consolidated nominal department.",
+            "readOnly": true
+          },
+          "consolidated_adjustment": {
+            "type": "number",
+            "description": "The consolidated adjustment.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "display_balances_in_selection_list": {
+            "type": "boolean",
+            "description": "Whether balances for the nominal code should be shown in selection lists.",
+            "readOnly": true
+          },
+          "balance_year_to_date": {
+            "type": "number",
+            "description": "The nominal account balance, if balances can be shown for the nominal account.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "debit_year_to_date": {
+            "type": "number",
+            "description": "The debit year to date.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "credit_year_to_date": {
+            "type": "number",
+            "description": "The credit year to date.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "brought_forward_balance": {
+            "type": "number",
+            "description": "The nominal account brought forward balance, if balances can be shown for the nominal account.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "analysis_code_1": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 1.",
+            "readOnly": true
+          },
+          "analysis_code_2": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 2.",
+            "readOnly": true
+          },
+          "analysis_code_3": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 3.",
+            "readOnly": true
+          },
+          "analysis_code_4": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 4.",
+            "readOnly": true
+          },
+          "analysis_code_5": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 5.",
+            "readOnly": true
+          },
+          "analysis_code_6": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 6.",
+            "readOnly": true
+          },
+          "analysis_code_7": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 7.",
+            "readOnly": true
+          },
+          "analysis_code_8": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 8.",
+            "readOnly": true
+          },
+          "analysis_code_9": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 9.",
+            "readOnly": true
+          },
+          "analysis_code_10": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 10.",
+            "readOnly": true
+          },
+          "analysis_code_11": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 11.",
+            "readOnly": true
+          },
+          "analysis_code_12": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 12.",
+            "readOnly": true
+          },
+          "analysis_code_13": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 13.",
+            "readOnly": true
+          },
+          "analysis_code_14": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 14.",
+            "readOnly": true
+          },
+          "analysis_code_15": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 15.",
+            "readOnly": true
+          },
+          "analysis_code_16": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 16.",
+            "readOnly": true
+          },
+          "analysis_code_17": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 17.",
+            "readOnly": true
+          },
+          "analysis_code_18": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 18.",
+            "readOnly": true
+          },
+          "analysis_code_19": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 19.",
+            "readOnly": true
+          },
+          "analysis_code_20": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Analysis Code 20.",
+            "readOnly": true
+          }
+        },
+        "description": "This resource returns the details of all nominal codes. The default sort (orderby) fields are by 'reference', 'cost_centre_code' and 'department_code' ascending."
+      },
+      "nominal_code_memo": {
+        "required": [
+          "nominal_code_id",
+          "note"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal code memo record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_id": {
+            "type": "integer",
+            "description": "Nominal code record Id.",
+            "format": "int64"
+          },
+          "is_active": {
+            "type": "boolean",
+            "description": "True if memo status is active, false if it is inactive."
+          },
+          "note": {
+            "maxLength": 1000,
+            "type": "string",
+            "description": "The memo text."
+          },
+          "is_to_delete": {
+            "type": "boolean",
+            "description": "When updating an existing nominal code, whether to delete this memo from the collection of nominal code memos."
+          },
+          "created_by": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The user that created the memo.",
+            "readOnly": true
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Memos are sections of text that can be used to make comments about a nominal code.<br/><br/>Multiple memos can be added to each nominal code. The user that created the memo, the date it was created and last updated date and time are also recorded.<br/><br/>A user can also specify if a memo is currently 'Active' or 'Inactive'. This allows a user to keep a record of previous memos without deleting them."
+      },
+      "nominal_code_financial_year": {
+        "required": [
+          "nominal_code_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal account year value Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_id": {
+            "type": "integer",
+            "description": "Nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "financial_year_id": {
+            "type": "integer",
+            "description": "An Id specific to each financial year.<P>If setting budget values for a brand new nominal code, this property can be omitted. For existing nominal codes, it is required.</P>",
+            "format": "int64",
+            "readOnly": true
+          },
+          "year_relative_to_current_year": {
+            "type": "integer",
+            "description": "Value to represent the year relative to the current financial year. The current financial year is 0. The first previous year is -1. The first future year is 1.<P>Note: If setting values for a brand new nominal code, this property must be set as the financial_year_id will be 0.</P>",
+            "format": "int32",
+            "readOnly": true
+          },
+          "budget_type": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "The budget type. This can be set for any current or future year. NOTE: future years can't use profiled budgets."
+          },
+          "budget_profile_id": {
+            "type": "integer",
+            "description": "The budget profile Id.",
+            "format": "int64"
+          },
+          "budget_profile": {
+            "type": "integer",
+            "description": "The budget profile.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "original_budget_value": {
+            "type": "number",
+            "description": "A yearly original budget value.",
+            "format": "decimal 2dp"
+          },
+          "budget_value": {
+            "type": "number",
+            "description": "The yearly budget value. If the budget type is NoBudgets, Monthly or Group, then this value will be ignored.",
+            "format": "decimal 2dp"
+          },
+          "adjustment_after_year_end_close": {
+            "type": "number",
+            "description": "The total value of any adjustments made to the nominal code after the financial year was closed.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "closing_balance": {
+            "type": "number",
+            "description": "The closing balance of the nominal code after the financial year was closed.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "period_balances": {
+            "type": "array",
+            "description": "A collection of periods for a financial year where budgets can be entered and period balances can be viewed.",
+            "items": {
+              "$ref": "#/components/schemas/nominal_code_period_balance"
+            }
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "The financial year breakdown for a nominal code where budgets can be entered and period balances can be viewed."
+      },
+      "nominal_code_period_balance": {
+        "required": [
+          "nominal_account_year_value_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal account period balance Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_account_year_value_id": {
+            "type": "integer",
+            "description": "Nominal code year value Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "accounting_period_id": {
+            "type": "integer",
+            "description": "Accounting period Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "period_number": {
+            "type": "integer",
+            "description": "The period number.<P>If setting values for a brand new nominal code, this property must be set as the Id will be 0.</P>",
+            "format": "int64",
+            "readOnly": true
+          },
+          "original_budget_value": {
+            "type": "number",
+            "description": "The period original budget value.",
+            "format": "decimal 2dp"
+          },
+          "budget_value": {
+            "type": "number",
+            "description": "The period budget value. NOTE: if the yearly budget type is set as NoBudgets, Group or Factor (profiled budgets), then this value will be ignored.",
+            "format": "decimal 2dp"
+          },
+          "period_balance": {
+            "type": "number",
+            "description": "The period balance.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "adjustment_after_year_end_close": {
+            "type": "number",
+            "description": "The total value of any adjustments made to the nominal code after the financial year was closed.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "consolidated_amount": {
+            "type": "number",
+            "description": "The consolidated amount.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "is_future_period": {
+            "type": "boolean",
+            "description": "If the period's status is Future, then true; otherwise false.",
+            "readOnly": true
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "A single period of a nominal code's financial year where budgets can be entered and balances can be viewed."
+      },
+      "nominal_codes_new_request": {
+        "type": "object",
+        "description": "Returns a nominal code with all the defaults that have been specified within the application. The API endpoint does not persist the nominal code."
+      },
+      "nominal_transaction_analysis_code": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Transaction analysis code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "code": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Nominal transaction analysis code.",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Nominal transaction analysis code description.",
+            "readOnly": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Boolean indicating whether the transaction analysis code is active.",
+            "readOnly": true
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal transaction analysis codes are used to group nominal analysis items on various transaction types"
+      },
+      "nominal_period_value_view": {
+        "type": "object",
+        "properties": {
+          "nominal_code_id": {
+            "type": "integer",
+            "description": "Nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_account_number_cost_centre_id": {
+            "type": "integer",
+            "description": "Nominal code account number cost centre record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_cost_centre_id": {
+            "type": "integer",
+            "description": "Nominal code cost centre record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_department_id": {
+            "type": "integer",
+            "description": "Nominal code department record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_account_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The type of the nominal code.",
+            "readOnly": true
+          },
+          "nominal_code_report_category_id": {
+            "type": "integer",
+            "description": "An Id specific to the associated report category.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Nominal code name.",
+            "readOnly": true
+          },
+          "nominal_code_reference": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Nominal code reference.",
+            "readOnly": true
+          },
+          "nominal_code_cost_centre": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Cost centre code.",
+            "readOnly": true
+          },
+          "nominal_code_department": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Department code.",
+            "readOnly": true
+          },
+          "nominal_code_account_status_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The status of the nominal code (Sage 200 Standard and versions of Professional released after February 2018). For example, this can either be 'Active' or 'Hidden'.",
+            "readOnly": true
+          },
+          "nominal_period_value_id": {
+            "type": "integer",
+            "description": "An Id specific to each accounting period value.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_period_value_budget_value": {
+            "type": "number",
+            "description": "The nominal period value budget value.",
+            "format": "decimal 5dp",
+            "readOnly": true
+          },
+          "nominal_period_value_actual_value": {
+            "type": "number",
+            "description": "The nominal period value actual value.",
+            "format": "decimal 5dp",
+            "readOnly": true
+          },
+          "nominal_period_value_adjustment_after_year_end_close": {
+            "type": "number",
+            "description": "The nominal period value adjustment after year end close.",
+            "format": "decimal 5dp",
+            "readOnly": true
+          },
+          "accounting_period_id": {
+            "type": "integer",
+            "description": "An Id specific to each accounting period.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "accounting_period_period_number": {
+            "type": "integer",
+            "description": "Value to show the period in relation to the associated year. For example, for a year that starts in January, January will be period 1, February period 2 etc.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "accounting_period_start_date": {
+            "type": "string",
+            "description": "Date the period starts. The returned string includes the time but this will always be 00:00:00.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "accounting_period_end_date": {
+            "type": "string",
+            "description": "Date the period finished. The returned string includes the time but this will always be 00:00:00.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "financial_year_id": {
+            "type": "integer",
+            "description": "An Id specific to each financial year.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "financial_year_start_date": {
+            "type": "string",
+            "description": "Date the financial year starts. The returned string includes the time but this will always be 00:00:00.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "year_relative_to_current_year": {
+            "type": "integer",
+            "description": "Value to represent the year relative to the current financial year. The current financial year is 0. The first previous year is -1. The first future year is 1.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "number_of_periods_in_year": {
+            "type": "integer",
+            "description": "The number of periods in the financial year.",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "description": "This resource returns the details of all accounting period nominal values for all financial years held for the company. A company always has five future financial years and can have unlimited previous years, depending on how long the company has been operating. The default sort (orderby) field are by 'accounting_period_end_date', 'accounting_period_period_number' and 'nominal_code_id' descending."
+      },
+      "nominal_report_category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal report category record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "account_report_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The type of the report.",
+            "readOnly": true
+          },
+          "code": {
+            "maxLength": 4,
+            "type": "string",
+            "description": "Nominal report category code.",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Nominal report category description.",
+            "readOnly": true
+          },
+          "account_report_category_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "The type of the report category.",
+            "readOnly": true
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal report categories are used in financial statements (PL, Balance Sheet) to group nominal codes under headings and to determine whether the nominal code value is reported on the layout for the Balance Sheet (Asset and Liability) or Profit and Loss (Income and Expense)."
+      },
+      "nominal_budget_title": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal budget title Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "year_relative_to_current_year": {
+            "type": "integer",
+            "description": "Financial year relative to current year.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "budget_title": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Budget title."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "The title for a budget for a given year."
+      },
+      "nominal_budget_profile": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal profile Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Profile name.",
+            "readOnly": true
+          },
+          "periods": {
+            "type": "array",
+            "description": "A collection of periods for a budget profile.",
+            "items": {
+              "$ref": "#/components/schemas/nominal_period_budget_profile"
+            }
+          }
+        },
+        "description": "A budget profile that can be associated with a nominal budget, where the budget type is set to Profiled."
+      },
+      "nominal_period_budget_profile": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal period budget profile Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "accounting_period_id": {
+            "type": "integer",
+            "description": "Period budget profile's linked accounting period Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "period_number": {
+            "type": "integer",
+            "description": "Period number.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "budget_percent": {
+            "type": "number",
+            "description": "Period budget percentage, as a percentage of the annual budget.",
+            "format": "decimal 2dp"
+          }
+        },
+        "description": "A period on a budget profile where a percentage of the annual budget can be set."
+      },
+      "lookup_nominal_code": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Nominal code name.",
+            "readOnly": true
+          },
+          "reference": {
+            "maxLength": 8,
+            "type": "string",
+            "description": "Nominal code reference.",
+            "readOnly": true
+          },
+          "cost_centre_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Cost centre code.",
+            "readOnly": true
+          },
+          "department_code": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Department code.",
+            "readOnly": true
+          },
+          "nominal_account_type_id": {
+            "type": "integer",
+            "description": "The type of the nominal code.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "account_status_type_id": {
+            "type": "integer",
+            "description": "The status of the nominal code (Sage 200 Standard and versions of Professional released after February 2018). For example, this can either be 'Active' or 'Hidden'.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "display_balances_in_selection_list": {
+            "type": "boolean",
+            "description": "Whether balances for the nominal code can be shown in selection lists.",
+            "readOnly": true
+          },
+          "balance_year_to_date": {
+            "type": "number",
+            "description": "The nominal account balance, if balances can be shown for the nominal account.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "brought_forward_balance": {
+            "type": "number",
+            "description": "The nominal account brought forward balance, if balances can be shown for the nominal account.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          }
+        },
+        "description": "Nominal accounts are fundamental to the successful management of company finances. The value of every transaction entered into Sage 200 is posted to a nominal account and, is where the revenue and expenditure of the business is recorded.<P>Nominal accounts include a code, and cost centre and a department.</P><P>The API endpoint returns details of the nominal codes that can be used.</P>"
+      },
+      "nominal_transaction_enquiry_view": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nominal_code_id": {
+            "type": "integer",
+            "description": "Nominal code Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "transaction_date": {
+            "type": "string",
+            "description": "Transaction date.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "period_number": {
+            "type": "integer",
+            "description": "Period number.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "reference": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Transaction reference.",
+            "readOnly": true
+          },
+          "narrative": {
+            "maxLength": 6000,
+            "type": "string",
+            "description": "Transaction narrative.",
+            "readOnly": true
+          },
+          "transaction_analysis_code": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Transaction analysis code.",
+            "readOnly": true
+          },
+          "debit": {
+            "type": "number",
+            "description": "Debit amount.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "credit": {
+            "type": "number",
+            "description": "Credit amount.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "user_name": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "User who entered the transaction.",
+            "readOnly": true
+          },
+          "source": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Source ledger.",
+            "readOnly": true
+          },
+          "urn": {
+            "type": "integer",
+            "description": "Unique reference number.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "accounting_period_id": {
+            "type": "integer",
+            "description": "An Id specific to each accounting period value.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "financial_year_id": {
+            "type": "integer",
+            "description": "An Id specific to each financial year.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "financial_year_start_date": {
+            "type": "string",
+            "description": "Date the financial year starts. The returned string includes the time but this will always be 00:00:00.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "year_relative_to_current_year": {
+            "type": "integer",
+            "description": "Value to represent the year relative to the current financial year. The current financial year is 0. The first previous year is -1. The first future year is 1.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "nominal_analysis_items": {
+            "type": "array",
+            "description": "Nominal analysis items.",
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "maxLength": 8,
+                  "type": "string",
+                  "description": "Nominal account code.",
+                  "readOnly": true
+                },
+                "cost_centre": {
+                  "maxLength": 3,
+                  "type": "string",
+                  "description": "Cost centre.",
+                  "readOnly": true
+                },
+                "department": {
+                  "maxLength": 3,
+                  "type": "string",
+                  "description": "Department.",
+                  "readOnly": true
+                },
+                "name": {
+                  "maxLength": 60,
+                  "type": "string",
+                  "description": "Nominal name.",
+                  "readOnly": true
+                },
+                "location": {
+                  "maxLength": 30,
+                  "type": "string",
+                  "description": "Location of the associated nominal transaction.",
+                  "readOnly": true
+                },
+                "reference": {
+                  "maxLength": 20,
+                  "type": "string",
+                  "description": "Reference.",
+                  "readOnly": true
+                },
+                "narrative": {
+                  "maxLength": 6000,
+                  "type": "string",
+                  "description": "Narrative.",
+                  "readOnly": true
+                },
+                "value": {
+                  "type": "number",
+                  "description": "Goods value.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "base_value": {
+                  "type": "number",
+                  "description": "Value in base currency.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "transaction_analysis_code": {
+                  "maxLength": 20,
+                  "type": "string",
+                  "description": "The transaction analysis code used on the nominal analysis item. This requires that the ledger settings allow additional analysis and that the code is valid",
+                  "readOnly": true
+                },
+                "source": {
+                  "maxLength": 30,
+                  "type": "string",
+                  "description": "Source ledger",
+                  "readOnly": true
+                }
+              }
+            }
+          },
+          "bank_items": {
+            "type": "array",
+            "description": "Bank items.",
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "bank_code": {
+                  "type": "string",
+                  "description": "Bank account code.",
+                  "readOnly": true
+                },
+                "name": {
+                  "maxLength": 60,
+                  "type": "string",
+                  "description": "Account name.",
+                  "readOnly": true
+                },
+                "bank_entry_type": {
+                  "maxLength": 30,
+                  "type": "string",
+                  "description": "Bank entry type.",
+                  "readOnly": true
+                },
+                "reference": {
+                  "maxLength": 20,
+                  "type": "string",
+                  "description": "Reference.",
+                  "readOnly": true
+                },
+                "cheque_value": {
+                  "type": "number",
+                  "description": "Value of item.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "statement_date": {
+                  "type": "string",
+                  "description": "Statement Date.",
+                  "format": "date-time",
+                  "readOnly": true
+                },
+                "statement_page_number": {
+                  "type": "integer",
+                  "description": "Page of statement item appears on.",
+                  "format": "int32",
+                  "readOnly": true
+                },
+                "urn": {
+                  "type": "integer",
+                  "description": "Unique reference number.",
+                  "format": "int32",
+                  "readOnly": true
+                }
+              }
+            }
+          },
+          "tax_analysis_items": {
+            "type": "array",
+            "description": "Tax analysis items.",
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "description": "Tax code Id",
+                  "format": "int64",
+                  "readOnly": true
+                },
+                "code": {
+                  "type": "integer",
+                  "description": "Tax code.",
+                  "format": "int16",
+                  "readOnly": true
+                },
+                "name": {
+                  "maxLength": 60,
+                  "type": "string",
+                  "description": "Tax code name.",
+                  "readOnly": true
+                },
+                "entry_type": {
+                  "maxLength": 20,
+                  "type": "string",
+                  "description": "The type of the tax code entry.",
+                  "readOnly": true
+                },
+                "goods_amount": {
+                  "type": "number",
+                  "description": "Goods amount.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "tax_amount": {
+                  "type": "number",
+                  "description": "Tax amount.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "tax_discount_amount": {
+                  "type": "number",
+                  "description": "Tax discount amount.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                }
+              }
+            }
+          },
+          "trade_items": {
+            "type": "array",
+            "description": "Trade items.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "account_number": {
+                  "type": "string",
+                  "description": "Account number.",
+                  "readOnly": true
+                },
+                "account_name": {
+                  "maxLength": 60,
+                  "type": "string",
+                  "description": "Account name.",
+                  "readOnly": true
+                },
+                "trading_entry_type": {
+                  "maxLength": 30,
+                  "type": "string",
+                  "description": "Trading entry type.",
+                  "readOnly": true
+                },
+                "entry_type_string": {
+                  "maxLength": 30,
+                  "type": "string",
+                  "description": "Trading entry type string.",
+                  "readOnly": true
+                },
+                "reference": {
+                  "maxLength": 20,
+                  "type": "string",
+                  "description": "Reference.",
+                  "readOnly": true
+                },
+                "gross_value": {
+                  "type": "number",
+                  "description": "Gross value.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "tax_value": {
+                  "type": "number",
+                  "description": "Tax value.",
+                  "format": "decimal 2dp",
+                  "readOnly": true
+                },
+                "transaction_date": {
+                  "type": "string",
+                  "description": "Transaction date.",
+                  "format": "date-time",
+                  "readOnly": true
+                },
+                "urn": {
+                  "type": "integer",
+                  "description": "Unique reference number.",
+                  "format": "int32",
+                  "readOnly": true
+                }
+              }
+            }
+          }
+        },
+        "description": "Nominal transaction enquiry views represent nominal transactions posted to the Nominal Ledger."
+      },
+      "nominal_ledger_settings": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Nominal Ledger Settings record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "allow_additional_trans_analysis": {
+            "type": "boolean",
+            "description": "Whether to include additional nominal transaction information for each transaction that is entered."
+          },
+          "is_consolidation_enabled": {
+            "type": "boolean",
+            "description": "Whether consolidation is enabled and a parent company has been set.",
+            "default": false
+          },
+          "keep_nominal_transactions": {
+            "type": "boolean",
+            "description": "Whether nominal transactions should be kept.",
+            "default": false
+          },
+          "months_to_keep_transactions": {
+            "type": "integer",
+            "description": "If nominal transactions should be kept, the number of periods they should be retained.<P>The value should be in the range 0-36.</P>",
+            "format": "int16"
+          },
+          "use_expanded_budgets": {
+            "type": "boolean",
+            "description": "Whether to show budgets for prior year only, or up to the last five years.",
+            "default": false
+          },
+          "budget_titles": {
+            "type": "array",
+            "description": "Budget titles.",
+            "items": {
+              "$ref": "#/components/schemas/nominal_budget_title"
+            }
+          },
+          "budget_profiles": {
+            "type": "array",
+            "description": "Budget profiles.",
+            "items": {
+              "$ref": "#/components/schemas/nominal_budget_profile"
+            }
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "The Nominal Ledger settings are used to configure application behaviour with respect to the Nominal Ledger module.<br/><br/>Settings include whether to include additional nominal transaction information for each transaction that is entered."
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}

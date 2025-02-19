@@ -1,0 +1,2678 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sage 200 v1 Extra General",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.columbus.sage.com/uk/sage200extra/accounts/v1/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Accounting Period Validation Types",
+      "description": ""
+    },
+    {
+      "name": "Analysis Code Mappings",
+      "description": ""
+    },
+    {
+      "name": "Company Details",
+      "description": ""
+    },
+    {
+      "name": "Configurable Terms",
+      "description": ""
+    },
+    {
+      "name": "Couriers",
+      "description": ""
+    },
+    {
+      "name": "Current User",
+      "description": ""
+    },
+    {
+      "name": "Flow States",
+      "description": ""
+    },
+    {
+      "name": "Ledger Types",
+      "description": ""
+    },
+    {
+      "name": "Licence",
+      "description": ""
+    },
+    {
+      "name": "Pending Emails",
+      "description": ""
+    },
+    {
+      "name": "Salutations",
+      "description": ""
+    },
+    {
+      "name": "Sites",
+      "description": ""
+    },
+    {
+      "name": "System Settings",
+      "description": ""
+    },
+    {
+      "name": "Time Unit Types",
+      "description": ""
+    },
+    {
+      "name": "Transaction Date Validation",
+      "description": ""
+    },
+    {
+      "name": "Transaction Date Validation Classifications",
+      "description": ""
+    },
+    {
+      "name": "Transaction Date Validation Types",
+      "description": ""
+    },
+    {
+      "name": "Update Modes",
+      "description": ""
+    },
+    {
+      "name": "Users",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/licence": {
+      "get": {
+        "tags": [
+          "Licence"
+        ],
+        "summary": "Licence For The Application",
+        "description": "Returns licence for the application.",
+        "operationId": "Licence",
+        "responses": {
+          "200": {
+            "description": "The licence was successfully returned. Response body will include the licence details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/licence"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Licence for the application",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/configurable_terms": {
+      "get": {
+        "tags": [
+          "Configurable Terms"
+        ],
+        "summary": "Configurable Terms For The Application",
+        "description": "Returns configurable terms for the application.",
+        "operationId": "GetConfigurableTerms",
+        "responses": {
+          "200": {
+            "description": "The list of configurable terms has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/configurable_term"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Configurable terms for the application",
+      "x-sage-changelog": [
+        {
+          "date": "15/03/2021",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/accounting_period_validation_types": {
+      "get": {
+        "tags": [
+          "Accounting Period Validation Types"
+        ],
+        "summary": "Accounting Period Validation Types",
+        "description": "The accounting period validation status is used in System Settings and can be configured as 'Acceptable', 'Unacceptable' or 'UseAccrual'.<P>The API endpoint returns details of the accounting period validation types that can be used.</P>",
+        "operationId": "GetAccountingPeriodValidationTypes",
+        "responses": {
+          "200": {
+            "description": "The list of accounting period validation types has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/accounting_period_validation_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Accounting Period Validation Types",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/transaction_date_validation_classifications": {
+      "get": {
+        "tags": [
+          "Transaction Date Validation Classifications"
+        ],
+        "summary": "Transaction Date Validation Classifications",
+        "description": "The transaction date validation classification is used in System Settings and can be configured as 'Normal', 'Acceptable' or 'Unacceptable'.<P>The API endpoint returns details of the classifications that can be used.</P>",
+        "operationId": "GetTransactionDateValidationClassifications",
+        "responses": {
+          "200": {
+            "description": "The list of transaction date validation classifications has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/transaction_date_validation_classification"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Transaction Date Validation Classifications",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/transaction_date_validation_types": {
+      "get": {
+        "tags": [
+          "Transaction Date Validation Types"
+        ],
+        "summary": "Transaction Date Validation Types",
+        "description": "The transaction date validation type is used in System Settings and can be configured as 'None', 'Period' or 'Calendar'.<P>The API endpoint returns details of the types that can be used.</P>",
+        "operationId": "GetTransactionDateValidationTypes",
+        "responses": {
+          "200": {
+            "description": "The list of transaction date validation types has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/transaction_date_validation_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Transaction Date Validation Types",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/analysis_code_mappings": {
+      "get": {
+        "tags": [
+          "Analysis Code Mappings"
+        ],
+        "summary": "Analysis Code Mappings",
+        "description": "Analysis code mapping for an entity in Sage 200.",
+        "operationId": "GetAnalysisCodeMappings",
+        "responses": {
+          "200": {
+            "description": "The list of analysis code mappings has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/analysis_code_mapping"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Analysis code mappings",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        },
+        {
+          "date": "08/11/2021",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'is_read_only'."
+        }
+      ]
+    },
+    "/analysis_code_mappings/{Id}": {
+      "get": {
+        "tags": [
+          "Analysis Code Mappings"
+        ],
+        "summary": "Analysis Code Mapping",
+        "description": "Analysis code mapping for an entity in Sage 200.",
+        "operationId": "GetAnalysisCodeMapping",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the analysis code mapping.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The details of the analysis code mapping have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/analysis_code_mapping"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Analysis code mapping"
+    },
+    "/sites": {
+      "get": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "Sites",
+        "description": "Access to Sage 200 sites is restricted by a Sage account. When invoking any API resource, the site Id must always be specified within the header 'X-Site'.<br /><br />Use this API endpoint to return the list of sites that a user has access to. This operation is particularly important during the initial stages of API development.",
+        "operationId": "GetSites",
+        "responses": {
+          "200": {
+            "description": "The list of sites has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/site"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Sites",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'tenant_id'."
+        }
+      ]
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Users",
+        "description": "Use this API endpoint to get a list of all usernames and IDs for the current company.",
+        "operationId": "GetUsers",
+        "responses": {
+          "200": {
+            "description": "The list of users has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/user"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Users"
+    },
+    "/users/{Id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "User",
+        "description": "Use this API endpoint to get a username and Id for a user from the current company",
+        "operationId": "GetUser",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of a user for the specified company.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "User"
+    },
+    "/current_user": {
+      "get": {
+        "tags": [
+          "Current User"
+        ],
+        "summary": "Current User",
+        "description": "Use this API endpoint to return the name and other details of the user you are logged in as.",
+        "operationId": "GetCurrentUser",
+        "responses": {
+          "200": {
+            "description": "Details of the user logged in.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/current_user"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Current_user",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'last_logon_date_time'."
+        },
+        {
+          "date": "05/02/2024",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'id'."
+        }
+      ]
+    },
+    "/transaction_date_validation": {
+      "post": {
+        "tags": [
+          "Transaction Date Validation"
+        ],
+        "summary": "Transaction Date Validation",
+        "description": "Use this API endpoint to validate a date for a transaction for a given ledger.",
+        "operationId": "PostTransactionDateValidation",
+        "requestBody": {
+          "description": "Request for validation.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/transaction_date_validation_request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "A transaction date validation classification enum and appropriate exception message if any.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/transaction_date_validation_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "TransactionDateValidationRequest"
+      },
+      "x-sage-pathtitle": "Transaction_date_validation",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/salutations": {
+      "get": {
+        "tags": [
+          "Salutations"
+        ],
+        "summary": "Salutations",
+        "description": "Each contact within the system has an associated 'salutation_id' to identify if they are 'Mr', 'Ms', 'Dr', etc. When working with contacts, it is important to know what this salutation_id refers to.<br /><br />The API endpoint returns details of the salutations that can be used.",
+        "operationId": "GetSalutations",
+        "responses": {
+          "200": {
+            "description": "The list of salutations has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/salutation"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Salutations",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'date_time_created'."
+        }
+      ]
+    },
+    "/salutations/{Id}": {
+      "get": {
+        "tags": [
+          "Salutations"
+        ],
+        "summary": "Salutation",
+        "description": "Each contact within the system has an associated 'salutation_id' to identify if they are 'Mr', 'Ms', 'Dr', etc. When working with contacts, it is important to know what this salutation_id refers to.<br /><br />The API endpoint returns details of the salutations that can be used.",
+        "operationId": "GetSalutation",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the salutation.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of salutation successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/salutation"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Salutation"
+    },
+    "/company_details": {
+      "get": {
+        "tags": [
+          "Company Details"
+        ],
+        "summary": "Company Details",
+        "description": "Every instance of Sage 200 is configured for the company using it. A company is identified in Sage 200 by its name. Sage 200 stores separate company details for each company that is created.<P>The information stored within company details is typical company information such as VAT registration number and company contact details.</P>",
+        "operationId": "GetCompanyDetails",
+        "responses": {
+          "200": {
+            "description": "The list of companies has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/company_details"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Company details",
+      "x-sage-changelog": [
+        {
+          "date": "30/10/2015",
+          "title": "Extended operation",
+          "description": "This operation now includes the field 'years_accounts_held_for'. This returns the number of years that periods with nominal data exist for, up to a maximum of 6 years."
+        },
+        {
+          "date": "01/08/2019",
+          "title": "Extended operation",
+          "description": "This operation now includes the field 'eori_number'. This returns the EORI number of the company."
+        },
+        {
+          "date": "16/09/2020",
+          "title": "Extended operations",
+          "description": "This endpoint was enhanced with GET by Id and PUT operations."
+        },
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'Id' and 'date_time_created'."
+        },
+        {
+          "date": "26/07/2021",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the field 'is_supplier_payments_enabled'."
+        },
+        {
+          "date": "20/02/2023",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'is_academy'."
+        }
+      ]
+    },
+    "/company_details/{Id}": {
+      "get": {
+        "tags": [
+          "Company Details"
+        ],
+        "summary": "Company Details",
+        "description": "Every instance of Sage 200 is configured for the company using it. A company is identified in Sage 200 by its name. Sage 200 stores separate company details for each company that is created.<P>The information stored within company details is typical company information such as VAT registration number and company contact details.</P>",
+        "operationId": "GetCompanyDetail",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the company details.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of company successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/company_details"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Company Details"
+        ],
+        "summary": "Company Details",
+        "description": "Update the company details.",
+        "operationId": "PutCompanyDetail",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the company details.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Company details to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/company_details"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The company details were updated. Response body will include the company details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/company_details"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "CompanyDetails"
+      },
+      "x-sage-pathtitle": "Company details"
+    },
+    "/ledger_types": {
+      "get": {
+        "tags": [
+          "Ledger Types"
+        ],
+        "summary": "Ledger Types",
+        "description": "Every ledger has its own unique Id in order to track which ledger a transaction is logged against. These unique IDs are predefined by the system, and consistent across all Sage 200 installations.<P>The API endpoint returns details of the ledgers that can be used.</P>",
+        "operationId": "GetLedgerTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the ledger types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ledger_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Ledger types"
+    },
+    "/time_unit_types": {
+      "get": {
+        "tags": [
+          "Time Unit Types"
+        ],
+        "summary": "Time Unit Types",
+        "description": "Time unit types are used to indicate a unit of time within the application. Time units can be 'Days', 'Weeks', 'Months' or 'Years'.<P>The API endpoint returns details of the time unit types that can be used.</P>",
+        "operationId": "GetTimeUnitTypes",
+        "responses": {
+          "200": {
+            "description": "The details of the time unit types have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/time_unit_type"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Time unit types",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/flow_states": {
+      "get": {
+        "tags": [
+          "Flow States"
+        ],
+        "summary": "Flow States",
+        "description": "Get states for Microsoft Flow.",
+        "operationId": "GetFlowStates",
+        "responses": {
+          "200": {
+            "description": "The list of flow states has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/flow_state"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Flow States"
+        ],
+        "summary": "Flow States",
+        "description": "Save state for Microsoft Flow.",
+        "operationId": "PostFlowState",
+        "requestBody": {
+          "description": "Flow state to store in Sage 200.",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/flow_state"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The Flow state was added.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/flow_state"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Flow State"
+      },
+      "x-sage-pathtitle": "Flow states",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'date_time_created'."
+        }
+      ]
+    },
+    "/flow_states/{Id}": {
+      "get": {
+        "tags": [
+          "Flow States"
+        ],
+        "summary": "Flow State",
+        "description": "Get state for Microsoft Flow.",
+        "operationId": "GetFlowState",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the flow.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The details of a flow state have been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/flow_state"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Flow States"
+        ],
+        "summary": "Flow State",
+        "description": "Update state for Microsoft Flow.",
+        "operationId": "PutFlowState",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the flow state.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Flow state to store in Sage 200.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/flow_state"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The Flow state was updated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/flow_state"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Flow State"
+      },
+      "delete": {
+        "tags": [
+          "Flow States"
+        ],
+        "summary": "Flow State",
+        "description": "Delete state for Microsoft Flow.",
+        "operationId": "DeleteFlowState",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the flow state.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Flow state was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Flow state"
+    },
+    "/pending_emails": {
+      "get": {
+        "tags": [
+          "Pending Emails"
+        ],
+        "summary": "Pending Emails",
+        "description": "Get all pending emails for use with Microsoft Flow.",
+        "operationId": "GetPendingEmails",
+        "responses": {
+          "200": {
+            "description": "Returns a list of all pending emails.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pending_email"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Pending Emails"
+        ],
+        "summary": "Pending Emails",
+        "description": "Save pending email for use with Microsoft Flow.",
+        "operationId": "PostPendingEmail",
+        "requestBody": {
+          "description": "Pending email to store in Sage 200.",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/pending_email"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The pending email has been added.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pending_email"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Pending Email"
+      },
+      "x-sage-pathtitle": "Pending Emails",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "Enhanced endpoint field",
+          "description": "This operation now includes the field 'date_time_created'."
+        }
+      ]
+    },
+    "/pending_emails/{Id}": {
+      "get": {
+        "tags": [
+          "Pending Emails"
+        ],
+        "summary": "Pending Email",
+        "description": "Get single pending email for use with Microsoft Flow.",
+        "operationId": "GetPendingEmail",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the pending email.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the details of a pending email.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pending_email"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Pending Emails"
+        ],
+        "summary": "Pending Email",
+        "description": "Update pending email for use with Microsoft Flow.",
+        "operationId": "PutPendingEmail",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the pending email.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Pending email to store in Sage 200 for use with Microsoft Flow.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pending_email"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The pending email has been updated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pending_email"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Pending Email"
+      },
+      "delete": {
+        "tags": [
+          "Pending Emails"
+        ],
+        "summary": "Pending Email",
+        "description": "Delete single pending email for use with Microsoft Flow.",
+        "operationId": "DeletePendingEmail",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the pending email.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The pending email has been deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Pending Email"
+    },
+    "/couriers": {
+      "get": {
+        "tags": [
+          "Couriers"
+        ],
+        "summary": "Couriers",
+        "description": "The courier used for an order.",
+        "operationId": "GetCouriers",
+        "responses": {
+          "200": {
+            "description": "The list of couriers has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/courier"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Couriers"
+        ],
+        "summary": "Couriers",
+        "description": "The courier used for an order.",
+        "operationId": "PutCouriers",
+        "requestBody": {
+          "description": "The couriers to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/courier"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The couriers were updated. Response body will include the courier details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/courier"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SOPCouriers"
+      },
+      "post": {
+        "tags": [
+          "Couriers"
+        ],
+        "summary": "Couriers",
+        "description": "The courier used for an order.",
+        "operationId": "PostCouriers",
+        "requestBody": {
+          "description": "Courier to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/courier"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The courier was successfully created. Response body will include the courier details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/courier"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Courier"
+      },
+      "x-sage-pathtitle": "Couriers",
+      "x-sage-changelog": [
+        {
+          "date": "22/08/2022",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    },
+    "/couriers/{Id}": {
+      "get": {
+        "tags": [
+          "Couriers"
+        ],
+        "summary": "Courier",
+        "description": "The courier used for an order.",
+        "operationId": "GetCourier",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the courier.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of the courier were successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/courier"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Couriers"
+        ],
+        "summary": "Courier",
+        "description": "The courier used for an order.",
+        "operationId": "PutCourier",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the courier.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Courier to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/courier"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The courier was successfully updated. Response body will include the courier details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/courier"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "Courier"
+      },
+      "delete": {
+        "tags": [
+          "Couriers"
+        ],
+        "summary": "Courier",
+        "description": "The courier used for an order.",
+        "operationId": "DeleteCourier",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the courier.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Courier was deleted.",
+            "content": {}
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Courier"
+    },
+    "/system_settings": {
+      "get": {
+        "tags": [
+          "System Settings"
+        ],
+        "summary": "System Settings",
+        "description": "The System Settings are used to define operation and transaction settings.<br/><br/>Operational settings includes setting such as the next VAT return date and number of open accounting periods. Transaction settings gives options to use additional transaction analysis and whether to validate transaction dates.",
+        "operationId": "GetSystemSettings",
+        "responses": {
+          "200": {
+            "description": "System settings successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/system_settings"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "System settings",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        },
+        {
+          "date": "26/07/2021",
+          "title": "Enhanced endpoint fields",
+          "description": "This operation now includes the fields 'use_segmented_address', 'financial_year_end_date', 'invoice_credit_note_same_numbers' and 'reverse_charge_minimum_value'."
+        }
+      ]
+    },
+    "/system_settings/{Id}": {
+      "get": {
+        "tags": [
+          "System Settings"
+        ],
+        "summary": "System Setting",
+        "description": "The System Settings are used to define operation and transaction settings.<br/><br/>Operational settings includes setting such as the next VAT return date and number of open accounting periods. Transaction settings gives options to use additional transaction analysis and whether to validate transaction dates.",
+        "operationId": "GetSystemSetting",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the system settings.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "System settings successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/system_settings"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "System Settings"
+        ],
+        "summary": "System Setting",
+        "description": "Update the system settings.",
+        "operationId": "PutSystemSetting",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Unique Id of the system settings.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "System settings to update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/system_settings"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The system settings were updated. Response body will include the system settings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/system_settings"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SystemSettings"
+      },
+      "x-sage-pathtitle": "System setting"
+    },
+    "/update_modes": {
+      "get": {
+        "tags": [
+          "Update Modes"
+        ],
+        "summary": "Update Modes",
+        "description": "Gets the list of update modes which can be used. For example, \"Update\", \"Create\", or \"Delete\".",
+        "operationId": "GetUpdateModes",
+        "responses": {
+          "200": {
+            "description": "The list of update modes has been successfully returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/update_mode"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was a problem with the request. Request body will include details.",
+            "content": {}
+          }
+        }
+      },
+      "x-sage-pathtitle": "Update modes",
+      "x-sage-changelog": [
+        {
+          "date": "16/09/2020",
+          "title": "New endpoint",
+          "description": "This endpoint was added."
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "licence": {
+        "type": "object",
+        "properties": {
+          "is_sales_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the sales module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_purchase_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the purchase module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_nominal_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the nominal module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_fixed_assets_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the fixed assets module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_cash_book_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the cash book module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_stock_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the stock module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_price_book_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the price book module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_invoicing_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the invoicing module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_sales_orders_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the sale orders module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_purchase_orders_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the purchase orders module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_bill_of_materials_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the bill of materials module is enabled in the application.",
+            "readOnly": true
+          },
+          "is_additional_excel_reports_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the additional excel reports are enabled in the application.",
+            "readOnly": true
+          },
+          "is_project_accounting_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the project accounting module is enabled in the application. (Sage 200 Professional only).",
+            "readOnly": true,
+            "x-sage-professional-only": true
+          },
+          "is_manufacturing_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the manufacturing module is enabled in the application. (Sage 200 Professional only).",
+            "readOnly": true,
+            "x-sage-professional-only": true
+          },
+          "is_business_intelligence_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the business intelligence module is enabled in the application. (Sage 200 Professional only).",
+            "readOnly": true,
+            "x-sage-professional-only": true
+          },
+          "is_scripting_enabled": {
+            "type": "boolean",
+            "description": "Indicates whether scripting is enabled in the application. (Sage 200 Professional only).",
+            "readOnly": true,
+            "x-sage-professional-only": true
+          }
+        },
+        "description": "Licence for the application."
+      },
+      "configurable_term": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Configurable term key.",
+            "readOnly": true
+          },
+          "lower_case_single": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Configurable term value singularised and lower case.",
+            "readOnly": true
+          },
+          "lower_case_plural": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Configurable term value pluralised and lower case.",
+            "readOnly": true
+          },
+          "upper_case_single": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Configurable term value singularised and upper case.",
+            "readOnly": true
+          },
+          "upper_case_plural": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Configurable term value pluralised and lower case.",
+            "readOnly": true
+          }
+        },
+        "description": "Configurable terms for the application."
+      },
+      "accounting_period_validation_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum description."
+          },
+          "value": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum value."
+          }
+        },
+        "description": "The accounting period validation status is used in System Settings and can be configured as 'Acceptable', 'Unacceptable' or 'UseAccrual'.<P>The API endpoint returns details of the accounting period validation types that can be used.</P>"
+      },
+      "analysis_code_mapping": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Analysis code mapping Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "class_name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Full name of the Sage 200 entity.",
+            "readOnly": true
+          },
+          "friendly_class_name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Friendly name of the Sage 200 entity.",
+            "readOnly": true
+          },
+          "property_name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Analysis code property name.",
+            "readOnly": true
+          },
+          "friendly_property_name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Analysis code friendly property name.",
+            "readOnly": true
+          },
+          "is_mandatory": {
+            "type": "boolean",
+            "description": "Flag to indicate if a value must be given for the analysis code. (Sage 200 Professional only).",
+            "readOnly": true,
+            "x-sage-professional-only": true
+          },
+          "is_read_only": {
+            "type": "boolean",
+            "description": "Flag to indicate if the analysis code is read only. Only returned where the analysis code is for SOPOrderReturn or POPOrderReturn.",
+            "readOnly": true
+          },
+          "slot": {
+            "type": "integer",
+            "description": "The slot of the analysis code, the position where it is used.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "analysis_code_id": {
+            "$ref": "#/components/schemas/analysis_code"
+          },
+          "analysis_code": {
+            "$ref": "#/components/schemas/analysis_code"
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Analysis code mapping for an entity in Sage 200."
+      },
+      "analysis_code": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Analysis code Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "The analysis code name.",
+            "readOnly": true
+          },
+          "allow_overtype": {
+            "type": "boolean",
+            "description": "Flag to indicate if a new value can be entered into the analysis code.",
+            "readOnly": true
+          },
+          "allow_new_on_entry": {
+            "type": "boolean",
+            "description": "Flag to indicate if a new value is stored against the analysis code.",
+            "readOnly": true
+          },
+          "values": {
+            "type": "array",
+            "description": "Values associated with the analysis code.",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/analysis_code_value"
+            }
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Analysis code associated with the analysis code mapping."
+      },
+      "analysis_code_value": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Analysis code value Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "analysis_code_id": {
+            "type": "integer",
+            "description": "Analysis code record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "The analysis code value.",
+            "readOnly": true
+          },
+          "is_default": {
+            "type": "boolean",
+            "description": "Indicates whether this is the default analysis code value.",
+            "readOnly": true,
+            "default": false
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Value associated with an analysis code."
+      },
+      "site": {
+        "type": "object",
+        "properties": {
+          "company_id": {
+            "type": "integer",
+            "description": "Company Id.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "company_name": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Company name."
+          },
+          "site_id": {
+            "maxLength": 36,
+            "type": "string",
+            "description": "Site Id.",
+            "readOnly": true
+          },
+          "site_name": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Site name.",
+            "readOnly": true
+          },
+          "site_short_name": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Site short name.",
+            "readOnly": true
+          }
+        },
+        "description": "Access to Sage 200 sites is restricted by a Sage account. When invoking any API resource, the site Id must always be specified within the header 'X-Site'.<br /><br />Use this API endpoint to return the list of sites that a user has access to. This operation is particularly important during the initial stages of API development."
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "User Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 250,
+            "type": "string",
+            "description": "Username.",
+            "readOnly": true
+          }
+        },
+        "description": "Use this API endpoint to get a list of all usernames and IDs for the current company."
+      },
+      "current_user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "User Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "logon_name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "The users logon name.",
+            "readOnly": true
+          },
+          "friendly_name": {
+            "maxLength": 250,
+            "type": "string",
+            "description": "The users full name."
+          },
+          "email_address": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "The users email address."
+          },
+          "is_web_user": {
+            "type": "boolean",
+            "description": "Is the user a web user.<br />Indicates that this user is allowed access via a web client.",
+            "readOnly": true
+          },
+          "last_logon_date_time": {
+            "type": "string",
+            "description": "The date and time this user last logged on (UTC).",
+            "format": "date-time"
+          }
+        },
+        "description": "Use this API endpoint to return details of the currently logged in user."
+      },
+      "transaction_date_validation_request": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "The proposed transaction date to be validated.",
+            "format": "date-time"
+          },
+          "ledger_type": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Ledger type."
+          }
+        },
+        "description": "Request object to validate a transaction date for a given ledger."
+      },
+      "transaction_date_validation_response": {
+        "type": "object",
+        "properties": {
+          "classification": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Transaction Date Validation Classification enum value."
+          },
+          "message": {
+            "type": "string",
+            "description": "Message string explaining the transaction date error."
+          }
+        },
+        "description": "Response object to for a transaction date validation request."
+      },
+      "salutation": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Salutation record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "is_default": {
+            "type": "boolean",
+            "description": "If this is the default salutation."
+          },
+          "code": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Salutation code."
+          },
+          "description": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Description of the salutation."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Each contact within the system has an associated 'salutation_id' to identify if they are 'Mr', 'Ms', 'Dr', etc. When working with contacts, it is important to know what this salutation_id refers to.<br /><br />The API endpoint returns details of the salutations that can be used."
+      },
+      "company_details": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Company Details record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "Company name."
+          },
+          "telephone": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Telephone number."
+          },
+          "fax": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Fax number."
+          },
+          "email": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Email address."
+          },
+          "website": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Company website address."
+          },
+          "tax_registration_number": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Tax registration number."
+          },
+          "years_accounts_held_for": {
+            "type": "integer",
+            "description": "Number of years that periods with nominal data exist for up to a maximum of six years.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "country_code_id": {
+            "type": "integer",
+            "description": "Country code record Id.",
+            "format": "int64"
+          },
+          "country_code": {
+            "type": "object",
+            "properties": {},
+            "description": "The company's country code."
+          },
+          "eori_number": {
+            "maxLength": 14,
+            "type": "string",
+            "description": "The company's EORI number."
+          },
+          "is_supplier_payments_enabled": {
+            "type": "boolean",
+            "description": "True if supplier payments is enabled; otherwise false.",
+            "readOnly": true
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "Company address record Id.",
+                "format": "int64",
+                "readOnly": true
+              },
+              "address_1": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "Address line 1."
+              },
+              "address_2": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "Address line 2."
+              },
+              "address_3": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "Address line 3."
+              },
+              "address_4": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "Address line 4."
+              },
+              "city": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "City."
+              },
+              "county": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "County."
+              },
+              "postcode": {
+                "maxLength": 10,
+                "type": "string",
+                "description": "Postcode."
+              },
+              "country": {
+                "maxLength": 60,
+                "type": "string",
+                "description": "Country."
+              },
+              "date_time_created": {
+                "type": "string",
+                "description": "The date and time this entity was created (UTC).",
+                "format": "date-time",
+                "readOnly": true
+              },
+              "date_time_updated": {
+                "type": "string",
+                "description": "The date and time this entity was last updated (UTC).",
+                "format": "date-time",
+                "readOnly": true
+              }
+            },
+            "description": "The company's address."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "Every instance of Sage 200 is configured for the company using it. A company is identified in Sage 200 by its name. Sage 200 stores separate company details for each company that is created.<P>The information stored within company details is typical company information such as VAT registration number and company contact details.</P>"
+      },
+      "ledger_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Ledger type Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Every ledger has its own unique Id in order to track which ledger a transaction is logged against. These unique IDs are predefined by the system, and consistent across all Sage 200 installations.<P>The API endpoint returns details of the ledgers that can be used.</P>"
+      },
+      "time_unit_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum description.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Time unit types are used to indicate a unit of time within the application. Time units can be 'Days', 'Weeks', 'Months' or 'Years'.<P>The API endpoint returns details of the time unit types that can be used.</P>"
+      },
+      "flow_state": {
+        "required": [
+          "flow_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The unique Id of the Sage 200 Flow identifier.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "flow_id": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Microsoft Flow identifier."
+          },
+          "value": {
+            "maxLength": 8000,
+            "type": "string",
+            "description": "Value of state."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "When working with Microsoft Flow, it is useful to be able to record the state of some data that is used in your flow.<br /><br />Use this API endpoint to read or write data to and from the flow."
+      },
+      "pending_email": {
+        "required": [
+          "email_address",
+          "email_type",
+          "user_number"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The unique Id of the Sage 200 pending email identifier.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "email_type": {
+            "maxLength": 32,
+            "type": "string",
+            "description": "The type of pending email (which provides the intended purpose)."
+          },
+          "email_address": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "The email address of the email recipient."
+          },
+          "email_subject": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "The text to use for the subject of the email."
+          },
+          "email_body": {
+            "maxLength": 8000,
+            "type": "string",
+            "description": "The text to use for the body of the email."
+          },
+          "user_number": {
+            "type": "integer",
+            "description": "The user Id of the email recipient.",
+            "format": "int64"
+          },
+          "user_name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "The user name of the email recipient."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "When working with Microsoft Flow, it is useful to be able to access pending emails to send as notifications to the user from Sage 200.<br /><br />Use this API endpoint to read or write data to and from the SYSPendingEmail table."
+      },
+      "courier": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Courier Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 60,
+            "type": "string",
+            "description": "The name of the courier."
+          },
+          "website": {
+            "maxLength": 2083,
+            "type": "string",
+            "description": "The website of the courier."
+          },
+          "tracking_url": {
+            "maxLength": 2083,
+            "type": "string",
+            "description": "The tracking URL of the courier."
+          },
+          "is_default": {
+            "type": "boolean",
+            "description": "True if courier is default, otherwise false.",
+            "default": false
+          },
+          "is_to_delete": {
+            "type": "boolean",
+            "description": "When updating existing couriers, whether to delete this courier from the collection of couriers."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "The courier used for an order."
+      },
+      "system_settings": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System Settings record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "next_urn": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Next Unique Reference Number.",
+            "readOnly": true
+          },
+          "next_invoice_number": {
+            "type": "integer",
+            "description": "Next invoice number.",
+            "format": "int64"
+          },
+          "next_credit_note_number": {
+            "type": "integer",
+            "description": "Next credit note number.",
+            "format": "int64"
+          },
+          "next_journal_entry_number": {
+            "type": "integer",
+            "description": "Next journal entry number.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "first_vat_return_date_defined": {
+            "type": "boolean",
+            "description": "Whether or not the VAT Return date is editable.",
+            "readOnly": true,
+            "default": false
+          },
+          "first_vat_return_date": {
+            "type": "string",
+            "description": "The date and time of the VAT Return (UTC).",
+            "format": "date-time"
+          },
+          "intrastat_value_for_consolidation": {
+            "type": "number",
+            "description": "Intrastat amount.",
+            "format": "decimal 2dp"
+          },
+          "number_open_periods": {
+            "type": "integer",
+            "description": "Number of open periods (1-20).",
+            "format": "int16"
+          },
+          "update_nominal_online": {
+            "type": "boolean",
+            "description": "Whether or not to update the nominal immediately.",
+            "default": false
+          },
+          "use_cost_centre_breakdown": {
+            "type": "boolean",
+            "description": "Whether or not to split postings.",
+            "default": false
+          },
+          "use_intrastat_reporting": {
+            "type": "boolean",
+            "description": "Whether or not to use intrastat reporting.",
+            "default": false
+          },
+          "use_period_exchange_rates": {
+            "type": "boolean",
+            "description": "Whether or not to use period exchange rates. Note: Setting to false will remove any period exchange rate records set up for currencies.",
+            "default": false
+          },
+          "use_segmented_address": {
+            "type": "boolean",
+            "description": "Whether or not to use segmented addresses. (Sage 200 Standard value is true and cannot be changed).",
+            "default": true
+          },
+          "use_additional_trans_analysis": {
+            "type": "boolean",
+            "description": "Whether or not to use additional transactional analysis.",
+            "default": false
+          },
+          "transaction_analysis_heading": {
+            "maxLength": 30,
+            "type": "string",
+            "description": "Transaction Analysis heading."
+          },
+          "accounting_period_validation_type": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "AccountingPeriodValidation enum value."
+          },
+          "financial_year_end_date": {
+            "type": "string",
+            "description": "The financial year end date (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "invoice_credit_note_same_numbers": {
+            "type": "boolean",
+            "description": "Whether or not to use the same numbers for invoices and credit notes.",
+            "readOnly": true,
+            "default": true
+          },
+          "reverse_charge_minimum_value": {
+            "type": "number",
+            "description": "Reverse charge minimum value.",
+            "format": "decimal 2dp",
+            "readOnly": true
+          },
+          "transaction_date_validation": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "Transaction date validation record Id.",
+                "format": "int64",
+                "readOnly": true
+              },
+              "transaction_date_validation_type": {
+                "maxLength": 20,
+                "type": "string",
+                "description": "TransactionDateValidationType enum value"
+              },
+              "pre_days_normal": {
+                "type": "integer",
+                "description": "Pre days normal.",
+                "format": "int64"
+              },
+              "post_days_normal": {
+                "type": "integer",
+                "description": "Post days normal.",
+                "format": "int64"
+              },
+              "pre_days_acceptable": {
+                "type": "integer",
+                "description": "Pre days acceptable.",
+                "format": "int64"
+              },
+              "post_days_acceptable": {
+                "type": "integer",
+                "description": "Post days acceptable.",
+                "format": "int64"
+              },
+              "previous_year_classification": {
+                "maxLength": 20,
+                "type": "string",
+                "description": "TransactionDateValidationClassification enum value"
+              },
+              "future_year_classification": {
+                "maxLength": 20,
+                "type": "string",
+                "description": "TransactionDateValidationClassification enum value"
+              },
+              "closed_period_classification": {
+                "maxLength": 20,
+                "type": "string",
+                "description": "TransactionDateValidationClassification enum value"
+              },
+              "future_period_classification": {
+                "maxLength": 20,
+                "type": "string",
+                "description": "TransactionDateValidationClassification enum value"
+              },
+              "date_time_created": {
+                "type": "string",
+                "description": "The date and time this entity was created (UTC).",
+                "format": "date-time",
+                "readOnly": true
+              },
+              "date_time_updated": {
+                "type": "string",
+                "description": "The date and time this entity was last updated (UTC).",
+                "format": "date-time",
+                "readOnly": true
+              }
+            },
+            "description": "Details of transaction date validation."
+          },
+          "date_time_created": {
+            "type": "string",
+            "description": "The date and time this entity was created (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "date_time_updated": {
+            "type": "string",
+            "description": "The date and time this entity was last updated (UTC).",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "description": "The System Settings are used to define operation and transaction settings.<br/><br/>Operational settings includes setting such as the next VAT return date and number of open accounting periods. Transaction settings gives options to use additional transaction analysis and whether to validate transaction dates."
+      },
+      "transaction_date_validation_classification": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description."
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value."
+          }
+        },
+        "description": "The transaction date validation classification is used in System Settings and can be configured as 'Normal', 'Acceptable' or 'Unacceptable'.<P>The API endpoint returns details of the classifications that can be used.</P>"
+      },
+      "update_mode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Update mode Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Description of the update mode.",
+            "readOnly": true
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value.",
+            "readOnly": true
+          }
+        },
+        "description": "Gets the list of update modes which can be used. For example, \"Update\", \"Create\", or \"Delete\"."
+      },
+      "transaction_date_validation_type": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Enum record Id.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "description": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum description."
+          },
+          "value": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Enum value."
+          }
+        },
+        "description": "The transaction date validation type is used in System Settings and can be configured as 'None', 'Period' or 'Calendar'.<P>The API endpoint returns details of the types that can be used.</P>"
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}

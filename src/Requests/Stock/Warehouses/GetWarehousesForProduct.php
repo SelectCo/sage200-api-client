@@ -2,11 +2,9 @@
 
 namespace Selectco\SageApi\Requests\Stock\Warehouses;
 
-use JsonException;
-use Selectco\SageApi\DataObjects\Stock\Warehouse;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
-use Saloon\Http\Response;
+use Selectco\SageApi\Exception\ODataInvalidArgumentException;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
 /**
@@ -17,49 +15,43 @@ use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 class GetWarehousesForProduct extends Request
 {
 	protected Method $method = Method::GET;
-    private string $endPoint;
-    private string $queryString;
+	private string $endPoint;
+	private string $queryString;
 
-    /**
-     * @param mixed $productId Unique id of a product.
-     * @param SageODataBuilder|null $queryParameters
-     */
-    public function __construct(protected string|int $productId, SageODataBuilder|null $queryParameters = null) {
-        $this->endPoint = "/products/{$this->productId}/warehouses";
-        $this->queryString = '';
-        $this->setQueryParameters($queryParameters);
-    }
 
-    /**
-     * @return string
-     */
-	public function resolveEndpoint(): string
-	{
-        return $this->endPoint . $this->queryString;
+	/**
+	 * @param float|int $productId Unique Id of a product.
+	 * @param SageODataBuilder|null $queryParameters
+	 * @throws ODataInvalidArgumentException
+	 */
+	public function __construct(
+		protected float|int $productId,
+		?SageODataBuilder $queryParameters = null,
+	) {
+		$this->endPoint = "/products/{$this->productId}/warehouses";
+		$this->queryString = '';
+		$this->setQueryParameters($queryParameters);
 	}
 
-    /**
-     * @param SageODataBuilder|null $queryParameters
-     * @return void
-     */
-    public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
-    {
-        if ($queryParameters) {
-            $this->queryString = $queryParameters->buildQueryString();
-        }
-    }
 
-    /**
-     * @param Response $response
-     * @return Warehouse[]
-     * @throws JsonException
-     */
-    public function createDtoFromResponse(Response $response): array
-    {
-        $returnArray = [];
-        foreach ($response->json() as $data) {
-            $returnArray[] = new Warehouse(...$data);
-        }
-        return $returnArray;
-    }
+	/**
+	 * @param SageODataBuilder|null $queryParameters
+	 * @return void
+	 * @throws ODataInvalidArgumentException
+	 */
+	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	{
+		if ($queryParameters) {
+		    $this->queryString = $queryParameters->buildQueryString();
+		}
+	}
+
+
+	/**
+	 * Define the endpoint for the request.
+	 */
+	public function resolveEndpoint(): string
+	{
+		return $this->endPoint . $this->queryString;
+	}
 }
