@@ -30,7 +30,7 @@ class StocktakeCountSheetItemsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktakeCountSheetItems(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getStocktakeCountSheetItems(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktakeCountSheetItems($id, $queryParameters));
 	}

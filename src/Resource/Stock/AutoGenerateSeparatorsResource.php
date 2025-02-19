@@ -29,7 +29,7 @@ class AutoGenerateSeparatorsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAutoGenerateSeparators(?SageODataBuilder $queryParameters = null): Response
+	public function getAutoGenerateSeparators(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAutoGenerateSeparators($queryParameters));
 	}
@@ -43,7 +43,7 @@ class AutoGenerateSeparatorsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAutoGenerateSeparator(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getAutoGenerateSeparator(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAutoGenerateSeparator($id, $queryParameters));
 	}

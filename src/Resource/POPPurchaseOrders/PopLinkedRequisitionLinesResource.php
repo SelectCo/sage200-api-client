@@ -30,8 +30,8 @@ class PopLinkedRequisitionLinesResource
 	 * @return Response
 	 */
 	public function getPoplinkedRequisitionLinesForPopline(
-		float|int $lineId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $lineId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetPoplinkedRequisitionLinesForPopline($lineId, $queryParameters));

@@ -26,9 +26,9 @@ class GetWarehouseHoldingsForProductAndWarehouse extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $productId,
-		protected float|int $warehouseId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $productId,
+        protected float|int   $warehouseId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/products/{$this->productId}/warehouses/{$this->warehouseId}/warehouse_holdings";
 		$this->queryString = '';
@@ -41,7 +41,7 @@ class GetWarehouseHoldingsForProductAndWarehouse extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

@@ -29,7 +29,7 @@ class DocumentLayoutsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDocumentLayouts(?SageODataBuilder $queryParameters = null): Response
+	public function getDocumentLayouts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDocumentLayouts($queryParameters));
 	}
@@ -43,7 +43,7 @@ class DocumentLayoutsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDocumentLayout(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getDocumentLayout(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDocumentLayout($id, $queryParameters));
 	}

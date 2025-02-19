@@ -30,7 +30,7 @@ class SalesLedgerSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesLedgerSettings(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesLedgerSettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesLedgerSettings($queryParameters));
 	}
@@ -44,7 +44,7 @@ class SalesLedgerSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesLedgerSetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalesLedgerSetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesLedgerSetting($id, $queryParameters));
 	}

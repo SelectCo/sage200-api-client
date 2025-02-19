@@ -28,7 +28,7 @@ class NominalCodeViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalCodeViews(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalCodeViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalCodeViews($queryParameters));
 	}

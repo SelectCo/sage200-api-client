@@ -28,7 +28,7 @@ class CrossSellProductViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCrossSellProductViews(?SageODataBuilder $queryParameters = null): Response
+	public function getCrossSellProductViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCrossSellProductViews($queryParameters));
 	}

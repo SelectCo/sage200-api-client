@@ -28,7 +28,7 @@ class TraceableIssueStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraceableIssueStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTraceableIssueStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraceableIssueStatusTypes($queryParameters));
 	}

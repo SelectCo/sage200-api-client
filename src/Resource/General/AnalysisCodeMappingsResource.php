@@ -29,7 +29,7 @@ class AnalysisCodeMappingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAnalysisCodeMappings(?SageODataBuilder $queryParameters = null): Response
+	public function getAnalysisCodeMappings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAnalysisCodeMappings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class AnalysisCodeMappingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAnalysisCodeMapping(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getAnalysisCodeMapping(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAnalysisCodeMapping($id, $queryParameters));
 	}

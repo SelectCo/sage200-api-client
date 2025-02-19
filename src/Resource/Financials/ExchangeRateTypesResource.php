@@ -28,7 +28,7 @@ class ExchangeRateTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getExchangeRateTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getExchangeRateTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetExchangeRateTypes($queryParameters));
 	}

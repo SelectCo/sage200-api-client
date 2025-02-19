@@ -28,7 +28,7 @@ class SitesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSites(?SageODataBuilder $queryParameters = null): Response
+	public function getSites(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSites($queryParameters));
 	}

@@ -17,31 +17,31 @@ class SalesReceipt
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $bank_id = null,
+		public int|null    $bank_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $cheque_currency_id = null,
+		public int|null    $cheque_currency_id = null,
 		#[Assert\Type('float')]
-		public ?float $cheque_value = null,
+		public float|null  $cheque_value = null,
 		#[Assert\Type('float')]
-		public ?float $customer_cheque_value = null,
+		public float|null  $customer_cheque_value = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('float')]
-		public ?float $exchange_rate = null,
+		public float|null  $exchange_rate = null,
 		#[Assert\Type('float')]
-		public ?float $bank_exchange_rate = null,
+		public float|null  $bank_exchange_rate = null,
 		#[Assert\Type('float')]
-		public ?float $cheque_exchange_rate = null,
+		public float|null  $cheque_exchange_rate = null,
 		#[Assert\Type('float')]
-		public ?float $settlement_discount_value = null,
+		public float|null  $settlement_discount_value = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('array')]
-		public ?array $nominal_analysis_items = null,
+		public array|null  $nominal_analysis_items = null,
 	) {
 	}
 }

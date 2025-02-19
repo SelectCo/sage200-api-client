@@ -28,7 +28,7 @@ class LookupProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLookupProducts(?SageODataBuilder $queryParameters = null): Response
+	public function getLookupProducts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLookupProducts($queryParameters));
 	}

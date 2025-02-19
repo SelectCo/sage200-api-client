@@ -11,21 +11,21 @@ class PopLinkedRequisitionLine
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $supplier_reference = null,
+		public string|null $supplier_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $supplier_name = null,
+		public string|null $supplier_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $item_code = null,
+		public string|null $item_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 6000)]
-		public ?string $item_name = null,
+		public string|null $item_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $budget_name = null,
+		public string|null $budget_name = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class SopConfirmationIntentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopconfirmationIntentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopconfirmationIntentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopconfirmationIntentTypes($queryParameters));
 	}

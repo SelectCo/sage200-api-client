@@ -28,7 +28,7 @@ class NominalReportCategoryTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalReportCategoryTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalReportCategoryTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalReportCategoryTypes($queryParameters));
 	}

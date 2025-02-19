@@ -30,7 +30,7 @@ class NominalTransactionEnquiryViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalTransactionEnquiryViews(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalTransactionEnquiryViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalTransactionEnquiryViews($queryParameters));
 	}
@@ -44,7 +44,7 @@ class NominalTransactionEnquiryViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalTransactionEnquiryView(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getNominalTransactionEnquiryView(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalTransactionEnquiryView($id, $queryParameters));
 	}
@@ -59,8 +59,8 @@ class NominalTransactionEnquiryViewsResource
 	 * @return Response
 	 */
 	public function getNominalTransactionsEnquiryViewForNominal(
-		float|int $nominalCodeId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $nominalCodeId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetNominalTransactionsEnquiryViewForNominal($nominalCodeId, $queryParameters));

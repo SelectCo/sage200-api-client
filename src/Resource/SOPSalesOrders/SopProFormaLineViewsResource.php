@@ -28,7 +28,7 @@ class SopProFormaLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopproformaLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSopproformaLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopproformaLineViews($queryParameters));
 	}

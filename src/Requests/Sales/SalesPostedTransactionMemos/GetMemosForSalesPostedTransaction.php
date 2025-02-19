@@ -29,8 +29,8 @@ class GetMemosForSalesPostedTransaction extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $transactionId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $transactionId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/sales_posted_transactions/{$this->transactionId}/sales_posted_transaction_memos";
 		$this->queryString = '';
@@ -43,7 +43,7 @@ class GetMemosForSalesPostedTransaction extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

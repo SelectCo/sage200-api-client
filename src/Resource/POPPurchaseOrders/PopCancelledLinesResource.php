@@ -29,7 +29,7 @@ class PopCancelledLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopcancelledLines(?SageODataBuilder $queryParameters = null): Response
+	public function getPopcancelledLines(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopcancelledLines($queryParameters));
 	}
@@ -43,7 +43,7 @@ class PopCancelledLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopcancelledLine(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPopcancelledLine(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopcancelledLine($id, $queryParameters));
 	}

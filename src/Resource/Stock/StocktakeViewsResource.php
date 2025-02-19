@@ -28,7 +28,7 @@ class StocktakeViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktakeViews(?SageODataBuilder $queryParameters = null): Response
+	public function getStocktakeViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktakeViews($queryParameters));
 	}

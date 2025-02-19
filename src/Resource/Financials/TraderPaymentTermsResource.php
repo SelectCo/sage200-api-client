@@ -28,7 +28,7 @@ class TraderPaymentTermsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraderPaymentTerms(?SageODataBuilder $queryParameters = null): Response
+	public function getTraderPaymentTerms(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraderPaymentTerms($queryParameters));
 	}

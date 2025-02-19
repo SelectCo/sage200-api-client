@@ -12,11 +12,11 @@ class SalesAllocation
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $allocation_date = null,
+		public string|null $allocation_date = null,
 		#[Assert\Type('array')]
-		public ?array $allocation_lines = null,
+		public array|null  $allocation_lines = null,
 	) {
 	}
 }

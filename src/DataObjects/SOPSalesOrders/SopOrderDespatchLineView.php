@@ -13,79 +13,79 @@ class SopOrderDespatchLineView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_despatch_line_id = null,
+		public int|null    $sop_despatch_line_id = null,
 		#[Assert\Type('float')]
-		public ?float $sop_despatch_line_quantity = null,
+		public float|null  $sop_despatch_line_quantity = null,
 		#[Assert\Type('bool')]
-		public ?bool $sop_despatch_line_is_invoiced = null,
+		public bool|null   $sop_despatch_line_is_invoiced = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_despatch_id = null,
+		public int|null    $sop_despatch_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $sop_despatch_document_no = null,
+		public string|null $sop_despatch_document_no = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $sop_despatch_date = null,
+		public string|null $sop_despatch_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $sop_despatch_user_name = null,
+		public string|null $sop_despatch_user_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_line_id = null,
+		public int|null    $sop_order_line_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_line_type_id = null,
+		public int|null    $sop_order_line_type_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $sop_order_line_item_code = null,
+		public string|null $sop_order_line_item_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_order_line_item_description = null,
+		public string|null $sop_order_line_item_description = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $sop_order_line_print_sequence_number = null,
+		public int|null    $sop_order_line_print_sequence_number = null,
 		#[Assert\Type('float')]
-		public ?float $sop_order_line_quantity = null,
+		public float|null  $sop_order_line_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $sop_order_line_despatch_quantity = null,
+		public float|null  $sop_order_line_despatch_quantity = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_id = null,
+		public int|null    $sop_order_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $sop_order_document_no = null,
+		public string|null $sop_order_document_no = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $sop_order_document_date = null,
+		public string|null $sop_order_document_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $sop_order_document_status_type = null,
+		public string|null $sop_order_document_status_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $sop_order_customer_document_no = null,
+		public string|null $sop_order_customer_document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $customer_reference = null,
+		public string|null $customer_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $customer_name = null,
+		public string|null $customer_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $product_code = null,
+		public string|null $product_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $product_name = null,
+		public string|null $product_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_holding_id = null,
+		public int|null    $warehouse_holding_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null    $warehouse_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_despatch_courier_name = null,
+		public string|null $sop_despatch_courier_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_despatch_consignment_no = null,
+		public string|null $sop_despatch_consignment_no = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_despatch_incoterm = null,
+		public string|null $sop_despatch_incoterm = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_despatch_export_reason = null,
+		public string|null $sop_despatch_export_reason = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $sop_despatch_pieces = null,
+		public int|null    $sop_despatch_pieces = null,
 		#[Assert\Type('float')]
-		public ?float $sop_despatch_weight = null,
+		public float|null  $sop_despatch_weight = null,
 		#[Assert\Type('string'), Assert\Length(max: 256)]
-		public ?string $sop_despatch_notes = null,
+		public string|null $sop_despatch_notes = null,
 		#[Assert\Type('string'), Assert\Length(max: 2083)]
-		public ?string $sys_courier_tracking_url = null,
+		public string|null $sys_courier_tracking_url = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

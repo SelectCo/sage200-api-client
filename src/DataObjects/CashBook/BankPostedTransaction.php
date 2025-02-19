@@ -13,55 +13,55 @@ class BankPostedTransaction
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $bank_id = null,
+		public int|null    $bank_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $bank_transaction_type = null,
+		public string|null $bank_transaction_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 6000)]
-		public ?string $entry_description = null,
+		public string|null $entry_description = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $posted_date = null,
+		public string|null $posted_date = null,
 		#[Assert\Type('float')]
-		public ?float $cheque_value = null,
+		public float|null  $cheque_value = null,
 		#[Assert\Type('float')]
-		public ?float $cheque_discount_value = null,
+		public float|null  $cheque_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $cheque_to_account_currency_rate = null,
+		public float|null  $cheque_to_account_currency_rate = null,
 		#[Assert\Type('float')]
-		public ?float $bank_cheque_to_base_currency_rate = null,
+		public float|null  $bank_cheque_to_base_currency_rate = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $cheque_currency_id = null,
+		public int|null    $cheque_currency_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $last_statement_date = null,
+		public string|null $last_statement_date = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $statement_page_number = null,
+		public int|null    $statement_page_number = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $source = null,
+		public string|null $source = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $urn = null,
+		public int|null    $urn = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $user_name = null,
+		public string|null $user_name = null,
 		#[Assert\Type('array')]
-		public ?array $tax_analysis_items = null,
+		public array|null  $tax_analysis_items = null,
 		#[Assert\Type('array')]
-		public ?array $nominal_analysis_items = null,
+		public array|null  $nominal_analysis_items = null,
 		#[Assert\Type('array')]
-		public ?array $trade_items = null,
+		public array|null  $trade_items = null,
 		#[Assert\Type('object')]
-		public ?object $bank = null,
+		public object|null $bank = null,
 		#[Assert\Type('object')]
-		public ?object $cheque_currency = null,
+		public object|null $cheque_currency = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

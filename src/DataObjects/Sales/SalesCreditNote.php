@@ -17,37 +17,37 @@ class SalesCreditNote
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('float')]
-		public ?float $exchange_rate = null,
+		public float|null  $exchange_rate = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('bool')]
-		public ?bool $settled_immediately = null,
+		public bool|null   $settled_immediately = null,
 		#[Assert\Type('float')]
-		public ?float $document_goods_value = null,
+		public float|null  $document_goods_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_tax_value = null,
+		public float|null  $document_tax_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_discount_value = null,
+		public float|null  $document_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_tax_discount_value = null,
+		public float|null  $document_tax_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $discount_percent = null,
+		public float|null  $discount_percent = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $discount_days = null,
+		public int|null    $discount_days = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_eu_trader = null,
+		public bool|null   $is_eu_trader = null,
 		#[Assert\Type('bool')]
-		public ?bool $triangular_transaction = null,
+		public bool|null   $triangular_transaction = null,
 		#[Assert\Type('array')]
-		public ?array $tax_analysis_items = null,
+		public array|null  $tax_analysis_items = null,
 		#[Assert\Type('array')]
-		public ?array $nominal_analysis_items = null,
+		public array|null  $nominal_analysis_items = null,
 	) {
 	}
 }

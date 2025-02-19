@@ -28,7 +28,7 @@ class UnitTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getUnitTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getUnitTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetUnitTypes($queryParameters));
 	}

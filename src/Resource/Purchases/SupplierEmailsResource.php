@@ -41,7 +41,7 @@ class SupplierEmailsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierEmails(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierEmails(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierEmails($queryParameters));
 	}
@@ -56,8 +56,8 @@ class SupplierEmailsResource
 	 * @return Response
 	 */
 	public function getSupplierEmailsForSupplierContact(
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierEmailsForSupplierContact($supplierContactId, $queryParameters));
@@ -86,9 +86,9 @@ class SupplierEmailsResource
 	 * @return Response
 	 */
 	public function getSupplierEmailsForSupplierAndSupplierContact(
-		float|int $supplierId,
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierEmailsForSupplierAndSupplierContact($supplierId, $supplierContactId, $queryParameters));
@@ -119,7 +119,7 @@ class SupplierEmailsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierEmail(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierEmail(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierEmail($id, $queryParameters));
 	}
@@ -159,9 +159,9 @@ class SupplierEmailsResource
 	 * @return Response
 	 */
 	public function getSupplierEmailForSupplierContact(
-		float|int $supplierContactId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierEmailForSupplierContact($supplierContactId, $id, $queryParameters));
@@ -205,10 +205,10 @@ class SupplierEmailsResource
 	 * @return Response
 	 */
 	public function getSupplierEmailForSupplierAndSupplierContact(
-		float|int $supplierId,
-		float|int $supplierContactId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        float|int             $supplierContactId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierEmailForSupplierAndSupplierContact($supplierId, $supplierContactId, $id, $queryParameters));

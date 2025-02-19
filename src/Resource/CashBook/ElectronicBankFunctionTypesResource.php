@@ -28,7 +28,7 @@ class ElectronicBankFunctionTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getElectronicBankFunctionTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getElectronicBankFunctionTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetElectronicBankFunctionTypes($queryParameters));
 	}

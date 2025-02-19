@@ -12,21 +12,21 @@ class StocktakeView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $stocktake_name = null,
+		public string|null $stocktake_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null    $warehouse_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $stocktake_date = null,
+		public string|null $stocktake_date = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $stocktake_type_id = null,
+		public int|null    $stocktake_type_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $stocktake_status_id = null,
+		public int|null    $stocktake_status_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

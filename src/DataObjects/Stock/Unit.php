@@ -12,17 +12,17 @@ class Unit
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('float')]
-		public ?float $multiple_of_base_unit = null,
+		public float|null  $multiple_of_base_unit = null,
 		#[Assert\Type('bool')]
-		public ?bool $each_value = null,
+		public bool|null   $each_value = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

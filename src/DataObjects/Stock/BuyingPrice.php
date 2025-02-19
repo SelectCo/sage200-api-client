@@ -11,17 +11,17 @@ class BuyingPrice
 {
 	public function __construct(
 		#[Assert\Type('float')]
-		public ?float $buying_price = null,
+		public float|null  $buying_price = null,
 		#[Assert\Type('float')]
-		public ?float $stock_level = null,
+		public float|null  $stock_level = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $stock_unit_name = null,
+		public string|null $stock_unit_name = null,
 		#[Assert\Type('float')]
-		public ?float $number_of_movements = null,
+		public float|null  $number_of_movements = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_buying_price_confirmed = null,
+		public bool|null   $is_buying_price_confirmed = null,
 		#[Assert\Type('array')]
-		public ?array $buying_prices = null,
+		public array|null  $buying_prices = null,
 	) {
 	}
 }

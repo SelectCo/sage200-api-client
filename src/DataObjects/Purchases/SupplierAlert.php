@@ -13,31 +13,31 @@ class SupplierAlert
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null    $supplier_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $alert_text = null,
+		public string|null $alert_text = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_active = null,
+		public bool|null   $is_active = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_alert_for_orders = null,
+		public bool|null   $show_alert_for_orders = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_alert_for_returns = null,
+		public bool|null   $show_alert_for_returns = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_alert_for_generate_purchase_orders = null,
+		public bool|null   $show_alert_for_generate_purchase_orders = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_alert_for_generate_purchase_order_from_requisition_lines = null,
+		public bool|null   $show_alert_for_generate_purchase_order_from_requisition_lines = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_alert_for_generate_purchase_orders_from_trial_kitting = null,
+		public bool|null   $show_alert_for_generate_purchase_orders_from_trial_kitting = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $updated_by = null,
+		public string|null $updated_by = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

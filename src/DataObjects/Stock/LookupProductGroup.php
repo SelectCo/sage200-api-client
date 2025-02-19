@@ -11,13 +11,13 @@ class LookupProductGroup
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $code = null,
+		public string|null $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_type_id = null,
+		public int|null    $product_type_id = null,
 	) {
 	}
 }

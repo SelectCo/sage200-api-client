@@ -28,7 +28,7 @@ class SourceAreaTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSourceAreaTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSourceAreaTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSourceAreaTypes($queryParameters));
 	}

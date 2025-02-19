@@ -29,7 +29,7 @@ class CashBookSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCashBookSettings(?SageODataBuilder $queryParameters = null): Response
+	public function getCashBookSettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCashBookSettings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CashBookSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCashBookSetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCashBookSetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCashBookSetting($id, $queryParameters));
 	}

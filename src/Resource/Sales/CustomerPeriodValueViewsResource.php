@@ -28,7 +28,7 @@ class CustomerPeriodValueViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerPeriodValueViews(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerPeriodValueViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerPeriodValueViews($queryParameters));
 	}

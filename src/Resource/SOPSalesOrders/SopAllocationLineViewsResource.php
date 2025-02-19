@@ -28,7 +28,7 @@ class SopAllocationLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopallocationLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSopallocationLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopallocationLineViews($queryParameters));
 	}

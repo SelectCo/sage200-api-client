@@ -28,7 +28,7 @@ class SerialAllocatedToWhoTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSerialAllocatedToWhoTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSerialAllocatedToWhoTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSerialAllocatedToWhoTypes($queryParameters));
 	}

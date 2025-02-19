@@ -11,17 +11,17 @@ class LookupSupplier
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $short_name = null,
+		public string|null $short_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $account_status_type_id = null,
+		public int|null    $account_status_type_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 10)]
-		public ?string $post_code = null,
+		public string|null $post_code = null,
 	) {
 	}
 }

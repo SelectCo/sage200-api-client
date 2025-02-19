@@ -32,7 +32,7 @@ class StocktakesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktakes(?SageODataBuilder $queryParameters = null): Response
+	public function getStocktakes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktakes($queryParameters));
 	}
@@ -57,7 +57,7 @@ class StocktakesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktake(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getStocktake(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktake($id, $queryParameters));
 	}

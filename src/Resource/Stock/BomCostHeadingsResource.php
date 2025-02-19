@@ -29,7 +29,7 @@ class BomCostHeadingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBomCostHeadings(?SageODataBuilder $queryParameters = null): Response
+	public function getBomCostHeadings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBomCostHeadings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class BomCostHeadingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBomCostHeading(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getBomCostHeading(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBomCostHeading($id, $queryParameters));
 	}

@@ -28,7 +28,7 @@ class PurchaseAgedCreditorSummaryViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPurchaseAgedCreditorSummaryViews(?SageODataBuilder $queryParameters = null): Response
+	public function getPurchaseAgedCreditorSummaryViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPurchaseAgedCreditorSummaryViews($queryParameters));
 	}

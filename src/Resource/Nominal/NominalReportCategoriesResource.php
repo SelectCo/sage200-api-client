@@ -32,7 +32,7 @@ class NominalReportCategoriesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalReportCategories(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalReportCategories(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalReportCategories($queryParameters));
 	}
@@ -57,7 +57,7 @@ class NominalReportCategoriesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalReportCategory(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getNominalReportCategory(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalReportCategory($id, $queryParameters));
 	}

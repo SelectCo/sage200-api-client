@@ -28,7 +28,7 @@ class AccountingPeriodValidationTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAccountingPeriodValidationTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getAccountingPeriodValidationTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAccountingPeriodValidationTypes($queryParameters));
 	}

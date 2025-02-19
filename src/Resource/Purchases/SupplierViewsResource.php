@@ -28,7 +28,7 @@ class SupplierViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierViews($queryParameters));
 	}

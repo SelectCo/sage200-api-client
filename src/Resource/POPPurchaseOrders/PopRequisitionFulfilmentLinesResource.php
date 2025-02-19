@@ -29,7 +29,7 @@ class PopRequisitionFulfilmentLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoprequisitionFulfilmentLines(?SageODataBuilder $queryParameters = null): Response
+	public function getPoprequisitionFulfilmentLines(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoprequisitionFulfilmentLines($queryParameters));
 	}
@@ -43,7 +43,7 @@ class PopRequisitionFulfilmentLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoprequisitionFulfilmentLine(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPoprequisitionFulfilmentLine(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoprequisitionFulfilmentLine($id, $queryParameters));
 	}

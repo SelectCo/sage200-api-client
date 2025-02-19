@@ -33,7 +33,7 @@ class CouriersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCouriers(?SageODataBuilder $queryParameters = null): Response
+	public function getCouriers(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCouriers($queryParameters));
 	}
@@ -69,7 +69,7 @@ class CouriersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCourier(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCourier(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCourier($id, $queryParameters));
 	}

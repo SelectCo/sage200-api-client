@@ -11,15 +11,15 @@ class LookupPopOrder
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null    $supplier_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $supplier_document_no = null,
+		public string|null $supplier_document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $document_status_id = null,
+		public int|null    $document_status_id = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class SopOrderLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderLineViews($queryParameters));
 	}

@@ -28,7 +28,7 @@ class SopIntrastatStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopintrastatStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopintrastatStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopintrastatStatusTypes($queryParameters));
 	}

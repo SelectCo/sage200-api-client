@@ -27,8 +27,8 @@ class GetCustomerEmailsForCustomerContact extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $customerContactId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $customerContactId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/customer_contacts/{$this->customerContactId}/customer_emails";
 		$this->queryString = '';
@@ -41,7 +41,7 @@ class GetCustomerEmailsForCustomerContact extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

@@ -32,7 +32,7 @@ class CustomerCardsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerCards(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerCards(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerCards($queryParameters));
 	}
@@ -46,7 +46,7 @@ class CustomerCardsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerCard(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerCard(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerCard($id, $queryParameters));
 	}
@@ -85,8 +85,8 @@ class CustomerCardsResource
 	 * @return Response
 	 */
 	public function getCustomerCardsForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerCardsForCustomer($customerId, $queryParameters));

@@ -29,7 +29,7 @@ class NominalBudgetProfilesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalBudgetProfiles(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalBudgetProfiles(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalBudgetProfiles($queryParameters));
 	}
@@ -43,7 +43,7 @@ class NominalBudgetProfilesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalBudgetProfile(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getNominalBudgetProfile(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalBudgetProfile($id, $queryParameters));
 	}

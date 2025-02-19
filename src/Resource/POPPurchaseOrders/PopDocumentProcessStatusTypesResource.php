@@ -28,7 +28,7 @@ class PopDocumentProcessStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopdocumentProcessStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPopdocumentProcessStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopdocumentProcessStatusTypes($queryParameters));
 	}

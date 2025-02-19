@@ -28,7 +28,7 @@ class NominalTransactionAnalysisCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalTransactionAnalysisCodes(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalTransactionAnalysisCodes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalTransactionAnalysisCodes($queryParameters));
 	}

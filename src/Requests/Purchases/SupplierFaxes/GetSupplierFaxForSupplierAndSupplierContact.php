@@ -29,10 +29,10 @@ class GetSupplierFaxForSupplierAndSupplierContact extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $id,
-		protected float|int $supplierContactId,
-		protected float|int $supplierId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $id,
+        protected float|int   $supplierContactId,
+        protected float|int   $supplierId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/suppliers/{$this->supplierId}/supplier_contacts/{$this->supplierContactId}/supplier_faxes/{$this->id}";
 		$this->queryString = '';
@@ -45,7 +45,7 @@ class GetSupplierFaxForSupplierAndSupplierContact extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

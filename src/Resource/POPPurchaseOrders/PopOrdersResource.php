@@ -35,7 +35,7 @@ class PopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporders(?SageODataBuilder $queryParameters = null): Response
+	public function getPoporders(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporders($queryParameters));
 	}
@@ -60,7 +60,7 @@ class PopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporder(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPoporder(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporder($id, $queryParameters));
 	}
@@ -121,7 +121,7 @@ class PopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopordersForSupplier(float|int $supplierId, ?SageODataBuilder $queryParameters = null): Response
+	public function getPopordersForSupplier(float|int $supplierId, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopordersForSupplier($supplierId, $queryParameters));
 	}

@@ -28,7 +28,7 @@ class BomItemTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBomitemTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getBomitemTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBomitemTypes($queryParameters));
 	}

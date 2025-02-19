@@ -11,19 +11,19 @@ class ProductSearchMatchingProduct
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $code = null,
+		public string|null $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $product_status_type = null,
+		public string|null $product_status_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $product_type = null,
+		public string|null $product_type = null,
 		#[Assert\Type('float')]
-		public ?float $free_stock_quantity = null,
+		public float|null  $free_stock_quantity = null,
 	) {
 	}
 }

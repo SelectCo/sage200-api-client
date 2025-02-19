@@ -28,7 +28,7 @@ class AccountStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAccountStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getAccountStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAccountStatusTypes($queryParameters));
 	}

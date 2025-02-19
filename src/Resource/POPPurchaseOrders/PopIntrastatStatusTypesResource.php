@@ -28,7 +28,7 @@ class PopIntrastatStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopintrastatStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPopintrastatStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopintrastatStatusTypes($queryParameters));
 	}

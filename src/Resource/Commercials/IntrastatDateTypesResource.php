@@ -28,7 +28,7 @@ class IntrastatDateTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getIntrastatDateTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getIntrastatDateTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetIntrastatDateTypes($queryParameters));
 	}

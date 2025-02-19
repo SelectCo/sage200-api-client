@@ -33,7 +33,7 @@ class ProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProducts(?SageODataBuilder $queryParameters = null): Response
+	public function getProducts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProducts($queryParameters));
 	}
@@ -58,7 +58,7 @@ class ProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProduct(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getProduct(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProduct($id, $queryParameters));
 	}
@@ -97,8 +97,8 @@ class ProductsResource
 	 * @return Response
 	 */
 	public function getProductsForProductGroup(
-		float|int $productGroupId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $productGroupId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetProductsForProductGroup($productGroupId, $queryParameters));

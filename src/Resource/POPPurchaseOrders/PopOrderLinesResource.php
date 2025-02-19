@@ -30,7 +30,7 @@ class PopOrderLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporderLine(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPoporderLine(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporderLine($id, $queryParameters));
 	}
@@ -44,7 +44,7 @@ class PopOrderLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporderLines(float|int $popOrderId, ?SageODataBuilder $queryParameters = null): Response
+	public function getPoporderLines(float|int $popOrderId, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporderLines($popOrderId, $queryParameters));
 	}

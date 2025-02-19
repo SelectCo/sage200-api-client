@@ -28,7 +28,7 @@ class ConfigurableTermsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getConfigurableTerms(?SageODataBuilder $queryParameters = null): Response
+	public function getConfigurableTerms(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetConfigurableTerms($queryParameters));
 	}

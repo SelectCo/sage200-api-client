@@ -17,39 +17,39 @@ class PurchaseCreditNote
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null    $supplier_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('float')]
-		public ?float $exchange_rate = null,
+		public float|null  $exchange_rate = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('bool')]
-		public ?bool $settled_immediately = null,
+		public bool|null   $settled_immediately = null,
 		#[Assert\Type('bool')]
-		public ?bool $vat_adjustment_doc_expected = null,
+		public bool|null   $vat_adjustment_doc_expected = null,
 		#[Assert\Type('float')]
-		public ?float $document_goods_value = null,
+		public float|null  $document_goods_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_tax_value = null,
+		public float|null  $document_tax_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_discount_value = null,
+		public float|null  $document_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_tax_discount_value = null,
+		public float|null  $document_tax_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $discount_percent = null,
+		public float|null  $discount_percent = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $discount_days = null,
+		public int|null    $discount_days = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $authorisation_type = null,
+		public string|null $authorisation_type = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_authorised = null,
+		public bool|null   $is_authorised = null,
 		#[Assert\Type('array')]
-		public ?array $tax_analysis_items = null,
+		public array|null  $tax_analysis_items = null,
 		#[Assert\Type('array')]
-		public ?array $nominal_analysis_items = null,
+		public array|null  $nominal_analysis_items = null,
 	) {
 	}
 }

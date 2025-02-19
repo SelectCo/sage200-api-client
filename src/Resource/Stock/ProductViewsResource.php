@@ -28,7 +28,7 @@ class ProductViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductViews(?SageODataBuilder $queryParameters = null): Response
+	public function getProductViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductViews($queryParameters));
 	}

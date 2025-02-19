@@ -12,23 +12,23 @@ class PriceBookSettings
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_limited_price_bands = null,
+		public bool|null   $use_limited_price_bands = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_customer_discount_groups = null,
+		public bool|null   $use_customer_discount_groups = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_stock_item_discounts = null,
+		public bool|null   $use_stock_item_discounts = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_product_group_discounts = null,
+		public bool|null   $use_product_group_discounts = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_quantity_based_discounts = null,
+		public bool|null   $use_quantity_based_discounts = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_order_value_discounts = null,
+		public bool|null   $use_order_value_discounts = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

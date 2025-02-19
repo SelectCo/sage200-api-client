@@ -28,7 +28,7 @@ class PopTradeLineStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoptradeLineStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPoptradeLineStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoptradeLineStatusTypes($queryParameters));
 	}

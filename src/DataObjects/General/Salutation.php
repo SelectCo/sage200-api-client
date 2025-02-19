@@ -13,17 +13,17 @@ class Salutation
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_default = null,
+		public bool|null   $is_default = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $code = null,
+		public string|null $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

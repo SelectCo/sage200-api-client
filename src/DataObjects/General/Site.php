@@ -14,15 +14,15 @@ class Site
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $company_id = null,
+		public int|null    $company_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $company_name = null,
+		public string|null $company_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 36)]
-		public ?string $site_id = null,
+		public string|null $site_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $site_name = null,
+		public string|null $site_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $site_short_name = null,
+		public string|null $site_short_name = null,
 	) {
 	}
 }

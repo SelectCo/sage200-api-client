@@ -13,19 +13,19 @@ class NominalReportCategory
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $account_report_type = null,
+		public string|null $account_report_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 4)]
-		public ?string $code = null,
+		public string|null $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $account_report_category_type = null,
+		public string|null $account_report_category_type = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

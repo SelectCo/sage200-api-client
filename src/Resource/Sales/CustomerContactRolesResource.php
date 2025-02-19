@@ -30,7 +30,7 @@ class CustomerContactRolesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerContactRoles(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerContactRoles(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerContactRoles($queryParameters));
 	}
@@ -45,8 +45,8 @@ class CustomerContactRolesResource
 	 * @return Response
 	 */
 	public function getCustomerContactRolesForCustomerContact(
-		float|int $customerContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerContactRolesForCustomerContact($customerContactId, $queryParameters));
@@ -61,7 +61,7 @@ class CustomerContactRolesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerContactRole(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerContactRole(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerContactRole($id, $queryParameters));
 	}

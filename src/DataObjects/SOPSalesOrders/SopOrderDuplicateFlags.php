@@ -14,11 +14,11 @@ class SopOrderDuplicateFlags
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $source_id = null,
+		public int|null  $source_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null  $customer_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $prices_and_discounts = null,
+		public bool|null $prices_and_discounts = null,
 	) {
 	}
 }

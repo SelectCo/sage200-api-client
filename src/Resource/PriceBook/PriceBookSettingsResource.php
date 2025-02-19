@@ -29,7 +29,7 @@ class PriceBookSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPriceBookSettings(?SageODataBuilder $queryParameters = null): Response
+	public function getPriceBookSettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPriceBookSettings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class PriceBookSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPriceBookSetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPriceBookSetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPriceBookSetting($id, $queryParameters));
 	}

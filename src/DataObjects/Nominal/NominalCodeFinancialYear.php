@@ -12,33 +12,33 @@ class NominalCodeFinancialYear
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_id = null,
+		public int|null    $nominal_code_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $financial_year_id = null,
+		public int|null    $financial_year_id = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $year_relative_to_current_year = null,
+		public int|null    $year_relative_to_current_year = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $budget_type = null,
+		public string|null $budget_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $budget_profile_id = null,
+		public int|null    $budget_profile_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $budget_profile = null,
+		public int|null    $budget_profile = null,
 		#[Assert\Type('float')]
-		public ?float $original_budget_value = null,
+		public float|null  $original_budget_value = null,
 		#[Assert\Type('float')]
-		public ?float $budget_value = null,
+		public float|null  $budget_value = null,
 		#[Assert\Type('float')]
-		public ?float $adjustment_after_year_end_close = null,
+		public float|null  $adjustment_after_year_end_close = null,
 		#[Assert\Type('float')]
-		public ?float $closing_balance = null,
+		public float|null  $closing_balance = null,
 		#[Assert\Type('array')]
-		public ?array $period_balances = null,
+		public array|null  $period_balances = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class NominalBudgetTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalBudgetTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalBudgetTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalBudgetTypes($queryParameters));
 	}

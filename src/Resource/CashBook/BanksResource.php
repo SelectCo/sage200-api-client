@@ -32,7 +32,7 @@ class BanksResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBanks(?SageODataBuilder $queryParameters = null): Response
+	public function getBanks(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBanks($queryParameters));
 	}
@@ -57,7 +57,7 @@ class BanksResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBank(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getBank(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBank($id, $queryParameters));
 	}

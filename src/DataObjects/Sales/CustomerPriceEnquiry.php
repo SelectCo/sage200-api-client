@@ -14,45 +14,45 @@ class CustomerPriceEnquiry
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $product_type = null,
+		public string|null $product_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $selling_unit_id = null,
+		public int|null    $selling_unit_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $selling_unit = null,
+		public string|null $selling_unit = null,
 		#[Assert\Type('float')]
-		public ?float $selling_unit_multiple = null,
+		public float|null  $selling_unit_multiple = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pricing_unit_id = null,
+		public int|null    $pricing_unit_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $pricing_unit = null,
+		public string|null $pricing_unit = null,
 		#[Assert\Type('float')]
-		public ?float $pricing_unit_multiple = null,
+		public float|null  $pricing_unit_multiple = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $currency_id = null,
+		public int|null    $currency_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $currency_name = null,
+		public string|null $currency_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 4)]
-		public ?string $currency_symbol = null,
+		public string|null $currency_symbol = null,
 		#[Assert\Type('float')]
-		public ?float $unit_price = null,
+		public float|null  $unit_price = null,
 		#[Assert\Type('float')]
-		public ?float $discounted_unit_price = null,
+		public float|null  $discounted_unit_price = null,
 		#[Assert\Type('float')]
-		public ?float $total_price_before_discount = null,
+		public float|null  $total_price_before_discount = null,
 		#[Assert\Type('float')]
-		public ?float $total_discount = null,
+		public float|null  $total_discount = null,
 		#[Assert\Type('float')]
-		public ?float $total_discounted_price = null,
+		public float|null  $total_discounted_price = null,
 		#[Assert\Type('bool')]
-		public ?bool $include_previous_prices = null,
+		public bool|null   $include_previous_prices = null,
 		#[Assert\Type('array')]
-		public ?array $previous_prices = null,
+		public array|null  $previous_prices = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class AuthorisationTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAuthorisationTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getAuthorisationTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAuthorisationTypes($queryParameters));
 	}

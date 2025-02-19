@@ -11,9 +11,9 @@ class ProductSearchSearchCategoryValue
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $search_category_id = null,
+		public int|null $search_category_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $search_value_id = null,
+		public int|null $search_value_id = null,
 	) {
 	}
 }

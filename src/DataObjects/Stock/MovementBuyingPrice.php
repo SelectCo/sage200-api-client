@@ -11,19 +11,19 @@ class MovementBuyingPrice
 {
 	public function __construct(
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date = null,
+		public string|null $date = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $bin_item_name = null,
+		public string|null $bin_item_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $stock_item_unit_name = null,
+		public string|null $stock_item_unit_name = null,
 	) {
 	}
 }

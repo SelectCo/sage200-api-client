@@ -32,7 +32,7 @@ class PendingEmailsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPendingEmails(?SageODataBuilder $queryParameters = null): Response
+	public function getPendingEmails(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPendingEmails($queryParameters));
 	}
@@ -57,7 +57,7 @@ class PendingEmailsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPendingEmail(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPendingEmail(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPendingEmail($id, $queryParameters));
 	}

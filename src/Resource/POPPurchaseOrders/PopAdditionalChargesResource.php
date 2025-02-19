@@ -29,7 +29,7 @@ class PopAdditionalChargesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopadditionalCharges(?SageODataBuilder $queryParameters = null): Response
+	public function getPopadditionalCharges(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopadditionalCharges($queryParameters));
 	}
@@ -43,7 +43,7 @@ class PopAdditionalChargesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopadditionalCharge(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPopadditionalCharge(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopadditionalCharge($id, $queryParameters));
 	}

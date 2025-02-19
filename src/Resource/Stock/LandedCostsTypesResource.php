@@ -28,7 +28,7 @@ class LandedCostsTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLandedCostsTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getLandedCostsTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLandedCostsTypes($queryParameters));
 	}

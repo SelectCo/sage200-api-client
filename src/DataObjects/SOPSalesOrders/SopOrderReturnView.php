@@ -12,171 +12,171 @@ class SopOrderReturnView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $document_date = null,
+		public string|null $document_date = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $document_type_id = null,
+		public int|null    $document_type_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $document_status_id = null,
+		public int|null    $document_status_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $document_print_status_id = null,
+		public int|null    $document_print_status_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $customer_document_no = null,
+		public string|null $customer_document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $currency_id = null,
+		public int|null    $currency_id = null,
 		#[Assert\Type('float')]
-		public ?float $exchange_rate = null,
+		public float|null  $exchange_rate = null,
 		#[Assert\Type('bool')]
-		public ?bool $are_prices_tax_inclusive = null,
+		public bool|null   $are_prices_tax_inclusive = null,
 		#[Assert\Type('float')]
-		public ?float $subtotal_goods_value = null,
+		public float|null  $subtotal_goods_value = null,
 		#[Assert\Type('float')]
-		public ?float $subtotal_charge_net_value = null,
+		public float|null  $subtotal_charge_net_value = null,
 		#[Assert\Type('float')]
-		public ?float $subtotal_charge_tax_value = null,
+		public float|null  $subtotal_charge_tax_value = null,
 		#[Assert\Type('float')]
-		public ?float $subtotal_discount_value = null,
+		public float|null  $subtotal_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $total_net_value = null,
+		public float|null  $total_net_value = null,
 		#[Assert\Type('float')]
-		public ?float $total_tax_value = null,
+		public float|null  $total_tax_value = null,
 		#[Assert\Type('float')]
-		public ?float $total_gross_value = null,
+		public float|null  $total_gross_value = null,
 		#[Assert\Type('float')]
-		public ?float $total_gross_value_inc_sett = null,
+		public float|null  $total_gross_value_inc_sett = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $settlement_discount_days = null,
+		public int|null    $settlement_discount_days = null,
 		#[Assert\Type('float')]
-		public ?float $settlement_discount_percent = null,
+		public float|null  $settlement_discount_percent = null,
 		#[Assert\Type('float')]
-		public ?float $document_discount_percent = null,
+		public float|null  $document_discount_percent = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $document_created_by = null,
+		public string|null $document_created_by = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $requested_delivery_date = null,
+		public string|null $requested_delivery_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $promised_delivery_date = null,
+		public string|null $promised_delivery_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $quotation_expiry_date = null,
+		public string|null $quotation_expiry_date = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $intrastat_status_id = null,
+		public int|null    $intrastat_status_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $ready_for_allocation = null,
+		public bool|null   $ready_for_allocation = null,
 		#[Assert\Type('bool')]
-		public ?bool $ready_for_despatch_receipt = null,
+		public bool|null   $ready_for_despatch_receipt = null,
 		#[Assert\Type('bool')]
-		public ?bool $ready_for_invoice_print = null,
+		public bool|null   $ready_for_invoice_print = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $allocated_status_id = null,
+		public int|null    $allocated_status_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $despatch_receipt_status_id = null,
+		public int|null    $despatch_receipt_status_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $invoice_credit_status_id = null,
+		public int|null    $invoice_credit_status_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $cancelled_status_id = null,
+		public int|null    $cancelled_status_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $source_document_no = null,
+		public string|null $source_document_no = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_invoice_address = null,
+		public bool|null   $use_invoice_address = null,
 		#[Assert\Type('bool')]
-		public ?bool $payment_invoiced = null,
+		public bool|null   $payment_invoiced = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $payment_method_name = null,
+		public string|null $payment_method_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $payment_reference = null,
+		public string|null $payment_reference = null,
 		#[Assert\Type('float')]
-		public ?float $payment_value = null,
+		public float|null  $payment_value = null,
 		#[Assert\Type('bool')]
-		public ?bool $payment_with_order = null,
+		public bool|null   $payment_with_order = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $payment_nominal_reference = null,
+		public string|null $payment_nominal_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $payment_nominal_cost_centre = null,
+		public string|null $payment_nominal_cost_centre = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $payment_nominal_department = null,
+		public string|null $payment_nominal_department = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $payment_nominal_code_id = null,
+		public int|null    $payment_nominal_code_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_1 = null,
+		public string|null $analysis_code_1 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_2 = null,
+		public string|null $analysis_code_2 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_3 = null,
+		public string|null $analysis_code_3 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_4 = null,
+		public string|null $analysis_code_4 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_5 = null,
+		public string|null $analysis_code_5 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_6 = null,
+		public string|null $analysis_code_6 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_7 = null,
+		public string|null $analysis_code_7 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_8 = null,
+		public string|null $analysis_code_8 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_9 = null,
+		public string|null $analysis_code_9 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_10 = null,
+		public string|null $analysis_code_10 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_11 = null,
+		public string|null $analysis_code_11 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_12 = null,
+		public string|null $analysis_code_12 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_13 = null,
+		public string|null $analysis_code_13 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_14 = null,
+		public string|null $analysis_code_14 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_15 = null,
+		public string|null $analysis_code_15 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_16 = null,
+		public string|null $analysis_code_16 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_17 = null,
+		public string|null $analysis_code_17 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_18 = null,
+		public string|null $analysis_code_18 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_19 = null,
+		public string|null $analysis_code_19 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_20 = null,
+		public string|null $analysis_code_20 = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $customer_reference = null,
+		public string|null $customer_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $customer_name = null,
+		public string|null $customer_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $customer_short_name = null,
+		public string|null $customer_short_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_postal_name = null,
+		public string|null $sop_delivery_addr_postal_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_description = null,
+		public string|null $sop_delivery_addr_description = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_address_1 = null,
+		public string|null $sop_delivery_addr_address_1 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_address_2 = null,
+		public string|null $sop_delivery_addr_address_2 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_address_3 = null,
+		public string|null $sop_delivery_addr_address_3 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_address_4 = null,
+		public string|null $sop_delivery_addr_address_4 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_city = null,
+		public string|null $sop_delivery_addr_city = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_county = null,
+		public string|null $sop_delivery_addr_county = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_post_code = null,
+		public string|null $sop_delivery_addr_post_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_country = null,
+		public string|null $sop_delivery_addr_country = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_contact = null,
+		public string|null $sop_delivery_addr_contact = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_telephone = null,
+		public string|null $sop_delivery_addr_telephone = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_fax = null,
+		public string|null $sop_delivery_addr_fax = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $sop_delivery_addr_email = null,
+		public string|null $sop_delivery_addr_email = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class CostingMethodTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCostingMethodTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getCostingMethodTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCostingMethodTypes($queryParameters));
 	}

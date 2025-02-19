@@ -12,15 +12,15 @@ class FinanceCharge
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $code = null,
+		public int|null    $code = null,
 		#[Assert\Type('float')]
-		public ?float $finance_charge_percent = null,
+		public float|null  $finance_charge_percent = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

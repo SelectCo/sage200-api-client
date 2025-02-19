@@ -28,7 +28,7 @@ class PopOrderReturnViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporderReturnViews(?SageODataBuilder $queryParameters = null): Response
+	public function getPoporderReturnViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporderReturnViews($queryParameters));
 	}

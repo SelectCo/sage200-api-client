@@ -12,27 +12,27 @@ class ConsolidatedNominalCode
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $cost_centre_id = null,
+		public int|null    $cost_centre_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $cost_centre_code = null,
+		public string|null $cost_centre_code = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $department_id = null,
+		public int|null    $department_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $department_code = null,
+		public string|null $department_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $nominal_account_type = null,
+		public string|null $nominal_account_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $account_status_type = null,
+		public string|null $account_status_type = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

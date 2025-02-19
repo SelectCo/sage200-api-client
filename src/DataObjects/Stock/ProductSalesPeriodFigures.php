@@ -11,25 +11,25 @@ class ProductSalesPeriodFigures
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $start_date = null,
+		public string|null $start_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $end_date = null,
+		public string|null $end_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 10)]
-		public ?string $period = null,
+		public string|null $period = null,
 		#[Assert\Type('string'), Assert\Length(max: 4)]
-		public ?string $year = null,
+		public string|null $year = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_sold = null,
+		public float|null  $quantity_sold = null,
 		#[Assert\Type('float')]
-		public ?float $value_sold = null,
+		public float|null  $value_sold = null,
 		#[Assert\Type('float')]
-		public ?float $average_selling_price = null,
+		public float|null  $average_selling_price = null,
 		#[Assert\Type('float')]
-		public ?float $cost_of_sale_value = null,
+		public float|null  $cost_of_sale_value = null,
 		#[Assert\Type('float')]
-		public ?float $profit_value = null,
+		public float|null  $profit_value = null,
 		#[Assert\Type('float')]
-		public ?float $profit_percent = null,
+		public float|null  $profit_percent = null,
 	) {
 	}
 }

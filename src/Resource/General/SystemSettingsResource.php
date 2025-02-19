@@ -30,7 +30,7 @@ class SystemSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSystemSettings(?SageODataBuilder $queryParameters = null): Response
+	public function getSystemSettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSystemSettings($queryParameters));
 	}
@@ -44,7 +44,7 @@ class SystemSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSystemSetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSystemSetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSystemSetting($id, $queryParameters));
 	}

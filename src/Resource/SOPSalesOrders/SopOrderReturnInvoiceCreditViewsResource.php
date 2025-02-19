@@ -28,7 +28,7 @@ class SopOrderReturnInvoiceCreditViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderInvoiceViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderInvoiceViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderInvoiceViews($queryParameters));
 	}

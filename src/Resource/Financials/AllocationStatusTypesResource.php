@@ -28,7 +28,7 @@ class AllocationStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAllocationStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getAllocationStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAllocationStatusTypes($queryParameters));
 	}

@@ -33,7 +33,7 @@ class DepartmentsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDepartments(?SageODataBuilder $queryParameters = null): Response
+	public function getDepartments(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDepartments($queryParameters));
 	}
@@ -69,7 +69,7 @@ class DepartmentsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDepartment(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getDepartment(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDepartment($id, $queryParameters));
 	}

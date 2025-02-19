@@ -29,8 +29,8 @@ class GetCustomerMemosForCustomer extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/customers/{$this->customerId}/customer_memos";
 		$this->queryString = '';
@@ -43,7 +43,7 @@ class GetCustomerMemosForCustomer extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

@@ -14,17 +14,17 @@ class CustomerPriceEnquiryRequest
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null   $customer_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null   $product_id = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null $quantity = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $selling_unit_id = null,
+		public int|null   $selling_unit_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pricing_unit_id = null,
+		public int|null   $pricing_unit_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $include_previous_prices = null,
+		public bool|null  $include_previous_prices = null,
 	) {
 	}
 }

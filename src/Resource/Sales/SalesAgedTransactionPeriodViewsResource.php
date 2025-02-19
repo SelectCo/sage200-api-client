@@ -28,7 +28,7 @@ class SalesAgedTransactionPeriodViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAgedTransactionPeriodViews(?SageODataBuilder $queryParameters = null): Response
+	public function getAgedTransactionPeriodViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAgedTransactionPeriodViews($queryParameters));
 	}

@@ -41,7 +41,7 @@ class SupplierFaxesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierFaxes(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierFaxes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierFaxes($queryParameters));
 	}
@@ -56,8 +56,8 @@ class SupplierFaxesResource
 	 * @return Response
 	 */
 	public function getSupplierFaxesForSupplierContact(
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierFaxesForSupplierContact($supplierContactId, $queryParameters));
@@ -86,9 +86,9 @@ class SupplierFaxesResource
 	 * @return Response
 	 */
 	public function getSupplierFaxesForSupplierAndSupplierContact(
-		float|int $supplierId,
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierFaxesForSupplierAndSupplierContact($supplierId, $supplierContactId, $queryParameters));
@@ -119,7 +119,7 @@ class SupplierFaxesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierFax(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierFax(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierFax($id, $queryParameters));
 	}
@@ -159,9 +159,9 @@ class SupplierFaxesResource
 	 * @return Response
 	 */
 	public function getSupplierFaxForSupplierContact(
-		float|int $id,
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $id,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierFaxForSupplierContact($id, $supplierContactId, $queryParameters));
@@ -205,10 +205,10 @@ class SupplierFaxesResource
 	 * @return Response
 	 */
 	public function getSupplierFaxForSupplierAndSupplierContact(
-		float|int $id,
-		float|int $supplierContactId,
-		float|int $supplierId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $id,
+        float|int             $supplierContactId,
+        float|int             $supplierId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierFaxForSupplierAndSupplierContact($id, $supplierContactId, $supplierId, $queryParameters));

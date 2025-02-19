@@ -32,7 +32,7 @@ class ProductMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductMemos(?SageODataBuilder $queryParameters = null): Response
+	public function getProductMemos(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductMemos($queryParameters));
 	}
@@ -57,7 +57,7 @@ class ProductMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductMemo(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getProductMemo(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductMemo($id, $queryParameters));
 	}

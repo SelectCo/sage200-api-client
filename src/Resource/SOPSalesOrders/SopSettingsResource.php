@@ -29,7 +29,7 @@ class SopSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopsettings(?SageODataBuilder $queryParameters = null): Response
+	public function getSopsettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopsettings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SopSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopsetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopsetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopsetting($id, $queryParameters));
 	}

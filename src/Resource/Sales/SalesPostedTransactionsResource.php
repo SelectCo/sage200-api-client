@@ -31,7 +31,7 @@ class SalesPostedTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesPostedTransactions(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesPostedTransactions(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesPostedTransactions($queryParameters));
 	}
@@ -45,7 +45,7 @@ class SalesPostedTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesPostedTransaction(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalesPostedTransaction(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesPostedTransaction($id, $queryParameters));
 	}
@@ -72,8 +72,8 @@ class SalesPostedTransactionsResource
 	 * @return Response
 	 */
 	public function getSalesPostedTransactionsForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSalesPostedTransactionsForCustomer($customerId, $queryParameters));

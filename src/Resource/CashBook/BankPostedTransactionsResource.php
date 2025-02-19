@@ -30,7 +30,7 @@ class BankPostedTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBankPostedTransactions(?SageODataBuilder $queryParameters = null): Response
+	public function getBankPostedTransactions(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBankPostedTransactions($queryParameters));
 	}
@@ -44,7 +44,7 @@ class BankPostedTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBankPostedTransaction(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getBankPostedTransaction(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBankPostedTransaction($id, $queryParameters));
 	}
@@ -59,8 +59,8 @@ class BankPostedTransactionsResource
 	 * @return Response
 	 */
 	public function getBankPostedTransactionsForBankAccount(
-		float|int $bankId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $bankId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetBankPostedTransactionsForBankAccount($bankId, $queryParameters));

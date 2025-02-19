@@ -28,7 +28,7 @@ class LookupCustomersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLookupCustomers(?SageODataBuilder $queryParameters = null): Response
+	public function getLookupCustomers(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLookupCustomers($queryParameters));
 	}

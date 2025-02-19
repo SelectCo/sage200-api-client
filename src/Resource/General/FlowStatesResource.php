@@ -32,7 +32,7 @@ class FlowStatesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFlowStates(?SageODataBuilder $queryParameters = null): Response
+	public function getFlowStates(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFlowStates($queryParameters));
 	}
@@ -57,7 +57,7 @@ class FlowStatesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFlowState(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getFlowState(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFlowState($id, $queryParameters));
 	}

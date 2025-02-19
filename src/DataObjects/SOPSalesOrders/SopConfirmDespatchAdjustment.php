@@ -17,15 +17,15 @@ class SopConfirmDespatchAdjustment
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_return_id = null,
+		public int|null    $sop_order_return_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $despatch_receipt_date = null,
+		public string|null $despatch_receipt_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $confirmation_intent_type = null,
+		public string|null $confirmation_intent_type = null,
 		#[Assert\Type('array')]
-		public ?array $items = null,
+		public array|null  $items = null,
 		#[Assert\Type('array')]
-		public ?array $tracking_items = null,
+		public array|null  $tracking_items = null,
 	) {
 	}
 }

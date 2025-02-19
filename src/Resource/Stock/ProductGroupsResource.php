@@ -29,7 +29,7 @@ class ProductGroupsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductGroups(?SageODataBuilder $queryParameters = null): Response
+	public function getProductGroups(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductGroups($queryParameters));
 	}
@@ -43,7 +43,7 @@ class ProductGroupsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductGroup(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getProductGroup(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductGroup($id, $queryParameters));
 	}

@@ -28,7 +28,7 @@ class LookupNominalCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLookupNominalCodes(?SageODataBuilder $queryParameters = null): Response
+	public function getLookupNominalCodes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLookupNominalCodes($queryParameters));
 	}

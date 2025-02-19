@@ -28,7 +28,7 @@ class SalesAgedDebtorSummaryViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesAgedDebtorSummaryViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesAgedDebtorSummaryViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesAgedDebtorSummaryViews($queryParameters));
 	}

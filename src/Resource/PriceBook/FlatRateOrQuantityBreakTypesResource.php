@@ -28,7 +28,7 @@ class FlatRateOrQuantityBreakTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFlatRateOrQuantityBreakTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFlatRateOrQuantityBreakTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFlatRateOrQuantityBreakTypes($queryParameters));
 	}

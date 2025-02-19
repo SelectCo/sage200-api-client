@@ -12,69 +12,69 @@ class SopDespatchReceiptItem
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_return_id = null,
+		public int|null    $sop_order_return_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $customer_reference = null,
+		public string|null $customer_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $customer_name = null,
+		public string|null $customer_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $item_code = null,
+		public string|null $item_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $item_name = null,
+		public string|null $item_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $unit_description = null,
+		public string|null $unit_description = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $selling_unit_description = null,
+		public string|null $selling_unit_description = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 		#[Assert\Type('float')]
-		public ?float $line_quantity = null,
+		public float|null  $line_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $despatch_receipt_quantity = null,
+		public float|null  $despatch_receipt_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $outstanding_quantity = null,
+		public float|null  $outstanding_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $available_quantity = null,
+		public float|null  $available_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $traceable_available_quantity = null,
+		public float|null  $traceable_available_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $line_unit_precision = null,
+		public float|null  $line_unit_precision = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_precision = null,
+		public float|null  $stock_unit_precision = null,
 		#[Assert\Type('float')]
-		public ?float $selling_unit_multiple = null,
+		public float|null  $selling_unit_multiple = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_multiple = null,
+		public float|null  $stock_unit_multiple = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $product_type = null,
+		public string|null $product_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $traceable_type = null,
+		public string|null $traceable_type = null,
 		#[Assert\Type('bool')]
-		public ?bool $sale_from_single_batch = null,
+		public bool|null   $sale_from_single_batch = null,
 		#[Assert\Type('bool')]
-		public ?bool $has_traceable_allocations = null,
+		public bool|null   $has_traceable_allocations = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_multiple_bin_allocations = null,
+		public bool|null   $is_multiple_bin_allocations = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $document_date = null,
+		public string|null $document_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $requested_delivery_date = null,
+		public string|null $requested_delivery_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $promised_delivery_date = null,
+		public string|null $promised_delivery_date = null,
 		#[Assert\Type('array')]
-		public ?array $bin_items = null,
+		public array|null  $bin_items = null,
 		#[Assert\Type('array')]
-		public ?array $traceable_adjustment_items = null,
+		public array|null  $traceable_adjustment_items = null,
 	) {
 	}
 }

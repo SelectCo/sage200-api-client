@@ -28,7 +28,7 @@ class SopQuoteViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopquoteViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSopquoteViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopquoteViews($queryParameters));
 	}

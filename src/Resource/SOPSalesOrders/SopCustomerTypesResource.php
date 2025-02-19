@@ -28,7 +28,7 @@ class SopCustomerTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopcustomerTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopcustomerTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopcustomerTypes($queryParameters));
 	}

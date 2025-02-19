@@ -29,7 +29,7 @@ class CurrencyIsoCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrencyIsocodes(?SageODataBuilder $queryParameters = null): Response
+	public function getCurrencyIsocodes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrencyIsocodes($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CurrencyIsoCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrencyIsocode(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCurrencyIsocode(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrencyIsocode($id, $queryParameters));
 	}

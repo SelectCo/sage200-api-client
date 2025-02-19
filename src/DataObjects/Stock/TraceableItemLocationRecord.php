@@ -12,17 +12,17 @@ class TraceableItemLocationRecord
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $traceable_bin_item_id = null,
+		public int|null    $traceable_bin_item_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $bin_item_id = null,
+		public int|null    $bin_item_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $bin_name = null,
+		public string|null $bin_name = null,
 		#[Assert\Type('float')]
-		public ?float $free_stock_available = null,
+		public float|null  $free_stock_available = null,
 		#[Assert\Type('float')]
-		public ?float $bin_quantity_in_stock = null,
+		public float|null  $bin_quantity_in_stock = null,
 	) {
 	}
 }

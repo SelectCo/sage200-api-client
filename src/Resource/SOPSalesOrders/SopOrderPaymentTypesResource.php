@@ -28,7 +28,7 @@ class SopOrderPaymentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderPaymentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderPaymentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderPaymentTypes($queryParameters));
 	}

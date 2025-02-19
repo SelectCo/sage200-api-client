@@ -11,29 +11,29 @@ class SuggestedProduct
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $code = null,
+		public string|null $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $number_orders_appears = null,
+		public int|null    $number_orders_appears = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $last_sales_date = null,
+		public string|null $last_sales_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $last_order_number = null,
+		public string|null $last_order_number = null,
 		#[Assert\Type('string'), Assert\Length(max: 10)]
-		public ?string $source = null,
+		public string|null $source = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $quantity_unit = null,
+		public string|null $quantity_unit = null,
 		#[Assert\Type('float')]
-		public ?float $price = null,
+		public float|null  $price = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $price_unit = null,
+		public string|null $price_unit = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $traceable_type_id = null,
+		public int|null    $traceable_type_id = null,
 	) {
 	}
 }

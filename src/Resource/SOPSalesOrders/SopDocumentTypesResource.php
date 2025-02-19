@@ -28,7 +28,7 @@ class SopDocumentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopdocumentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopdocumentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopdocumentTypes($queryParameters));
 	}

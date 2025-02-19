@@ -28,7 +28,7 @@ class SopOrderDespatchLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderDespatchLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderDespatchLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderDespatchLineViews($queryParameters));
 	}

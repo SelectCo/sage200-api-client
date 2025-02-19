@@ -30,8 +30,8 @@ class TraceableItemBalancesResource
 	 * @return Response
 	 */
 	public function getTraceableItemBalancesForAwarehouseHolding(
-		float|int $warehouseHoldingId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $warehouseHoldingId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetTraceableItemBalancesForAwarehouseHolding($warehouseHoldingId, $queryParameters));

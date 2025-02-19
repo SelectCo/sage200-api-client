@@ -28,7 +28,7 @@ class PopDocumentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopdocumentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPopdocumentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopdocumentTypes($queryParameters));
 	}

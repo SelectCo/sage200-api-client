@@ -29,7 +29,7 @@ class SearchCategoriesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSearchCategories(?SageODataBuilder $queryParameters = null): Response
+	public function getSearchCategories(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSearchCategories($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SearchCategoriesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSearchCategory(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSearchCategory(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSearchCategory($id, $queryParameters));
 	}

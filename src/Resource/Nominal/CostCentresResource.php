@@ -33,7 +33,7 @@ class CostCentresResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCostCentres(?SageODataBuilder $queryParameters = null): Response
+	public function getCostCentres(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCostCentres($queryParameters));
 	}
@@ -69,7 +69,7 @@ class CostCentresResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCostCentre(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCostCentre(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCostCentre($id, $queryParameters));
 	}

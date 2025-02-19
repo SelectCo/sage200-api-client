@@ -30,7 +30,7 @@ class SalesTransactionEnquiryViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesTransactionEnquiryViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesTransactionEnquiryViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesTransactionEnquiryViews($queryParameters));
 	}
@@ -44,7 +44,7 @@ class SalesTransactionEnquiryViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesTransactionEnquiryView(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalesTransactionEnquiryView(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesTransactionEnquiryView($id, $queryParameters));
 	}
@@ -59,8 +59,8 @@ class SalesTransactionEnquiryViewsResource
 	 * @return Response
 	 */
 	public function getSalesTransactionsEnquiryViewsForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSalesTransactionsEnquiryViewsForCustomer($customerId, $queryParameters));

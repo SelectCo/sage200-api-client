@@ -33,7 +33,7 @@ class CustomerDeliveryAddressesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerDeliveryAddresses(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerDeliveryAddresses(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerDeliveryAddresses($queryParameters));
 	}
@@ -58,7 +58,7 @@ class CustomerDeliveryAddressesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerDeliveryAddress(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerDeliveryAddress(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerDeliveryAddress($id, $queryParameters));
 	}
@@ -97,8 +97,8 @@ class CustomerDeliveryAddressesResource
 	 * @return Response
 	 */
 	public function getCustomerDeliveryAddressesForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerDeliveryAddressesForCustomer($customerId, $queryParameters));

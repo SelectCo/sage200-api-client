@@ -29,7 +29,7 @@ class CreditPositionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCreditPositions(?SageODataBuilder $queryParameters = null): Response
+	public function getCreditPositions(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCreditPositions($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CreditPositionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCreditPosition(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCreditPosition(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCreditPosition($id, $queryParameters));
 	}

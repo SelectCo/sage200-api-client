@@ -30,7 +30,7 @@ class SopDespatchReceiptsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopdespatchReceipts(?SageODataBuilder $queryParameters = null): Response
+	public function getSopdespatchReceipts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopdespatchReceipts($queryParameters));
 	}
@@ -44,7 +44,7 @@ class SopDespatchReceiptsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopdespatchReceipt(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopdespatchReceipt(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopdespatchReceipt($id, $queryParameters));
 	}

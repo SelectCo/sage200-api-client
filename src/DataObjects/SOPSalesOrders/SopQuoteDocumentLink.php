@@ -8,23 +8,23 @@ class SopQuoteDocumentLink
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $source_document_id = null,
+		public int|null    $source_document_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $source_document_no = null,
+		public string|null $source_document_no = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $source_document_type = null,
+		public string|null $source_document_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $document_id = null,
+		public int|null    $document_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $document_type = null,
+		public string|null $document_type = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

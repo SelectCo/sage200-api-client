@@ -12,17 +12,17 @@ class ProductTransactionTraceableItemHistoryRecord
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $identification_no = null,
+		public string|null $identification_no = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $additional_reference = null,
+		public string|null $additional_reference = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $sell_by_date = null,
+		public string|null $sell_by_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $use_by_date = null,
+		public string|null $use_by_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $bin_name = null,
+		public string|null $bin_name = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 	) {
 	}
 }

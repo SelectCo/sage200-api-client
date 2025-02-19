@@ -28,7 +28,7 @@ class SopDocumentProcessStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopdocumentProcessStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopdocumentProcessStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopdocumentProcessStatusTypes($queryParameters));
 	}

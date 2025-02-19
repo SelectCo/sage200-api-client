@@ -33,7 +33,7 @@ class SalesPostedTransactionMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesPostedTransactionMemos(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesPostedTransactionMemos(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesPostedTransactionMemos($queryParameters));
 	}
@@ -58,7 +58,7 @@ class SalesPostedTransactionMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesPostedTransactionMemo(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalesPostedTransactionMemo(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesPostedTransactionMemo($id, $queryParameters));
 	}
@@ -97,8 +97,8 @@ class SalesPostedTransactionMemosResource
 	 * @return Response
 	 */
 	public function getMemosForSalesPostedTransaction(
-		float|int $transactionId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $transactionId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetMemosForSalesPostedTransaction($transactionId, $queryParameters));

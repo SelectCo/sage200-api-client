@@ -15,11 +15,11 @@ class SourceAreaType
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $value = null,
+		public string|null $value = null,
 	) {
 	}
 }

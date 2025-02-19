@@ -28,7 +28,7 @@ class PopOrderGenerationTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporderGenerationTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPoporderGenerationTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporderGenerationTypes($queryParameters));
 	}

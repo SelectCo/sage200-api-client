@@ -28,7 +28,7 @@ class AgedBalancesAgeingTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAgedBalancesAgeingTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getAgedBalancesAgeingTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAgedBalancesAgeingTypes($queryParameters));
 	}

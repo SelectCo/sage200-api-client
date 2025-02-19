@@ -28,7 +28,7 @@ class PaymentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPaymentGroupPaymentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPaymentGroupPaymentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPaymentGroupPaymentTypes($queryParameters));
 	}

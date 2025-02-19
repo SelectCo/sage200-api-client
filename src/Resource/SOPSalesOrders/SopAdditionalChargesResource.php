@@ -29,7 +29,7 @@ class SopAdditionalChargesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopadditionalCharges(?SageODataBuilder $queryParameters = null): Response
+	public function getSopadditionalCharges(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopadditionalCharges($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SopAdditionalChargesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopadditionalCharge(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopadditionalCharge(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopadditionalCharge($id, $queryParameters));
 	}

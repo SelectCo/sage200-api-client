@@ -29,7 +29,7 @@ class SopCancelledLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopcancelledLines(?SageODataBuilder $queryParameters = null): Response
+	public function getSopcancelledLines(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopcancelledLines($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SopCancelledLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopcancelledLine(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopcancelledLine(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopcancelledLine($id, $queryParameters));
 	}

@@ -13,47 +13,47 @@ class SopUserPermission
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $user_number = null,
+		public int|null    $user_number = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $user_name = null,
+		public string|null $user_name = null,
 		#[Assert\Type('bool')]
-		public ?bool $view_profit_values = null,
+		public bool|null   $view_profit_values = null,
 		#[Assert\Type('bool')]
-		public ?bool $view_price_calculations = null,
+		public bool|null   $view_price_calculations = null,
 		#[Assert\Type('bool')]
-		public ?bool $override_credit_holds = null,
+		public bool|null   $override_credit_holds = null,
 		#[Assert\Type('bool')]
-		public ?bool $override_prices_discounts = null,
+		public bool|null   $override_prices_discounts = null,
 		#[Assert\Type('bool')]
-		public ?bool $override_fulfilment_method = null,
+		public bool|null   $override_fulfilment_method = null,
 		#[Assert\Type('bool')]
-		public ?bool $override_confirmation_method = null,
+		public bool|null   $override_confirmation_method = null,
 		#[Assert\Type('bool')]
-		public ?bool $override_cost_price = null,
+		public bool|null   $override_cost_price = null,
 		#[Assert\Type('bool')]
-		public ?bool $generate_purchase_orders = null,
+		public bool|null   $generate_purchase_orders = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $rapid_order_warehouse_id = null,
+		public int|null    $rapid_order_warehouse_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $trade_order_warehouse_id = null,
+		public int|null    $trade_order_warehouse_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $full_order_warehouse_id = null,
+		public int|null    $full_order_warehouse_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $invoice_warehouse_id = null,
+		public int|null    $invoice_warehouse_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 		#[Assert\Type('object')]
-		public ?object $rapid_order_warehouse = null,
+		public object|null $rapid_order_warehouse = null,
 		#[Assert\Type('object')]
-		public ?object $trade_order_warehouse = null,
+		public object|null $trade_order_warehouse = null,
 		#[Assert\Type('object')]
-		public ?object $full_order_warehouse = null,
+		public object|null $full_order_warehouse = null,
 		#[Assert\Type('object')]
-		public ?object $invoice_warehouse = null,
+		public object|null $invoice_warehouse = null,
 	) {
 	}
 }

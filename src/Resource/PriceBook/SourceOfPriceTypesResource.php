@@ -28,7 +28,7 @@ class SourceOfPriceTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSourceOfPriceTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSourceOfPriceTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSourceOfPriceTypes($queryParameters));
 	}

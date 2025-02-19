@@ -28,7 +28,7 @@ class LookupPopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLookupPoporders(?SageODataBuilder $queryParameters = null): Response
+	public function getLookupPoporders(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLookupPoporders($queryParameters));
 	}

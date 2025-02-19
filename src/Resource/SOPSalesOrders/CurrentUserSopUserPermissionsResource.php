@@ -28,7 +28,7 @@ class CurrentUserSopUserPermissionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrentUserSopuserPermission(?SageODataBuilder $queryParameters = null): Response
+	public function getCurrentUserSopuserPermission(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrentUserSopuserPermission($queryParameters));
 	}

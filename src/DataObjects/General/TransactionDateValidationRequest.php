@@ -11,9 +11,9 @@ class TransactionDateValidationRequest
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date = null,
+		public string|null $date = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $ledger_type = null,
+		public string|null $ledger_type = null,
 	) {
 	}
 }

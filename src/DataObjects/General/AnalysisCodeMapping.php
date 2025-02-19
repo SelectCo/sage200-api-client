@@ -11,27 +11,27 @@ class AnalysisCodeMapping
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null          $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $class_name = null,
+		public string|null       $class_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $friendly_class_name = null,
+		public string|null       $friendly_class_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $property_name = null,
+		public string|null       $property_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $friendly_property_name = null,
+		public string|null       $friendly_property_name = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_mandatory = null,
+		public bool|null         $is_mandatory = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_read_only = null,
+		public bool|null         $is_read_only = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $slot = null,
-		public ?AnalysisCode $analysis_code_id = null,
-		public ?AnalysisCode $analysis_code = null,
+		public int|null          $slot = null,
+		public AnalysisCode|null $analysis_code_id = null,
+		public AnalysisCode|null $analysis_code = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null       $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null       $date_time_updated = null,
 	) {
 	}
 }

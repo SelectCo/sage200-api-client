@@ -29,7 +29,7 @@ class CreditBureausResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCreditBureaus(?SageODataBuilder $queryParameters = null): Response
+	public function getCreditBureaus(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCreditBureaus($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CreditBureausResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCreditBureau(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCreditBureau(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCreditBureau($id, $queryParameters));
 	}

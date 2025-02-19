@@ -28,7 +28,7 @@ class TaxAccountEntryTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTaxAccountEntryLocationTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTaxAccountEntryLocationTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTaxAccountEntryLocationTypes($queryParameters));
 	}

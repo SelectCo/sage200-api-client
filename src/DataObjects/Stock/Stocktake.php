@@ -13,41 +13,41 @@ class Stocktake
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $stocktake_name = null,
+		public string|null $stocktake_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null    $warehouse_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $stocktake_date = null,
+		public string|null $stocktake_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $stocktake_type = null,
+		public string|null $stocktake_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $stocktake_status = null,
+		public string|null $stocktake_status = null,
 		#[Assert\Type('bool')]
-		public ?bool $exclude_inactive_stock = null,
+		public bool|null   $exclude_inactive_stock = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_expected_quantities = null,
+		public bool|null   $show_expected_quantities = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $stock_variance_nominal_code_id = null,
+		public int|null    $stock_variance_nominal_code_id = null,
 		#[Assert\Type('object')]
-		public ?object $stock_variance_nominal_code = null,
+		public object|null $stock_variance_nominal_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 6000)]
-		public ?string $nominal_narrative = null,
+		public string|null $nominal_narrative = null,
 		#[Assert\Type('bool')]
-		public ?bool $can_modify_stocktake_type = null,
+		public bool|null   $can_modify_stocktake_type = null,
 		#[Assert\Type('bool')]
-		public ?bool $advance_status = null,
+		public bool|null   $advance_status = null,
 		#[Assert\Type('bool')]
-		public ?bool $pre_fill_actual_with_expected = null,
+		public bool|null   $pre_fill_actual_with_expected = null,
 		#[Assert\Type('array')]
-		public ?array $stocktake_items = null,
+		public array|null  $stocktake_items = null,
 		#[Assert\Type('array')]
-		public ?array $failed_stocktake_items = null,
+		public array|null  $failed_stocktake_items = null,
 		#[Assert\Type('array')]
-		public ?array $stocktake_count_sheet_items = null,
+		public array|null  $stocktake_count_sheet_items = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class NominalPeriodValueViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalPeriodValueViews(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalPeriodValueViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalPeriodValueViews($queryParameters));
 	}

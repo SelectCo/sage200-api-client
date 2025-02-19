@@ -29,7 +29,7 @@ class SalesTradingPeriodsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesTradingPeriods(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesTradingPeriods(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesTradingPeriods($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SalesTradingPeriodsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesTradingPeriod(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalesTradingPeriod(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesTradingPeriod($id, $queryParameters));
 	}

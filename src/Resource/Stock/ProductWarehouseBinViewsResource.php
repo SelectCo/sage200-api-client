@@ -28,7 +28,7 @@ class ProductWarehouseBinViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductWarehouseBinViews(?SageODataBuilder $queryParameters = null): Response
+	public function getProductWarehouseBinViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductWarehouseBinViews($queryParameters));
 	}

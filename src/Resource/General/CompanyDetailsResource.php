@@ -30,7 +30,7 @@ class CompanyDetailsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCompanyDetails(?SageODataBuilder $queryParameters = null): Response
+	public function getCompanyDetails(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCompanyDetails($queryParameters));
 	}
@@ -44,7 +44,7 @@ class CompanyDetailsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCompanyDetail(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCompanyDetail(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCompanyDetail($id, $queryParameters));
 	}

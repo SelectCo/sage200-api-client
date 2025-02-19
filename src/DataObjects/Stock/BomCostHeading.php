@@ -12,19 +12,19 @@ class BomCostHeading
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $bom_cost_heading_type = null,
+		public string|null $bom_cost_heading_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('float')]
-		public ?float $markup = null,
+		public float|null  $markup = null,
 		#[Assert\Type('float')]
-		public ?float $overhead_recovery_percent = null,
+		public float|null  $overhead_recovery_percent = null,
 		#[Assert\Type('bool')]
-		public ?bool $reserved = null,
+		public bool|null   $reserved = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 	) {
 	}
 }

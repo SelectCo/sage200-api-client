@@ -28,7 +28,7 @@ class SopShowOnPickingListTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopshowOnPickingListTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopshowOnPickingListTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopshowOnPickingListTypes($queryParameters));
 	}

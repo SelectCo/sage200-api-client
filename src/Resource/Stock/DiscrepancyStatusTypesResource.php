@@ -28,7 +28,7 @@ class DiscrepancyStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDiscrepancyStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getDiscrepancyStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDiscrepancyStatusTypes($queryParameters));
 	}

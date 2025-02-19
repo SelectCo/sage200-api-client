@@ -11,27 +11,27 @@ class ProductDuplicateFlags
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $source_id = null,
+		public int|null    $source_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $new_code = null,
+		public string|null $new_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $new_name = null,
+		public string|null $new_name = null,
 		#[Assert\Type('bool')]
-		public ?bool $locations = null,
+		public bool|null   $locations = null,
 		#[Assert\Type('bool')]
-		public ?bool $location_stocking_levels = null,
+		public bool|null   $location_stocking_levels = null,
 		#[Assert\Type('bool')]
-		public ?bool $units = null,
+		public bool|null   $units = null,
 		#[Assert\Type('bool')]
-		public ?bool $alternative_items = null,
+		public bool|null   $alternative_items = null,
 		#[Assert\Type('bool')]
-		public ?bool $cross_selling_items = null,
+		public bool|null   $cross_selling_items = null,
 		#[Assert\Type('bool')]
-		public ?bool $attachments = null,
+		public bool|null   $attachments = null,
 		#[Assert\Type('bool')]
-		public ?bool $memos = null,
+		public bool|null   $memos = null,
 		#[Assert\Type('bool')]
-		public ?bool $suppliers = null,
+		public bool|null   $suppliers = null,
 	) {
 	}
 }

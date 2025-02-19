@@ -30,8 +30,8 @@ class PopLinkedOrderLinesResource
 	 * @return Response
 	 */
 	public function getPoplinkedOrderLinesForPopline(
-		float|int $lineId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $lineId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetPoplinkedOrderLinesForPopline($lineId, $queryParameters));

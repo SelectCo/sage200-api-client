@@ -34,7 +34,7 @@ class SopQuotesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopquotes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopquotes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopquotes($queryParameters));
 	}
@@ -59,7 +59,7 @@ class SopQuotesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopquote(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopquote(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopquote($id, $queryParameters));
 	}

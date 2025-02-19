@@ -36,7 +36,7 @@ class WarehouseHoldingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getWarehouseHoldings(?SageODataBuilder $queryParameters = null): Response
+	public function getWarehouseHoldings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetWarehouseHoldings($queryParameters));
 	}
@@ -61,7 +61,7 @@ class WarehouseHoldingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getWarehouseHolding(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getWarehouseHolding(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetWarehouseHolding($id, $queryParameters));
 	}
@@ -100,8 +100,8 @@ class WarehouseHoldingsResource
 	 * @return Response
 	 */
 	public function getWarehouseHoldingsForWarehouse(
-		float|int $warehouseId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $warehouseId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetWarehouseHoldingsForWarehouse($warehouseId, $queryParameters));
@@ -117,8 +117,8 @@ class WarehouseHoldingsResource
 	 * @return Response
 	 */
 	public function getWarehouseHoldingsForProduct(
-		float|int $productId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $productId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetWarehouseHoldingsForProduct($productId, $queryParameters));
@@ -135,9 +135,9 @@ class WarehouseHoldingsResource
 	 * @return Response
 	 */
 	public function getWarehouseHoldingsForWarehouseAndProduct(
-		float|int $productId,
-		float|int $warehouseId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $productId,
+        float|int             $warehouseId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetWarehouseHoldingsForWarehouseAndProduct($productId, $warehouseId, $queryParameters));
@@ -154,9 +154,9 @@ class WarehouseHoldingsResource
 	 * @return Response
 	 */
 	public function getWarehouseHoldingsForProductAndWarehouse(
-		float|int $productId,
-		float|int $warehouseId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $productId,
+        float|int             $warehouseId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetWarehouseHoldingsForProductAndWarehouse($productId, $warehouseId, $queryParameters));

@@ -29,10 +29,10 @@ class GetCustomerMobileForCustomerAndCustomerContact extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $customerId,
-		protected float|int $customerContactId,
-		protected float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $customerId,
+        protected float|int   $customerContactId,
+        protected float|int   $id,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/customers/{$this->customerId}/customer_contacts/{$this->customerContactId}/customer_mobiles/{$this->id}";
 		$this->queryString = '';
@@ -45,7 +45,7 @@ class GetCustomerMobileForCustomerAndCustomerContact extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

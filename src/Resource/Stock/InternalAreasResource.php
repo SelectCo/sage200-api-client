@@ -29,7 +29,7 @@ class InternalAreasResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getInternalAreas(?SageODataBuilder $queryParameters = null): Response
+	public function getInternalAreas(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetInternalAreas($queryParameters));
 	}
@@ -43,7 +43,7 @@ class InternalAreasResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getInternalArea(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getInternalArea(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetInternalArea($id, $queryParameters));
 	}

@@ -11,13 +11,13 @@ class NominalPeriodBudgetProfile
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null   $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $accounting_period_id = null,
+		public int|null   $accounting_period_id = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $period_number = null,
+		public int|null   $period_number = null,
 		#[Assert\Type('float')]
-		public ?float $budget_percent = null,
+		public float|null $budget_percent = null,
 	) {
 	}
 }

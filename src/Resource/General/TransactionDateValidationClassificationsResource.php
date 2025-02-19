@@ -28,7 +28,7 @@ class TransactionDateValidationClassificationsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTransactionDateValidationClassifications(?SageODataBuilder $queryParameters = null): Response
+	public function getTransactionDateValidationClassifications(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTransactionDateValidationClassifications($queryParameters));
 	}

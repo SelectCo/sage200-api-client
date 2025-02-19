@@ -28,7 +28,7 @@ class WarehouseTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getWarehouseTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getWarehouseTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetWarehouseTypes($queryParameters));
 	}

@@ -28,7 +28,7 @@ class TraderAccountTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraderAccountTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTraderAccountTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraderAccountTypes($queryParameters));
 	}

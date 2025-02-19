@@ -28,7 +28,7 @@ class StatementLayoutTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStatementLayoutTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getStatementLayoutTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStatementLayoutTypes($queryParameters));
 	}

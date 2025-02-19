@@ -29,7 +29,7 @@ class NominalLedgerSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalLedgerSettings(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalLedgerSettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalLedgerSettings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class NominalLedgerSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalLedgerSetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getNominalLedgerSetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalLedgerSetting($id, $queryParameters));
 	}

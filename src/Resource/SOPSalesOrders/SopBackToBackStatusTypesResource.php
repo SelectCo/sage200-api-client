@@ -28,7 +28,7 @@ class SopBackToBackStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopbackToBackStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopbackToBackStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopbackToBackStatusTypes($queryParameters));
 	}

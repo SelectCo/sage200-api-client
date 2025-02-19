@@ -33,7 +33,7 @@ class SuppliersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSuppliers(?SageODataBuilder $queryParameters = null): Response
+	public function getSuppliers(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSuppliers($queryParameters));
 	}
@@ -58,7 +58,7 @@ class SuppliersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplier(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplier(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplier($id, $queryParameters));
 	}

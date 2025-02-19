@@ -29,7 +29,7 @@ class CustomerPriceBandsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerPriceBands(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerPriceBands(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerPriceBands($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CustomerPriceBandsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerPriceBand(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerPriceBand(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerPriceBand($id, $queryParameters));
 	}

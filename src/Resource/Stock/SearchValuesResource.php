@@ -29,7 +29,7 @@ class SearchValuesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSearchValues(?SageODataBuilder $queryParameters = null): Response
+	public function getSearchValues(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSearchValues($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SearchValuesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSearchValue(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSearchValue(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSearchValue($id, $queryParameters));
 	}

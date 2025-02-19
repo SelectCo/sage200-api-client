@@ -28,7 +28,7 @@ class IntrastatTermsOfDeliveryTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getIntrastatTermsOfDeliveryTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getIntrastatTermsOfDeliveryTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetIntrastatTermsOfDeliveryTypes($queryParameters));
 	}

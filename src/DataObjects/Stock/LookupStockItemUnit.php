@@ -11,13 +11,13 @@ class LookupStockItemUnit
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $stock_item_id = null,
+		public int|null    $stock_item_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $unit_id = null,
+		public int|null    $unit_id = null,
 	) {
 	}
 }

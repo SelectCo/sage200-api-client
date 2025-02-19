@@ -29,7 +29,7 @@ class SopPaymentMethodsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoppaymentMethods(?SageODataBuilder $queryParameters = null): Response
+	public function getSoppaymentMethods(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoppaymentMethods($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SopPaymentMethodsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoppaymentMethod(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSoppaymentMethod(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoppaymentMethod($id, $queryParameters));
 	}

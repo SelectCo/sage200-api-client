@@ -33,7 +33,7 @@ class SopExportReasonsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopexportReasons(?SageODataBuilder $queryParameters = null): Response
+	public function getSopexportReasons(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopexportReasons($queryParameters));
 	}
@@ -69,7 +69,7 @@ class SopExportReasonsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopexportReason(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopexportReason(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopexportReason($id, $queryParameters));
 	}

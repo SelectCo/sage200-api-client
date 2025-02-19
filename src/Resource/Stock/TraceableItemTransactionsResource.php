@@ -30,8 +30,8 @@ class TraceableItemTransactionsResource
 	 * @return Response
 	 */
 	public function getTransactionsForTraceableHistory(
-		float|int $traceableHistoryId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $traceableHistoryId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetTransactionsForTraceableHistory($traceableHistoryId, $queryParameters));

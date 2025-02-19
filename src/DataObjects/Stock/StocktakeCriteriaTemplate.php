@@ -12,25 +12,25 @@ class StocktakeCriteriaTemplate
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $last_sold_date = null,
+		public string|null $last_sold_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $due_date = null,
+		public string|null $due_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $stocktake_traceable_type = null,
+		public string|null $stocktake_traceable_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $stock_value_type = null,
+		public string|null $stock_value_type = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $stock_value_number_of_items = null,
+		public int|null    $stock_value_number_of_items = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_from = null,
+		public float|null  $quantity_from = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_to = null,
+		public float|null  $quantity_to = null,
 		#[Assert\Type('array')]
-		public ?array $product_groups = null,
+		public array|null  $product_groups = null,
 	) {
 	}
 }

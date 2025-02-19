@@ -17,59 +17,59 @@ class WarehouseHolding
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null    $warehouse_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_default_manufacturing_warehouse = null,
+		public bool|null   $is_default_manufacturing_warehouse = null,
 		#[Assert\Type('float')]
-		public ?float $reorder_level = null,
+		public float|null  $reorder_level = null,
 		#[Assert\Type('float')]
-		public ?float $minimum_level = null,
+		public float|null  $minimum_level = null,
 		#[Assert\Type('float')]
-		public ?float $maximum_level = null,
+		public float|null  $maximum_level = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_reserved = null,
+		public float|null  $quantity_reserved = null,
 		#[Assert\Type('float')]
-		public ?float $confirmed_qty_in_stock = null,
+		public float|null  $confirmed_qty_in_stock = null,
 		#[Assert\Type('float')]
-		public ?float $unconfirmed_qty_in_stock = null,
+		public float|null  $unconfirmed_qty_in_stock = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_in_stock = null,
+		public float|null  $quantity_in_stock = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_in_stock_less_reserved = null,
+		public float|null  $quantity_in_stock_less_reserved = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_on_order = null,
+		public float|null  $quantity_on_order = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_allocated_stock = null,
+		public float|null  $quantity_allocated_stock = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_allocated_sop = null,
+		public float|null  $quantity_allocated_sop = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_allocated_bom = null,
+		public float|null  $quantity_allocated_bom = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_allocated = null,
+		public float|null  $quantity_allocated = null,
 		#[Assert\Type('float')]
-		public ?float $free_stock_available = null,
+		public float|null  $free_stock_available = null,
 		#[Assert\Type('float')]
-		public ?float $free_stock_available_less_reserved = null,
+		public float|null  $free_stock_available_less_reserved = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('object')]
-		public ?object $product = null,
+		public object|null $product = null,
 		#[Assert\Type('object')]
-		public ?object $warehouse = null,
+		public object|null $warehouse = null,
 		#[Assert\Type('array')]
-		public ?array $bin_holdings = null,
+		public array|null  $bin_holdings = null,
 		#[Assert\Type('object')]
-		public ?object $status = null,
+		public object|null $status = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

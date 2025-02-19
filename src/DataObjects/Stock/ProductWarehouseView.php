@@ -12,17 +12,17 @@ class ProductWarehouseView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_holding_id = null,
+		public int|null    $warehouse_holding_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null    $warehouse_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_for_sales_trading = null,
+		public bool|null   $use_for_sales_trading = null,
 		#[Assert\Type('float')]
-		public ?float $free_stock_quantity = null,
+		public float|null  $free_stock_quantity = null,
 	) {
 	}
 }

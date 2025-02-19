@@ -25,8 +25,8 @@ class GetAllocationsForTraceableBinItem extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $traceableBinItemId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $traceableBinItemId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/traceable_bin_items/{$this->traceableBinItemId}/traceable_item_allocations";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetAllocationsForTraceableBinItem extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

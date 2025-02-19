@@ -28,7 +28,7 @@ class FinancialReportRowLayoutPositionTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinancialReportRowLayoutPositionTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFinancialReportRowLayoutPositionTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinancialReportRowLayoutPositionTypes($queryParameters));
 	}

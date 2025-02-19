@@ -25,8 +25,8 @@ class GetNominalTransactionsEnquiryViewForNominal extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $nominalCodeId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $nominalCodeId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/nominal_codes/{$this->nominalCodeId}/nominal_transaction_enquiry_views";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetNominalTransactionsEnquiryViewForNominal extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

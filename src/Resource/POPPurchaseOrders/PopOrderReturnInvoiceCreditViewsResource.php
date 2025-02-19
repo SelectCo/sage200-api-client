@@ -28,7 +28,7 @@ class PopOrderReturnInvoiceCreditViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporderReturnInvoiceCreditViews(?SageODataBuilder $queryParameters = null): Response
+	public function getPoporderReturnInvoiceCreditViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporderReturnInvoiceCreditViews($queryParameters));
 	}

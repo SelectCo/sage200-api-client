@@ -28,7 +28,7 @@ class LedgerTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLedgerTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getLedgerTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLedgerTypes($queryParameters));
 	}

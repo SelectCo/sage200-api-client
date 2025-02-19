@@ -13,31 +13,31 @@ class PriceBand
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_standard_band = null,
+		public bool|null   $is_standard_band = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $currency_id = null,
+		public int|null    $currency_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $price_band_type_id = null,
+		public int|null    $price_band_type_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $price_band_type = null,
+		public string|null $price_band_type = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_active = null,
+		public bool|null   $is_active = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_time_based = null,
+		public bool|null   $is_time_based = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $active_date_time_from = null,
+		public string|null $active_date_time_from = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $active_date_time_to = null,
+		public string|null $active_date_time_to = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

@@ -28,7 +28,7 @@ class BomCostHeadingTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBomCostHeadingTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getBomCostHeadingTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBomCostHeadingTypes($queryParameters));
 	}

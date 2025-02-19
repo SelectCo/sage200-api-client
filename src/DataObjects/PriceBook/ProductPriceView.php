@@ -15,31 +15,31 @@ class ProductPriceView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_price_id = null,
+		public int|null    $product_price_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $product_code = null,
+		public string|null $product_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $product_name = null,
+		public string|null $product_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $product_stock_unit_name = null,
+		public string|null $product_stock_unit_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $price_band_id = null,
+		public int|null    $price_band_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $price_band_name = null,
+		public string|null $price_band_name = null,
 		#[Assert\Type('bool')]
-		public ?bool $product_price_use_standard = null,
+		public bool|null   $product_price_use_standard = null,
 		#[Assert\Type('float')]
-		public ?float $product_price_price = null,
+		public float|null  $product_price_price = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $currency_id = null,
+		public int|null    $currency_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $currency_name = null,
+		public string|null $currency_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 4)]
-		public ?string $currency_symbol = null,
+		public string|null $currency_symbol = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

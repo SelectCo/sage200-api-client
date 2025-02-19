@@ -29,7 +29,7 @@ class UnitsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getUnits(?SageODataBuilder $queryParameters = null): Response
+	public function getUnits(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetUnits($queryParameters));
 	}
@@ -43,7 +43,7 @@ class UnitsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getUnit(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getUnit(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetUnit($id, $queryParameters));
 	}

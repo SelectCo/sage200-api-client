@@ -30,7 +30,7 @@ class PaymentGroupsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPaymentGroups(?SageODataBuilder $queryParameters = null): Response
+	public function getPaymentGroups(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPaymentGroups($queryParameters));
 	}
@@ -44,7 +44,7 @@ class PaymentGroupsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPaymentGroup(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPaymentGroup(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPaymentGroup($id, $queryParameters));
 	}

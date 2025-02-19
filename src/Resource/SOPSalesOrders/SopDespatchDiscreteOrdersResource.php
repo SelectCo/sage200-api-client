@@ -28,7 +28,7 @@ class SopDespatchDiscreteOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopdespatchDiscreteOrders(?SageODataBuilder $queryParameters = null): Response
+	public function getSopdespatchDiscreteOrders(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopdespatchDiscreteOrders($queryParameters));
 	}

@@ -13,21 +13,21 @@ class CrossSellProduct
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $cross_sell_product_id = null,
+		public int|null    $cross_sell_product_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('object')]
-		public ?object $cross_sell_product = null,
+		public object|null $cross_sell_product = null,
 		#[Assert\Type('object')]
-		public ?object $product = null,
+		public object|null $product = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

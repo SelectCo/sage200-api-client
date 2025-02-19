@@ -30,7 +30,7 @@ class SalesHistoricalTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesHistoricalTransactions(?SageODataBuilder $queryParameters = null): Response
+	public function getSalesHistoricalTransactions(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesHistoricalTransactions($queryParameters));
 	}
@@ -44,7 +44,7 @@ class SalesHistoricalTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalesHistoricalTransaction(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalesHistoricalTransaction(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalesHistoricalTransaction($id, $queryParameters));
 	}
@@ -59,8 +59,8 @@ class SalesHistoricalTransactionsResource
 	 * @return Response
 	 */
 	public function getSalesHistoricalTransactionsForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSalesHistoricalTransactionsForCustomer($customerId, $queryParameters));

@@ -33,7 +33,7 @@ class CustomersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomers(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomers(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomers($queryParameters));
 	}
@@ -58,7 +58,7 @@ class CustomersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomer(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomer(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomer($id, $queryParameters));
 	}

@@ -30,7 +30,7 @@ class PurchaseAuthorisationsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPurchaseAuthorisation(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPurchaseAuthorisation(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPurchaseAuthorisation($id, $queryParameters));
 	}

@@ -28,7 +28,7 @@ class ExchangeRateAmendabilityTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getExchangeRateAmendabilityTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getExchangeRateAmendabilityTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetExchangeRateAmendabilityTypes($queryParameters));
 	}

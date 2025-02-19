@@ -28,7 +28,7 @@ class FinancialYearPeriodViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinancialYearPeriodViews(?SageODataBuilder $queryParameters = null): Response
+	public function getFinancialYearPeriodViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinancialYearPeriodViews($queryParameters));
 	}

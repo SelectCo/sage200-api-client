@@ -12,7 +12,7 @@ class PurchaseCreditNoteNewRequest
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null $supplier_id = null,
 	) {
 	}
 }

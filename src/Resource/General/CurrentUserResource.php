@@ -28,7 +28,7 @@ class CurrentUserResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrentUser(?SageODataBuilder $queryParameters = null): Response
+	public function getCurrentUser(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrentUser($queryParameters));
 	}

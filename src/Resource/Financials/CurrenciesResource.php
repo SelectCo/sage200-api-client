@@ -29,7 +29,7 @@ class CurrenciesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrencies(?SageODataBuilder $queryParameters = null): Response
+	public function getCurrencies(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrencies($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CurrenciesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrency(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCurrency(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrency($id, $queryParameters));
 	}

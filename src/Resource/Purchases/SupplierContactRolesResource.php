@@ -30,7 +30,7 @@ class SupplierContactRolesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierContactRoles(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierContactRoles(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierContactRoles($queryParameters));
 	}
@@ -45,8 +45,8 @@ class SupplierContactRolesResource
 	 * @return Response
 	 */
 	public function getSupplierContactRolesForSupplierContact(
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierContactRolesForSupplierContact($supplierContactId, $queryParameters));
@@ -61,7 +61,7 @@ class SupplierContactRolesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierContactRole(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierContactRole(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierContactRole($id, $queryParameters));
 	}

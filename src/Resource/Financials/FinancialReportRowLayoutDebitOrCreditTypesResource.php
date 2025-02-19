@@ -28,7 +28,7 @@ class FinancialReportRowLayoutDebitOrCreditTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinancialReportRowLayoutDebitOrCreditTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFinancialReportRowLayoutDebitOrCreditTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinancialReportRowLayoutDebitOrCreditTypes($queryParameters));
 	}

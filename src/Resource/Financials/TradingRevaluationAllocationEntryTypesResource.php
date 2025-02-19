@@ -28,7 +28,7 @@ class TradingRevaluationAllocationEntryTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTradingRevaluationAllocationEntryTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTradingRevaluationAllocationEntryTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTradingRevaluationAllocationEntryTypes($queryParameters));
 	}

@@ -11,45 +11,45 @@ class PopRequisitionFulfilmentLine
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_requisition_line_id = null,
+		public int|null    $pop_requisition_line_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $linked_item_id = null,
+		public int|null    $linked_item_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $linked_reference = null,
+		public string|null $linked_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 40)]
-		public ?string $pop_requisition_fulfilment_line_type = null,
+		public string|null $pop_requisition_fulfilment_line_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null    $supplier_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $item_code = null,
+		public string|null $item_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 1000)]
-		public ?string $item_name = null,
+		public string|null $item_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null    $warehouse_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_item_id = null,
+		public int|null    $warehouse_item_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $nominal_account_name = null,
+		public string|null $nominal_account_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $nominal_account_reference = null,
+		public string|null $nominal_account_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $nominal_cost_centre = null,
+		public string|null $nominal_cost_centre = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $nominal_department = null,
+		public string|null $nominal_department = null,
 		#[Assert\Type('float')]
-		public ?float $unit_buying_price = null,
+		public float|null  $unit_buying_price = null,
 		#[Assert\Type('float')]
-		public ?float $net_value = null,
+		public float|null  $net_value = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

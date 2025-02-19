@@ -14,15 +14,15 @@ class CustomerCard
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $last_used_date = null,
+		public string|null $last_used_date = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 	) {
 	}
 }

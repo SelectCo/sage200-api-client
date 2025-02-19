@@ -32,7 +32,7 @@ class NominalCodeMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalCodeMemos(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalCodeMemos(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalCodeMemos($queryParameters));
 	}
@@ -57,7 +57,7 @@ class NominalCodeMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalCodeMemo(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getNominalCodeMemo(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalCodeMemo($id, $queryParameters));
 	}

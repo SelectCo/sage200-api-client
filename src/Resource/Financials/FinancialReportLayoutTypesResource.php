@@ -28,7 +28,7 @@ class FinancialReportLayoutTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinancialReportLayoutTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFinancialReportLayoutTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinancialReportLayoutTypes($queryParameters));
 	}

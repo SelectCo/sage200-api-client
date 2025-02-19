@@ -12,25 +12,25 @@ class ProductGroupUnit
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_group_id = null,
+		public int|null    $product_group_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $unit_id = null,
+		public int|null    $unit_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $unit_type = null,
+		public string|null $unit_type = null,
 		#[Assert\Type('float')]
-		public ?float $multiple_of_base_unit = null,
+		public float|null  $multiple_of_base_unit = null,
 		#[Assert\Type('float')]
-		public ?float $unit_precision = null,
+		public float|null  $unit_precision = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_own_price = null,
+		public bool|null   $use_own_price = null,
 		#[Assert\Type('object')]
-		public ?object $unit = null,
+		public object|null $unit = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

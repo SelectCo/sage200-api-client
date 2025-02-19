@@ -15,21 +15,21 @@ class NominalCodeMemo
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_id = null,
+		public int|null    $nominal_code_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_active = null,
+		public bool|null   $is_active = null,
 		#[Assert\Type('string'), Assert\Length(max: 1000)]
-		public ?string $note = null,
+		public string|null $note = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $created_by = null,
+		public string|null $created_by = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

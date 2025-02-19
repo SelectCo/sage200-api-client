@@ -14,25 +14,25 @@ class LookupNominalCode
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $cost_centre_code = null,
+		public string|null $cost_centre_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $department_code = null,
+		public string|null $department_code = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_account_type_id = null,
+		public int|null    $nominal_account_type_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $account_status_type_id = null,
+		public int|null    $account_status_type_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $display_balances_in_selection_list = null,
+		public bool|null   $display_balances_in_selection_list = null,
 		#[Assert\Type('float')]
-		public ?float $balance_year_to_date = null,
+		public float|null  $balance_year_to_date = null,
 		#[Assert\Type('float')]
-		public ?float $brought_forward_balance = null,
+		public float|null  $brought_forward_balance = null,
 	) {
 	}
 }

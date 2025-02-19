@@ -28,7 +28,7 @@ class SopInvoiceCreditTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopinvoiceCreditTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSopinvoiceCreditTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopinvoiceCreditTypes($queryParameters));
 	}

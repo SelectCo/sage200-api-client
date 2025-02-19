@@ -29,7 +29,7 @@ class SalutationsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalutations(?SageODataBuilder $queryParameters = null): Response
+	public function getSalutations(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalutations($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SalutationsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSalutation(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSalutation(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSalutation($id, $queryParameters));
 	}

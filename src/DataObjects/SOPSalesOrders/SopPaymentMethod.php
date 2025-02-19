@@ -13,25 +13,25 @@ class SopPaymentMethod
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $bank_account_id = null,
+		public int|null    $bank_account_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $currency_id = null,
+		public int|null    $currency_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $card_processing_method = null,
+		public bool|null   $card_processing_method = null,
 		#[Assert\Type('object')]
-		public ?object $bank_account = null,
+		public object|null $bank_account = null,
 		#[Assert\Type('object')]
-		public ?object $currency = null,
+		public object|null $currency = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

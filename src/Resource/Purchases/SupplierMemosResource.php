@@ -33,7 +33,7 @@ class SupplierMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierMemos(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierMemos(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierMemos($queryParameters));
 	}
@@ -58,7 +58,7 @@ class SupplierMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierMemo(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierMemo(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierMemo($id, $queryParameters));
 	}
@@ -97,8 +97,8 @@ class SupplierMemosResource
 	 * @return Response
 	 */
 	public function getSupplierMemosForSupplier(
-		float|int $supplierId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierMemosForSupplier($supplierId, $queryParameters));

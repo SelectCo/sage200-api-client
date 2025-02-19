@@ -28,7 +28,7 @@ class EntrySourceTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getEntrySourceTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getEntrySourceTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetEntrySourceTypes($queryParameters));
 	}

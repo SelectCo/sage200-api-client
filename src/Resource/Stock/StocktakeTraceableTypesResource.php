@@ -28,7 +28,7 @@ class StocktakeTraceableTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktakeTraceableTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getStocktakeTraceableTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktakeTraceableTypes($queryParameters));
 	}

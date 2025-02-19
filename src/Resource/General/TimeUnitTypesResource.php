@@ -28,7 +28,7 @@ class TimeUnitTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTimeUnitTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTimeUnitTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTimeUnitTypes($queryParameters));
 	}

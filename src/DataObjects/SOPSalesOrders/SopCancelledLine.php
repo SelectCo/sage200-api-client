@@ -11,29 +11,29 @@ class SopCancelledLine
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_return_id = null,
+		public int|null    $sop_order_return_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $item_code = null,
+		public string|null $item_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 1000)]
-		public ?string $item_description = null,
+		public string|null $item_description = null,
 		#[Assert\Type('float')]
-		public ?float $cancelled_quantity = null,
+		public float|null  $cancelled_quantity = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $cancelled_date = null,
+		public string|null $cancelled_date = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $user_number = null,
+		public int|null    $user_number = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $user_name = null,
+		public string|null $user_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $selling_unit_description = null,
+		public string|null $selling_unit_description = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_cancelled_quantity = null,
+		public float|null  $stock_unit_cancelled_quantity = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

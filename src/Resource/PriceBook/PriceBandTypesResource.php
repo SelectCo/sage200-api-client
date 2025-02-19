@@ -28,7 +28,7 @@ class PriceBandTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPriceBandTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPriceBandTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPriceBandTypes($queryParameters));
 	}

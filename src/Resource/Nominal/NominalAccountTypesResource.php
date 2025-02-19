@@ -28,7 +28,7 @@ class NominalAccountTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalAccountTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalAccountTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalAccountTypes($queryParameters));
 	}

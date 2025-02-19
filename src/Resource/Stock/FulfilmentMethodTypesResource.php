@@ -28,7 +28,7 @@ class FulfilmentMethodTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFulfilmentMethodTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFulfilmentMethodTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFulfilmentMethodTypes($queryParameters));
 	}

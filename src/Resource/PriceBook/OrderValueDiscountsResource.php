@@ -29,7 +29,7 @@ class OrderValueDiscountsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getOrderValueDiscounts(?SageODataBuilder $queryParameters = null): Response
+	public function getOrderValueDiscounts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetOrderValueDiscounts($queryParameters));
 	}
@@ -43,7 +43,7 @@ class OrderValueDiscountsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getOrderValueDiscount(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getOrderValueDiscount(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetOrderValueDiscount($id, $queryParameters));
 	}

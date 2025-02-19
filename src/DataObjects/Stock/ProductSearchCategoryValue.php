@@ -14,25 +14,25 @@ class ProductSearchCategoryValue
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $search_category_id = null,
+		public int|null    $search_category_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 40)]
-		public ?string $search_category_name = null,
+		public string|null $search_category_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $search_value_id = null,
+		public int|null    $search_value_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 40)]
-		public ?string $search_value_name = null,
+		public string|null $search_value_name = null,
 		#[Assert\Type('object')]
-		public ?object $search_value = null,
+		public object|null $search_value = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

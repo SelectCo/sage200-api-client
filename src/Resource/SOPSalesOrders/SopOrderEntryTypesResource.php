@@ -28,7 +28,7 @@ class SopOrderEntryTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderEntryTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderEntryTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderEntryTypes($queryParameters));
 	}

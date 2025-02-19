@@ -30,8 +30,8 @@ class TraceableItemLocationsResource
 	 * @return Response
 	 */
 	public function getLocationsForTraceableItem(
-		float|int $traceableItemId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $traceableItemId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetLocationsForTraceableItem($traceableItemId, $queryParameters));

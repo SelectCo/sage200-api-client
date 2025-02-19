@@ -25,7 +25,7 @@ class GetPriceBands extends Request
 	 * @param SageODataBuilder|null $queryParameters
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function __construct(?SageODataBuilder $queryParameters = null)
+	public function __construct(SageODataBuilder|null $queryParameters = null)
 	{
 		$this->endPoint = "/price_bands";
 		$this->queryString = '';
@@ -38,7 +38,7 @@ class GetPriceBands extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

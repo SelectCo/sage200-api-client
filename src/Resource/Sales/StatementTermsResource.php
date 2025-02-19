@@ -28,7 +28,7 @@ class StatementTermsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStatementTerms(?SageODataBuilder $queryParameters = null): Response
+	public function getStatementTerms(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStatementTerms($queryParameters));
 	}

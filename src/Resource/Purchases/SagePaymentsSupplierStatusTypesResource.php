@@ -28,7 +28,7 @@ class SagePaymentsSupplierStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSagePaymentsSupplierStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSagePaymentsSupplierStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSagePaymentsSupplierStatusTypes($queryParameters));
 	}

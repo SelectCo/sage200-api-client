@@ -28,7 +28,7 @@ class ControlNominalCodeTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getControlNominalCodeTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getControlNominalCodeTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetControlNominalCodeTypes($queryParameters));
 	}

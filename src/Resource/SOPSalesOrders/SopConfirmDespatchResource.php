@@ -29,7 +29,7 @@ class SopConfirmDespatchResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopconfirmDespatch(?SageODataBuilder $queryParameters = null): Response
+	public function getSopconfirmDespatch(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopconfirmDespatch($queryParameters));
 	}

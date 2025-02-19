@@ -15,51 +15,51 @@ class NominalPeriodValueView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_id = null,
+		public int|null    $nominal_code_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_account_number_cost_centre_id = null,
+		public int|null    $nominal_code_account_number_cost_centre_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_cost_centre_id = null,
+		public int|null    $nominal_code_cost_centre_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_department_id = null,
+		public int|null    $nominal_code_department_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $nominal_code_account_type = null,
+		public string|null $nominal_code_account_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_code_report_category_id = null,
+		public int|null    $nominal_code_report_category_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $nominal_code_name = null,
+		public string|null $nominal_code_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $nominal_code_reference = null,
+		public string|null $nominal_code_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $nominal_code_cost_centre = null,
+		public string|null $nominal_code_cost_centre = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $nominal_code_department = null,
+		public string|null $nominal_code_department = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $nominal_code_account_status_type = null,
+		public string|null $nominal_code_account_status_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_period_value_id = null,
+		public int|null    $nominal_period_value_id = null,
 		#[Assert\Type('float')]
-		public ?float $nominal_period_value_budget_value = null,
+		public float|null  $nominal_period_value_budget_value = null,
 		#[Assert\Type('float')]
-		public ?float $nominal_period_value_actual_value = null,
+		public float|null  $nominal_period_value_actual_value = null,
 		#[Assert\Type('float')]
-		public ?float $nominal_period_value_adjustment_after_year_end_close = null,
+		public float|null  $nominal_period_value_adjustment_after_year_end_close = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $accounting_period_id = null,
+		public int|null    $accounting_period_id = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $accounting_period_period_number = null,
+		public int|null    $accounting_period_period_number = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $accounting_period_start_date = null,
+		public string|null $accounting_period_start_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $accounting_period_end_date = null,
+		public string|null $accounting_period_end_date = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $financial_year_id = null,
+		public int|null    $financial_year_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $financial_year_start_date = null,
+		public string|null $financial_year_start_date = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $year_relative_to_current_year = null,
+		public int|null    $year_relative_to_current_year = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $number_of_periods_in_year = null,
+		public int|null    $number_of_periods_in_year = null,
 	) {
 	}
 }

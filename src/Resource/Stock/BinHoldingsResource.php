@@ -34,7 +34,7 @@ class BinHoldingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBinHoldings(?SageODataBuilder $queryParameters = null): Response
+	public function getBinHoldings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBinHoldings($queryParameters));
 	}
@@ -59,7 +59,7 @@ class BinHoldingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBinHolding(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getBinHolding(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBinHolding($id, $queryParameters));
 	}
@@ -98,8 +98,8 @@ class BinHoldingsResource
 	 * @return Response
 	 */
 	public function getBinHoldingsForWarehouseHolding(
-		float|int $warehouseHoldingId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $warehouseHoldingId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetBinHoldingsForWarehouseHolding($warehouseHoldingId, $queryParameters));
@@ -114,7 +114,7 @@ class BinHoldingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBinHoldingsForProduct(float|int $productId, ?SageODataBuilder $queryParameters = null): Response
+	public function getBinHoldingsForProduct(float|int $productId, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBinHoldingsForProduct($productId, $queryParameters));
 	}

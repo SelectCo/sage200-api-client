@@ -29,7 +29,7 @@ class DocumentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDocumentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getDocumentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDocumentTypes($queryParameters));
 	}
@@ -43,7 +43,7 @@ class DocumentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDocumentType(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getDocumentType(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDocumentType($id, $queryParameters));
 	}

@@ -28,7 +28,7 @@ class StatementAgeingTermsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStatementAgeingTerms(?SageODataBuilder $queryParameters = null): Response
+	public function getStatementAgeingTerms(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStatementAgeingTerms($queryParameters));
 	}

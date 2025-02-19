@@ -28,7 +28,7 @@ class ProductTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getProductTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductTypes($queryParameters));
 	}

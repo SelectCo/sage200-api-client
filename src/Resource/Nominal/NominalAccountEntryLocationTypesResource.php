@@ -28,7 +28,7 @@ class NominalAccountEntryLocationTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getNominalAccountEntryLocationTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getNominalAccountEntryLocationTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetNominalAccountEntryLocationTypes($queryParameters));
 	}

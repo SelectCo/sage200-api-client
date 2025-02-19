@@ -33,7 +33,7 @@ class SopIncotermsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopincoterms(?SageODataBuilder $queryParameters = null): Response
+	public function getSopincoterms(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopincoterms($queryParameters));
 	}
@@ -69,7 +69,7 @@ class SopIncotermsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopincoterm(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopincoterm(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopincoterm($id, $queryParameters));
 	}

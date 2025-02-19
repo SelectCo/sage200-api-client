@@ -29,7 +29,7 @@ class PopSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopsettings(?SageODataBuilder $queryParameters = null): Response
+	public function getPopsettings(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopsettings($queryParameters));
 	}
@@ -43,7 +43,7 @@ class PopSettingsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopsetting(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPopsetting(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopsetting($id, $queryParameters));
 	}

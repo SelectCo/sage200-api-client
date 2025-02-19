@@ -11,7 +11,7 @@ class Urn
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $urn = null,
+		public string|null $urn = null,
 	) {
 	}
 }

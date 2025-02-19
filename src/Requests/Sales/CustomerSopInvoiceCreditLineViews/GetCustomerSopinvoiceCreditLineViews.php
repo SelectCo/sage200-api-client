@@ -26,7 +26,7 @@ class GetCustomerSopinvoiceCreditLineViews extends Request
 	 * @param SageODataBuilder|null $queryParameters
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function __construct(?SageODataBuilder $queryParameters = null)
+	public function __construct(SageODataBuilder|null $queryParameters = null)
 	{
 		$this->endPoint = "/customer_sop_invoice_credit_line_views";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetCustomerSopinvoiceCreditLineViews extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

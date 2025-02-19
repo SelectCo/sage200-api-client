@@ -29,7 +29,7 @@ class CustomerDiscountGroupsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerDiscountGroups(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerDiscountGroups(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerDiscountGroups($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CustomerDiscountGroupsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerDiscountGroup(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerDiscountGroup(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerDiscountGroup($id, $queryParameters));
 	}

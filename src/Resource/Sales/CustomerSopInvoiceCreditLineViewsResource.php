@@ -28,7 +28,7 @@ class CustomerSopInvoiceCreditLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerSopinvoiceCreditLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerSopinvoiceCreditLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerSopinvoiceCreditLineViews($queryParameters));
 	}

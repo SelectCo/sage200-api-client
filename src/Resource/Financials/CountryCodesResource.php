@@ -29,7 +29,7 @@ class CountryCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCountryCodes(?SageODataBuilder $queryParameters = null): Response
+	public function getCountryCodes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCountryCodes($queryParameters));
 	}
@@ -43,7 +43,7 @@ class CountryCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCountryCode(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCountryCode(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCountryCode($id, $queryParameters));
 	}

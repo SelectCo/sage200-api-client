@@ -28,8 +28,8 @@ class GetPurchaseTradingPeriod extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $id,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/purchase_trading_periods/{$this->id}";
 		$this->queryString = '';
@@ -42,7 +42,7 @@ class GetPurchaseTradingPeriod extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

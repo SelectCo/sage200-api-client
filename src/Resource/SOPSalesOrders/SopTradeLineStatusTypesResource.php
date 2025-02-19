@@ -28,7 +28,7 @@ class SopTradeLineStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoptradeLineStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getSoptradeLineStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoptradeLineStatusTypes($queryParameters));
 	}

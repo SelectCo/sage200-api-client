@@ -12,27 +12,27 @@ class SopQuoteView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $document_date = null,
+		public string|null $document_date = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $document_status_id = null,
+		public int|null    $document_status_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $customer_document_no = null,
+		public string|null $customer_document_no = null,
 		#[Assert\Type('float')]
-		public ?float $total_gross_value = null,
+		public float|null  $total_gross_value = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $order_no = null,
+		public string|null $order_no = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $proforma_no = null,
+		public string|null $proforma_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $customer_reference = null,
+		public string|null $customer_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $customer_name = null,
+		public string|null $customer_name = null,
 	) {
 	}
 }

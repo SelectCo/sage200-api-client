@@ -33,7 +33,7 @@ class WarehousesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getWarehouses(?SageODataBuilder $queryParameters = null): Response
+	public function getWarehouses(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetWarehouses($queryParameters));
 	}
@@ -58,7 +58,7 @@ class WarehousesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getWarehouse(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getWarehouse(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetWarehouse($id, $queryParameters));
 	}
@@ -96,7 +96,7 @@ class WarehousesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getWarehousesForProduct(float|int $productId, ?SageODataBuilder $queryParameters = null): Response
+	public function getWarehousesForProduct(float|int $productId, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetWarehousesForProduct($productId, $queryParameters));
 	}

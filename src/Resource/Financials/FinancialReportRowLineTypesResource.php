@@ -28,7 +28,7 @@ class FinancialReportRowLineTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinancialReportRowLineTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFinancialReportRowLineTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinancialReportRowLineTypes($queryParameters));
 	}

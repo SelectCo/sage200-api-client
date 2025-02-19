@@ -31,8 +31,8 @@ class TraceableItemAllocationsResource
 	 * @return Response
 	 */
 	public function getAllocationsForTraceableItem(
-		float|int $traceableItemId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $traceableItemId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetAllocationsForTraceableItem($traceableItemId, $queryParameters));
@@ -48,8 +48,8 @@ class TraceableItemAllocationsResource
 	 * @return Response
 	 */
 	public function getAllocationsForTraceableBinItem(
-		float|int $traceableBinItemId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $traceableBinItemId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetAllocationsForTraceableBinItem($traceableBinItemId, $queryParameters));

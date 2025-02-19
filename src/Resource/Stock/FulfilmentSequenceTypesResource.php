@@ -28,7 +28,7 @@ class FulfilmentSequenceTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFulfilmentSequenceTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getFulfilmentSequenceTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFulfilmentSequenceTypes($queryParameters));
 	}

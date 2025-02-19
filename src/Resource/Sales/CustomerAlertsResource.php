@@ -33,7 +33,7 @@ class CustomerAlertsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerAlerts(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerAlerts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerAlerts($queryParameters));
 	}
@@ -58,7 +58,7 @@ class CustomerAlertsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerAlert(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerAlert(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerAlert($id, $queryParameters));
 	}
@@ -97,8 +97,8 @@ class CustomerAlertsResource
 	 * @return Response
 	 */
 	public function getCustomerAlertsForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerAlertsForCustomer($customerId, $queryParameters));

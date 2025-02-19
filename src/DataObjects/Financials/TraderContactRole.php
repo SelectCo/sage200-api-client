@@ -12,23 +12,23 @@ class TraderContactRole
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $role = null,
+		public string|null $role = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_default_role = null,
+		public bool|null   $is_default_role = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_mandatory = null,
+		public bool|null   $is_mandatory = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_for_customer_accounts = null,
+		public bool|null   $use_for_customer_accounts = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_for_supplier_accounts = null,
+		public bool|null   $use_for_supplier_accounts = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_with_documents = null,
+		public bool|null   $use_with_documents = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

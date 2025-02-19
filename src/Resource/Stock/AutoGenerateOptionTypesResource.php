@@ -28,7 +28,7 @@ class AutoGenerateOptionTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAutoGenerateOptionTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getAutoGenerateOptionTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAutoGenerateOptionTypes($queryParameters));
 	}

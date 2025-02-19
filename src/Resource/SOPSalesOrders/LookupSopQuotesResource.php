@@ -28,7 +28,7 @@ class LookupSopQuotesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLookupSopquotes(?SageODataBuilder $queryParameters = null): Response
+	public function getLookupSopquotes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLookupSopquotes($queryParameters));
 	}

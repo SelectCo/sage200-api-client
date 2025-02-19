@@ -30,8 +30,8 @@ class TraceableItemReceiptsResource
 	 * @return Response
 	 */
 	public function getReceiptsForTraceableItem(
-		float|int $traceableItemId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $traceableItemId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetReceiptsForTraceableItem($traceableItemId, $queryParameters));

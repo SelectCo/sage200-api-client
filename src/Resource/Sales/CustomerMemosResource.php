@@ -33,7 +33,7 @@ class CustomerMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerMemos(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerMemos(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerMemos($queryParameters));
 	}
@@ -58,7 +58,7 @@ class CustomerMemosResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerMemo(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerMemo(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerMemo($id, $queryParameters));
 	}
@@ -97,8 +97,8 @@ class CustomerMemosResource
 	 * @return Response
 	 */
 	public function getCustomerMemosForCustomer(
-		float|int $customerId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerMemosForCustomer($customerId, $queryParameters));

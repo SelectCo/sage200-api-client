@@ -30,8 +30,8 @@ class TraceableItemIssuesResource
 	 * @return Response
 	 */
 	public function getIssuesForTraceableItem(
-		float|int $traceableItemId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $traceableItemId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetIssuesForTraceableItem($traceableItemId, $queryParameters));

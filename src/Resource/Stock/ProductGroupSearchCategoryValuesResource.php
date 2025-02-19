@@ -28,7 +28,7 @@ class ProductGroupSearchCategoryValuesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductGroupSearchCategoryValues(?SageODataBuilder $queryParameters = null): Response
+	public function getProductGroupSearchCategoryValues(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductGroupSearchCategoryValues($queryParameters));
 	}

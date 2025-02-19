@@ -28,7 +28,7 @@ class SopOrderReturnViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderReturnViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderReturnViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderReturnViews($queryParameters));
 	}

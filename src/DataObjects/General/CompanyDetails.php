@@ -14,35 +14,35 @@ class CompanyDetails
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $telephone = null,
+		public string|null $telephone = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $fax = null,
+		public string|null $fax = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $email = null,
+		public string|null $email = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $website = null,
+		public string|null $website = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $tax_registration_number = null,
+		public string|null $tax_registration_number = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $years_accounts_held_for = null,
+		public int|null    $years_accounts_held_for = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $country_code_id = null,
+		public int|null    $country_code_id = null,
 		#[Assert\Type('object')]
-		public ?object $country_code = null,
+		public object|null $country_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 14)]
-		public ?string $eori_number = null,
+		public string|null $eori_number = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_supplier_payments_enabled = null,
+		public bool|null   $is_supplier_payments_enabled = null,
 		#[Assert\Type('object')]
-		public ?object $address = null,
+		public object|null $address = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

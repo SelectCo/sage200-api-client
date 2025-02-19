@@ -11,13 +11,13 @@ class SopDespatchBinItem
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $bin_name = null,
+		public string|null $bin_name = null,
 		#[Assert\Type('float')]
-		public ?float $available_quantity = null,
+		public float|null  $available_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $quantity = null,
+		public float|null  $quantity = null,
 	) {
 	}
 }

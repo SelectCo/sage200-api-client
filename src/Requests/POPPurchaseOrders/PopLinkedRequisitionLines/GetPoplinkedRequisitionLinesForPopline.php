@@ -25,8 +25,8 @@ class GetPoplinkedRequisitionLinesForPopline extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $lineId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $lineId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/pop_order_lines/{$this->lineId}/pop_linked_requisition_lines";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetPoplinkedRequisitionLinesForPopline extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

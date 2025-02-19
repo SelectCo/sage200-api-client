@@ -15,15 +15,15 @@ class ProductSalesFigures
 {
 	public function __construct(
 		#[Assert\Type('float')]
-		public ?float $quantity_sold_this_period = null,
+		public float|null $quantity_sold_this_period = null,
 		#[Assert\Type('float')]
-		public ?float $value_sold_this_period = null,
+		public float|null $value_sold_this_period = null,
 		#[Assert\Type('float')]
-		public ?float $quantity_sold_last_period = null,
+		public float|null $quantity_sold_last_period = null,
 		#[Assert\Type('float')]
-		public ?float $value_sold_last_period = null,
+		public float|null $value_sold_last_period = null,
 		#[Assert\Type('array')]
-		public ?array $periods = null,
+		public array|null $periods = null,
 	) {
 	}
 }

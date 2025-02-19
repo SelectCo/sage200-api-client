@@ -28,7 +28,7 @@ class ProductWarehouseViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductWarehouseViews(?SageODataBuilder $queryParameters = null): Response
+	public function getProductWarehouseViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductWarehouseViews($queryParameters));
 	}

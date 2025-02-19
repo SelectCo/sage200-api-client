@@ -8,39 +8,39 @@ class SopOrderReturnProfit
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_return_id = null,
+		public int|null    $sop_order_return_id = null,
 		#[Assert\Type('float')]
-		public ?float $estimated_cost_value = null,
+		public float|null  $estimated_cost_value = null,
 		#[Assert\Type('float')]
-		public ?float $estimated_profit_percent_on_revenue = null,
+		public float|null  $estimated_profit_percent_on_revenue = null,
 		#[Assert\Type('float')]
-		public ?float $estimated_profit_percent_on_cost = null,
+		public float|null  $estimated_profit_percent_on_cost = null,
 		#[Assert\Type('float')]
-		public ?float $estimated_profit_value = null,
+		public float|null  $estimated_profit_value = null,
 		#[Assert\Type('float')]
-		public ?float $issue_value = null,
+		public float|null  $issue_value = null,
 		#[Assert\Type('float')]
-		public ?float $realised_cost_value = null,
+		public float|null  $realised_cost_value = null,
 		#[Assert\Type('float')]
-		public ?float $realised_issue_value = null,
+		public float|null  $realised_issue_value = null,
 		#[Assert\Type('float')]
-		public ?float $realised_profit_percent_on_revenue = null,
+		public float|null  $realised_profit_percent_on_revenue = null,
 		#[Assert\Type('float')]
-		public ?float $realised_profit_percent_on_cost = null,
+		public float|null  $realised_profit_percent_on_cost = null,
 		#[Assert\Type('float')]
-		public ?float $realised_profit_value = null,
+		public float|null  $realised_profit_value = null,
 		#[Assert\Type('bool')]
-		public ?bool $simple_profit_calculation_only = null,
+		public bool|null   $simple_profit_calculation_only = null,
 		#[Assert\Type('array')]
-		public ?array $stock_item_order_lines = null,
+		public array|null  $stock_item_order_lines = null,
 		#[Assert\Type('array')]
-		public ?array $other_order_lines = null,
+		public array|null  $other_order_lines = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

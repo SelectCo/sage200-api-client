@@ -13,49 +13,49 @@ class FinancialReportLayoutView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $financial_report_layout_id = null,
+		public int|null    $financial_report_layout_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $financial_report_layout_account_report_type = null,
+		public string|null $financial_report_layout_account_report_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $financial_report_layout_name = null,
+		public string|null $financial_report_layout_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $financial_report_row_id = null,
+		public int|null    $financial_report_row_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $financial_report_row_line_type = null,
+		public string|null $financial_report_row_line_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $financial_report_row_layout_position_type = null,
+		public string|null $financial_report_row_layout_position_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $financial_report_row_layout_debit_or_credit_type = null,
+		public string|null $financial_report_row_layout_debit_or_credit_type = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_report_row = null,
+		public int|null    $financial_report_row_report_row = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $financial_report_row_title = null,
+		public string|null $financial_report_row_title = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $financial_report_row_subtotal_group = null,
+		public int|null    $financial_report_row_subtotal_group = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_1 = null,
+		public int|null    $financial_report_row_group_break_1 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_2 = null,
+		public int|null    $financial_report_row_group_break_2 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_3 = null,
+		public int|null    $financial_report_row_group_break_3 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_4 = null,
+		public int|null    $financial_report_row_group_break_4 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_5 = null,
+		public int|null    $financial_report_row_group_break_5 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_6 = null,
+		public int|null    $financial_report_row_group_break_6 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_7 = null,
+		public int|null    $financial_report_row_group_break_7 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_8 = null,
+		public int|null    $financial_report_row_group_break_8 = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $financial_report_row_group_break_9 = null,
+		public int|null    $financial_report_row_group_break_9 = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $nominal_account_report_category_id = null,
+		public int|null    $nominal_account_report_category_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 4)]
-		public ?string $nominal_account_report_category_code = null,
+		public string|null $nominal_account_report_category_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $nominal_account_report_category_description = null,
+		public string|null $nominal_account_report_category_description = null,
 	) {
 	}
 }

@@ -11,15 +11,15 @@ class ConfigurableTerm
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $key = null,
+		public string|null $key = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $lower_case_single = null,
+		public string|null $lower_case_single = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $lower_case_plural = null,
+		public string|null $lower_case_plural = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $upper_case_single = null,
+		public string|null $upper_case_single = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $upper_case_plural = null,
+		public string|null $upper_case_plural = null,
 	) {
 	}
 }

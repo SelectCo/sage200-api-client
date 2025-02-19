@@ -28,7 +28,7 @@ class BankViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBankViews(?SageODataBuilder $queryParameters = null): Response
+	public function getBankViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBankViews($queryParameters));
 	}

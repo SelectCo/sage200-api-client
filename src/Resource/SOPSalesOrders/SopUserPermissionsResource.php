@@ -29,7 +29,7 @@ class SopUserPermissionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopuserPermissions(?SageODataBuilder $queryParameters = null): Response
+	public function getSopuserPermissions(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopuserPermissions($queryParameters));
 	}
@@ -43,7 +43,7 @@ class SopUserPermissionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopuserPermission(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopuserPermission(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopuserPermission($id, $queryParameters));
 	}

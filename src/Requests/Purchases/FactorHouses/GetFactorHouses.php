@@ -23,7 +23,7 @@ class GetFactorHouses extends Request
 	 * @param SageODataBuilder|null $queryParameters
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function __construct(?SageODataBuilder $queryParameters = null)
+	public function __construct(SageODataBuilder|null $queryParameters = null)
 	{
 		$this->endPoint = "/factor_houses";
 		$this->queryString = '';
@@ -36,7 +36,7 @@ class GetFactorHouses extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

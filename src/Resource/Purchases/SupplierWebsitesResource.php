@@ -41,7 +41,7 @@ class SupplierWebsitesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierWebsites(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierWebsites(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierWebsites($queryParameters));
 	}
@@ -56,8 +56,8 @@ class SupplierWebsitesResource
 	 * @return Response
 	 */
 	public function getSupplierWebsitesForSupplierContact(
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierWebsitesForSupplierContact($supplierContactId, $queryParameters));
@@ -86,9 +86,9 @@ class SupplierWebsitesResource
 	 * @return Response
 	 */
 	public function getSupplierWebsitesForSupplierAndSupplierContact(
-		float|int $supplierContactId,
-		float|int $supplierId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        float|int             $supplierId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierWebsitesForSupplierAndSupplierContact($supplierContactId, $supplierId, $queryParameters));
@@ -119,7 +119,7 @@ class SupplierWebsitesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierWebsite(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierWebsite(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierWebsite($id, $queryParameters));
 	}
@@ -159,9 +159,9 @@ class SupplierWebsitesResource
 	 * @return Response
 	 */
 	public function getSupplierWebsiteForSupplierContact(
-		float|int $supplierContactId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierWebsiteForSupplierContact($supplierContactId, $id, $queryParameters));
@@ -205,10 +205,10 @@ class SupplierWebsitesResource
 	 * @return Response
 	 */
 	public function getSupplierWebsiteForSupplierAndSupplierContact(
-		float|int $supplierId,
-		float|int $supplierContactId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        float|int             $supplierContactId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierWebsiteForSupplierAndSupplierContact($supplierId, $supplierContactId, $id, $queryParameters));

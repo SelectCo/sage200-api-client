@@ -28,7 +28,7 @@ class PopOrderLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoporderLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getPoporderLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoporderLineViews($queryParameters));
 	}

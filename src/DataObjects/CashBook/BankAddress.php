@@ -11,29 +11,29 @@ class BankAddress
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $contact = null,
+		public string|null $contact = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $country = null,
+		public string|null $country = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $address_1 = null,
+		public string|null $address_1 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $address_2 = null,
+		public string|null $address_2 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $address_3 = null,
+		public string|null $address_3 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $address_4 = null,
+		public string|null $address_4 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $city = null,
+		public string|null $city = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $county = null,
+		public string|null $county = null,
 		#[Assert\Type('string'), Assert\Length(max: 10)]
-		public ?string $postcode = null,
+		public string|null $postcode = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

@@ -12,19 +12,19 @@ class DocumentLayout
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sys_document_type_id = null,
+		public int|null    $sys_document_type_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 256)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $layout = null,
+		public string|null $layout = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_default = null,
+		public bool|null   $is_default = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

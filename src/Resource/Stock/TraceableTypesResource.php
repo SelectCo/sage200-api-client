@@ -28,7 +28,7 @@ class TraceableTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraceableTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTraceableTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraceableTypes($queryParameters));
 	}

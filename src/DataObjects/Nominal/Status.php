@@ -11,7 +11,7 @@ class Status
 {
 	public function __construct(
 		#[Assert\Type('string')]
-		public ?string $delete_exception_type = null,
+		public string|null $delete_exception_type = null,
 	) {
 	}
 }

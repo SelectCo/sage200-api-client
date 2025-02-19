@@ -14,23 +14,23 @@ class TaxCode
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $code = null,
+		public int|null    $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('float')]
-		public ?float $tax_rate = null,
+		public float|null  $tax_rate = null,
 		#[Assert\Type('string'), Assert\Length(max: 54)]
-		public ?string $terms = null,
+		public string|null $terms = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $terms_description = null,
+		public string|null $terms_description = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_notional_acquisition_tax = null,
+		public bool|null   $is_notional_acquisition_tax = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

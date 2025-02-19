@@ -28,7 +28,7 @@ class DiscountOrSurchargeTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDiscountOrSurchargeTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getDiscountOrSurchargeTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDiscountOrSurchargeTypes($queryParameters));
 	}

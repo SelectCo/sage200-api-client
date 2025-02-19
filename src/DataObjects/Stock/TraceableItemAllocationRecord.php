@@ -12,23 +12,23 @@ class TraceableItemAllocationRecord
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $traceable_bin_item_id = null,
+		public int|null    $traceable_bin_item_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $warehouse_name = null,
+		public string|null $warehouse_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $bin_name = null,
+		public string|null $bin_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $traceable_allocation_bal_id = null,
+		public int|null    $traceable_allocation_bal_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $allocation_balance_id = null,
+		public int|null    $allocation_balance_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $allocated_to = null,
+		public string|null $allocated_to = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $allocation_date = null,
+		public string|null $allocation_date = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $order_no = null,
+		public string|null $order_no = null,
 		#[Assert\Type('float')]
-		public ?float $allocated_quantity = null,
+		public float|null  $allocated_quantity = null,
 	) {
 	}
 }

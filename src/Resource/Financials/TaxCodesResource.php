@@ -29,7 +29,7 @@ class TaxCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTaxCodes(?SageODataBuilder $queryParameters = null): Response
+	public function getTaxCodes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTaxCodes($queryParameters));
 	}
@@ -43,7 +43,7 @@ class TaxCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTaxCode(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getTaxCode(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTaxCode($id, $queryParameters));
 	}

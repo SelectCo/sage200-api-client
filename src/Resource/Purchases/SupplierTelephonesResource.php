@@ -41,7 +41,7 @@ class SupplierTelephonesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierTelephones(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierTelephones(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierTelephones($queryParameters));
 	}
@@ -56,8 +56,8 @@ class SupplierTelephonesResource
 	 * @return Response
 	 */
 	public function getSupplierTelephonesForSupplierContact(
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierTelephonesForSupplierContact($supplierContactId, $queryParameters));
@@ -86,9 +86,9 @@ class SupplierTelephonesResource
 	 * @return Response
 	 */
 	public function getSupplierTelephonesForSupplierAndSupplierContact(
-		float|int $supplierId,
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierTelephonesForSupplierAndSupplierContact($supplierId, $supplierContactId, $queryParameters));
@@ -119,7 +119,7 @@ class SupplierTelephonesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierTelephone(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierTelephone(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierTelephone($id, $queryParameters));
 	}
@@ -159,9 +159,9 @@ class SupplierTelephonesResource
 	 * @return Response
 	 */
 	public function getSupplierTelephoneForSupplierContact(
-		float|int $id,
-		float|int $supplierContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $id,
+        float|int             $supplierContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierTelephoneForSupplierContact($id, $supplierContactId, $queryParameters));
@@ -205,10 +205,10 @@ class SupplierTelephonesResource
 	 * @return Response
 	 */
 	public function getSupplierTelephoneForSupplierAndSupplierContact(
-		float|int $id,
-		float|int $supplierContactId,
-		float|int $supplierId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $id,
+        float|int             $supplierContactId,
+        float|int             $supplierId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSupplierTelephoneForSupplierAndSupplierContact($id, $supplierContactId, $supplierId, $queryParameters));

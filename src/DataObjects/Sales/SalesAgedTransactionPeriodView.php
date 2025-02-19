@@ -17,13 +17,13 @@ class SalesAgedTransactionPeriodView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('float')]
-		public ?float $base_outstanding_value = null,
+		public float|null  $base_outstanding_value = null,
 		#[Assert\Type('string'), Assert\Length(max: 7)]
-		public ?string $ageing_period_name = null,
+		public string|null $ageing_period_name = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $ageing_date = null,
+		public string|null $ageing_date = null,
 	) {
 	}
 }

@@ -29,8 +29,8 @@ class GetDocumentType extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $id,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/document_types/{$this->id}";
 		$this->queryString = '';
@@ -43,7 +43,7 @@ class GetDocumentType extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

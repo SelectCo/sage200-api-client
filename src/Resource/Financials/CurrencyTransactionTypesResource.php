@@ -28,7 +28,7 @@ class CurrencyTransactionTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCurrencyTransactionTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getCurrencyTransactionTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCurrencyTransactionTypes($queryParameters));
 	}

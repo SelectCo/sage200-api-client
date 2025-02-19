@@ -14,43 +14,43 @@ class BankTransfer
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $bank_from_id = null,
+		public int|null    $bank_from_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $bank_to_id = null,
+		public int|null    $bank_to_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 6000)]
-		public ?string $narrative = null,
+		public string|null $narrative = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('float')]
-		public ?float $payment_value = null,
+		public float|null  $payment_value = null,
 		#[Assert\Type('float')]
-		public ?float $receipt_value = null,
+		public float|null  $receipt_value = null,
 		#[Assert\Type('float')]
-		public ?float $exchange_rate = null,
+		public float|null  $exchange_rate = null,
 		#[Assert\Type('float')]
-		public ?float $commission_value = null,
+		public float|null  $commission_value = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $commission_code = null,
+		public string|null $commission_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $commission_cost_centre = null,
+		public string|null $commission_cost_centre = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $commission_department = null,
+		public string|null $commission_department = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $commission_payer = null,
+		public string|null $commission_payer = null,
 		#[Assert\Type('float')]
-		public ?float $payment_to_base_exchange_rate = null,
+		public float|null  $payment_to_base_exchange_rate = null,
 		#[Assert\Type('float')]
-		public ?float $receipt_to_base_exchange_rate = null,
+		public float|null  $receipt_to_base_exchange_rate = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $exchange_difference_code = null,
+		public string|null $exchange_difference_code = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $exchange_difference_cost_centre = null,
+		public string|null $exchange_difference_cost_centre = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $exchange_difference_department = null,
+		public string|null $exchange_difference_department = null,
 	) {
 	}
 }

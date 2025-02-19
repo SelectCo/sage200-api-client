@@ -28,7 +28,7 @@ class CustomerViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerViews(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerViews($queryParameters));
 	}

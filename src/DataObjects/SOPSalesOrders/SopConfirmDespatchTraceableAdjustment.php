@@ -12,11 +12,11 @@ class SopConfirmDespatchTraceableAdjustment
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null   $id = null,
 		#[Assert\Type('array')]
-		public ?array $bin_items = null,
+		public array|null $bin_items = null,
 		#[Assert\Type('array')]
-		public ?array $traceable_adjustment_items = null,
+		public array|null $traceable_adjustment_items = null,
 	) {
 	}
 }

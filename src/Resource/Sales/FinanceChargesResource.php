@@ -30,7 +30,7 @@ class FinanceChargesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinanceCharges(?SageODataBuilder $queryParameters = null): Response
+	public function getFinanceCharges(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinanceCharges($queryParameters));
 	}
@@ -44,7 +44,7 @@ class FinanceChargesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFinanceCharge(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getFinanceCharge(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFinanceCharge($id, $queryParameters));
 	}

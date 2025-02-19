@@ -28,7 +28,7 @@ class PopRequisitionFulfilmentLineViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoprequisitionFulfilmentLineViews(?SageODataBuilder $queryParameters = null): Response
+	public function getPoprequisitionFulfilmentLineViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoprequisitionFulfilmentLineViews($queryParameters));
 	}

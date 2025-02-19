@@ -28,7 +28,7 @@ class AlternativeProductViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAlternativeProductViews(?SageODataBuilder $queryParameters = null): Response
+	public function getAlternativeProductViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAlternativeProductViews($queryParameters));
 	}

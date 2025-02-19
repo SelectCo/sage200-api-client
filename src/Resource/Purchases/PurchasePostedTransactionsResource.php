@@ -31,7 +31,7 @@ class PurchasePostedTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPurchasePostedTransactions(?SageODataBuilder $queryParameters = null): Response
+	public function getPurchasePostedTransactions(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPurchasePostedTransactions($queryParameters));
 	}
@@ -45,7 +45,7 @@ class PurchasePostedTransactionsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPurchasePostedTransaction(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getPurchasePostedTransaction(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPurchasePostedTransaction($id, $queryParameters));
 	}
@@ -72,8 +72,8 @@ class PurchasePostedTransactionsResource
 	 * @return Response
 	 */
 	public function getPurchasePostedTransactionsForSupplier(
-		float|int $supplierId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $supplierId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetPurchasePostedTransactionsForSupplier($supplierId, $queryParameters));

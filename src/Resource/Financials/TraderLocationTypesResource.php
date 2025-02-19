@@ -28,7 +28,7 @@ class TraderLocationTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraderLocationTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getTraderLocationTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraderLocationTypes($queryParameters));
 	}

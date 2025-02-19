@@ -11,19 +11,19 @@ class SopOrderReturnLineInvoiceCreditView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_invoice_credit_id = null,
+		public int|null    $sop_invoice_credit_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_order_return_line_id = null,
+		public int|null    $sop_order_return_line_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $sop_invoice_credit_document_no = null,
+		public string|null $sop_invoice_credit_document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_invoice_credit_type_id = null,
+		public int|null    $sop_invoice_credit_type_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $sop_invoice_credit_document_date = null,
+		public string|null $sop_invoice_credit_document_date = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $sop_invoice_credit_document_status_id = null,
+		public int|null    $sop_invoice_credit_document_status_id = null,
 		#[Assert\Type('float')]
-		public ?float $sop_invoice_credit_line_invoice_credit_quantity = null,
+		public float|null  $sop_invoice_credit_line_invoice_credit_quantity = null,
 	) {
 	}
 }

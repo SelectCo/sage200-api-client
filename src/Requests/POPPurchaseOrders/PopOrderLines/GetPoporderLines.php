@@ -25,8 +25,8 @@ class GetPoporderLines extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $popOrderId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $popOrderId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/pop_orders/{$this->popOrderId}/pop_order_lines";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetPoporderLines extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

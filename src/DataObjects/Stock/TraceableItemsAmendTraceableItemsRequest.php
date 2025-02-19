@@ -11,7 +11,7 @@ class TraceableItemsAmendTraceableItemsRequest
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null $product_id = null,
 	) {
 	}
 }

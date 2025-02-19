@@ -13,17 +13,17 @@ class SopDespatchDiscreteOrder
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $trader_reference = null,
+		public string|null $trader_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $trader_name = null,
+		public string|null $trader_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $document_no = null,
+		public string|null $document_no = null,
 		#[Assert\Type('float')]
-		public ?float $document_value = null,
+		public float|null  $document_value = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $document_date = null,
+		public string|null $document_date = null,
 	) {
 	}
 }

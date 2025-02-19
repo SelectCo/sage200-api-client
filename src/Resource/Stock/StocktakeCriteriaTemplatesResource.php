@@ -32,7 +32,7 @@ class StocktakeCriteriaTemplatesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktakeCriteriaTemplates(?SageODataBuilder $queryParameters = null): Response
+	public function getStocktakeCriteriaTemplates(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktakeCriteriaTemplates($queryParameters));
 	}
@@ -57,7 +57,7 @@ class StocktakeCriteriaTemplatesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getStocktakeCriteriaTemplate(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getStocktakeCriteriaTemplate(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetStocktakeCriteriaTemplate($id, $queryParameters));
 	}

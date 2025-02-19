@@ -28,8 +28,8 @@ class GetProductsForProductGroup extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $productGroupId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $productGroupId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/product_groups/{$this->productGroupId}/products";
 		$this->queryString = '';
@@ -42,7 +42,7 @@ class GetProductsForProductGroup extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

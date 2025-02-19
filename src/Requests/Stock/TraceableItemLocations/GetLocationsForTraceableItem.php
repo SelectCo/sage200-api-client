@@ -25,8 +25,8 @@ class GetLocationsForTraceableItem extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $traceableItemId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $traceableItemId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/traceable_items/{$this->traceableItemId}/traceable_item_locations";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetLocationsForTraceableItem extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

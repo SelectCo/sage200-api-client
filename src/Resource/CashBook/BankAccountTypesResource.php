@@ -28,7 +28,7 @@ class BankAccountTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getBankAccountTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getBankAccountTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetBankAccountTypes($queryParameters));
 	}

@@ -11,9 +11,9 @@ class TransactionDateValidationResponse
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $classification = null,
+		public string|null $classification = null,
 		#[Assert\Type('string')]
-		public ?string $message = null,
+		public string|null $message = null,
 	) {
 	}
 }

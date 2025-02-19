@@ -32,7 +32,7 @@ class CrossSellProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCrossSellProducts(?SageODataBuilder $queryParameters = null): Response
+	public function getCrossSellProducts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCrossSellProducts($queryParameters));
 	}
@@ -57,7 +57,7 @@ class CrossSellProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCrossSellProduct(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCrossSellProduct(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCrossSellProduct($id, $queryParameters));
 	}

@@ -13,242 +13,242 @@ class PopOrderLine
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null                               $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_order_id = null,
+		public int|null                               $pop_order_id = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $line_number = null,
+		public int|null                               $line_number = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $line_type = null,
+		public string|null                            $line_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null                               $product_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $warehouse_id = null,
+		public int|null                               $warehouse_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $create_cancelled_line = null,
+		public bool|null                              $create_cancelled_line = null,
 		#[Assert\Type('bool')]
-		public ?bool $remove_link_to_sop_order_line = null,
+		public bool|null                              $remove_link_to_sop_order_line = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $code = null,
+		public string|null                            $code = null,
 		#[Assert\Type('string'), Assert\Length(max: 6000)]
-		public ?string $description = null,
+		public string|null                            $description = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_description = null,
+		public bool|null                              $use_description = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $supplier_part_ref = null,
+		public string|null                            $supplier_part_ref = null,
 		#[Assert\Type('bool')]
-		public ?bool $for_direct_delivery = null,
+		public bool|null                              $for_direct_delivery = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_on_supplier_docs = null,
+		public bool|null                              $show_on_supplier_docs = null,
 		#[Assert\Type('bool')]
-		public ?bool $update_prices_at_goods_receipt = null,
+		public bool|null                              $update_prices_at_goods_receipt = null,
 		#[Assert\Type('string'), Assert\Length(max: 50)]
-		public ?string $confirmation_intent_type = null,
+		public string|null                            $confirmation_intent_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $tax_code_id = null,
+		public int|null                               $tax_code_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $nominal_reference = null,
+		public string|null                            $nominal_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $nominal_cost_centre = null,
+		public string|null                            $nominal_cost_centre = null,
 		#[Assert\Type('string'), Assert\Length(max: 3)]
-		public ?string $nominal_department = null,
+		public string|null                            $nominal_department = null,
 		#[Assert\Type('float')]
-		public ?float $line_quantity = null,
+		public float|null                             $line_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $receipt_return_quantity = null,
+		public float|null                             $receipt_return_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $invoice_credit_quantity = null,
+		public float|null                             $invoice_credit_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_receipt_return_quantity = null,
+		public float|null                             $stock_unit_receipt_return_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_invoice_credit_quantity = null,
+		public float|null                             $stock_unit_invoice_credit_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_on_order_quantity = null,
+		public float|null                             $stock_unit_on_order_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $line_unit_precision = null,
+		public float|null                             $line_unit_precision = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $buying_unit_id = null,
+		public int|null                               $buying_unit_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $buying_unit_description = null,
+		public string|null                            $buying_unit_description = null,
 		#[Assert\Type('float')]
-		public ?float $unit_buying_price = null,
+		public float|null                             $unit_buying_price = null,
 		#[Assert\Type('float')]
-		public ?float $unit_discount_percent = null,
+		public float|null                             $unit_discount_percent = null,
 		#[Assert\Type('bool')]
-		public ?bool $discount_percent_specified = null,
+		public bool|null                              $discount_percent_specified = null,
 		#[Assert\Type('float')]
-		public ?float $unit_discount_value = null,
+		public float|null                             $unit_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $discounted_unit_price = null,
+		public float|null                             $discounted_unit_price = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pricing_unit_id = null,
+		public int|null                               $pricing_unit_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $pricing_unit_description = null,
+		public string|null                            $pricing_unit_description = null,
 		#[Assert\Type('float')]
-		public ?float $pricing_unit_multiple = null,
+		public float|null                             $pricing_unit_multiple = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_multiple = null,
+		public float|null                             $stock_unit_multiple = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_precision = null,
+		public float|null                             $stock_unit_precision = null,
 		#[Assert\Type('float')]
-		public ?float $stock_unit_line_quantity = null,
+		public float|null                             $stock_unit_line_quantity = null,
 		#[Assert\Type('float')]
-		public ?float $line_total_value = null,
+		public float|null                             $line_total_value = null,
 		#[Assert\Type('float')]
-		public ?float $line_tax_value = null,
+		public float|null                             $line_tax_value = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $landed_costs_type = null,
+		public string|null                            $landed_costs_type = null,
 		#[Assert\Type('float')]
-		public ?float $landed_costs_percentage = null,
+		public float|null                             $landed_costs_percentage = null,
 		#[Assert\Type('float')]
-		public ?float $landed_costs_per_item = null,
+		public float|null                             $landed_costs_per_item = null,
 		#[Assert\Type('float')]
-		public ?float $total_landed_costs_value = null,
+		public float|null                             $total_landed_costs_value = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $receipt_return_status = null,
+		public string|null                            $receipt_return_status = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $invoice_credit_status = null,
+		public string|null                            $invoice_credit_status = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_complete = null,
+		public bool|null                              $is_complete = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_line_deletable = null,
+		public bool|null                              $is_line_deletable = null,
 		#[Assert\Type('bool')]
-		public ?bool $has_linked_order_lines = null,
+		public bool|null                              $has_linked_order_lines = null,
 		#[Assert\Type('bool')]
-		public ?bool $has_requisition_lines = null,
+		public bool|null                              $has_requisition_lines = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_1 = null,
+		public string|null                            $analysis_code_1 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_2 = null,
+		public string|null                            $analysis_code_2 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_3 = null,
+		public string|null                            $analysis_code_3 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_4 = null,
+		public string|null                            $analysis_code_4 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_5 = null,
+		public string|null                            $analysis_code_5 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_6 = null,
+		public string|null                            $analysis_code_6 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_7 = null,
+		public string|null                            $analysis_code_7 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_8 = null,
+		public string|null                            $analysis_code_8 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_9 = null,
+		public string|null                            $analysis_code_9 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_10 = null,
+		public string|null                            $analysis_code_10 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_11 = null,
+		public string|null                            $analysis_code_11 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_12 = null,
+		public string|null                            $analysis_code_12 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_13 = null,
+		public string|null                            $analysis_code_13 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_14 = null,
+		public string|null                            $analysis_code_14 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_15 = null,
+		public string|null                            $analysis_code_15 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_16 = null,
+		public string|null                            $analysis_code_16 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_17 = null,
+		public string|null                            $analysis_code_17 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_18 = null,
+		public string|null                            $analysis_code_18 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_19 = null,
+		public string|null                            $analysis_code_19 = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $analysis_code_20 = null,
+		public string|null                            $analysis_code_20 = null,
 		#[Assert\Type('object')]
-		public ?object $buying_unit = null,
+		public object|null                            $buying_unit = null,
 		#[Assert\Type('object')]
-		public ?object $nominal_code = null,
+		public object|null                            $nominal_code = null,
 		#[Assert\Type('object')]
-		public ?object $pop_order = null,
+		public object|null                            $pop_order = null,
 		#[Assert\Type('object')]
-		public ?object $pricing_unit = null,
+		public object|null                            $pricing_unit = null,
 		#[Assert\Type('object')]
-		public ?object $product = null,
+		public object|null                            $product = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_1 = null,
+		public string|null                            $spare_text_1 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_2 = null,
+		public string|null                            $spare_text_2 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_3 = null,
+		public string|null                            $spare_text_3 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_4 = null,
+		public string|null                            $spare_text_4 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_5 = null,
+		public string|null                            $spare_text_5 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_6 = null,
+		public string|null                            $spare_text_6 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_7 = null,
+		public string|null                            $spare_text_7 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_8 = null,
+		public string|null                            $spare_text_8 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_9 = null,
+		public string|null                            $spare_text_9 = null,
 		#[Assert\Type('string'), Assert\Length(max: 100)]
-		public ?string $spare_text_10 = null,
+		public string|null                            $spare_text_10 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_1 = null,
+		public float|null                             $spare_number_1 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_2 = null,
+		public float|null                             $spare_number_2 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_3 = null,
+		public float|null                             $spare_number_3 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_4 = null,
+		public float|null                             $spare_number_4 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_5 = null,
+		public float|null                             $spare_number_5 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_6 = null,
+		public float|null                             $spare_number_6 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_7 = null,
+		public float|null                             $spare_number_7 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_8 = null,
+		public float|null                             $spare_number_8 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_9 = null,
+		public float|null                             $spare_number_9 = null,
 		#[Assert\Type('float')]
-		public ?float $spare_number_10 = null,
+		public float|null                             $spare_number_10 = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $spare_date_1 = null,
+		public string|null                            $spare_date_1 = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $spare_date_2 = null,
+		public string|null                            $spare_date_2 = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $spare_date_3 = null,
+		public string|null                            $spare_date_3 = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $spare_date_4 = null,
+		public string|null                            $spare_date_4 = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $spare_date_5 = null,
+		public string|null                            $spare_date_5 = null,
 		#[Assert\Type('bool')]
-		public ?bool $spare_bool_1 = null,
+		public bool|null                              $spare_bool_1 = null,
 		#[Assert\Type('bool')]
-		public ?bool $spare_bool_2 = null,
+		public bool|null                              $spare_bool_2 = null,
 		#[Assert\Type('bool')]
-		public ?bool $spare_bool_3 = null,
+		public bool|null                              $spare_bool_3 = null,
 		#[Assert\Type('bool')]
-		public ?bool $spare_bool_4 = null,
+		public bool|null                              $spare_bool_4 = null,
 		#[Assert\Type('bool')]
-		public ?bool $spare_bool_5 = null,
+		public bool|null                              $spare_bool_5 = null,
 		#[Assert\Type('object')]
-		public ?object $additional_charge = null,
-		public ?PopOrderLineDirectDeliveryAddress $direct_delivery_address = null,
+		public object|null                            $additional_charge = null,
+		public PopOrderLineDirectDeliveryAddress|null $direct_delivery_address = null,
 		#[Assert\Type('string'), Assert\Length(max: 1000)]
-		public ?string $requisition_lines_comment = null,
+		public string|null                            $requisition_lines_comment = null,
 		#[Assert\Type('object')]
-		public ?object $cancel_requisition_lines = null,
+		public object|null                            $cancel_requisition_lines = null,
 		#[Assert\Type('array')]
-		public ?array $linked_requisition_lines = null,
+		public array|null                             $linked_requisition_lines = null,
 		#[Assert\Type('array')]
-		public ?array $linked_order_lines = null,
+		public array|null                             $linked_order_lines = null,
 		#[Assert\Type('object')]
-		public ?object $tax_code = null,
+		public object|null                            $tax_code = null,
 		#[Assert\Type('object')]
-		public ?object $warehouse = null,
+		public object|null                            $warehouse = null,
 		#[Assert\Type('array')]
-		public ?array $requested_delivery_dates = null,
+		public array|null                             $requested_delivery_dates = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null                              $is_to_delete = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null                            $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null                            $date_time_updated = null,
 	) {
 	}
 }

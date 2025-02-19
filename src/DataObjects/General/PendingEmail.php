@@ -13,23 +13,23 @@ class PendingEmail
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string'), Assert\Length(max: 32)]
-		public ?string $email_type = null,
+		public string|null $email_type = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $email_address = null,
+		public string|null $email_address = null,
 		#[Assert\Type('string'), Assert\Length(max: 255)]
-		public ?string $email_subject = null,
+		public string|null $email_subject = null,
 		#[Assert\Type('string'), Assert\Length(max: 8000)]
-		public ?string $email_body = null,
+		public string|null $email_body = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $user_number = null,
+		public int|null    $user_number = null,
 		#[Assert\Type('string'), Assert\Length(max: 256)]
-		public ?string $user_name = null,
+		public string|null $user_name = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

@@ -11,31 +11,31 @@ class PopOrderReturnLineReceiptReturnView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_receipt_return_line_id = null,
+		public int|null    $pop_receipt_return_line_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $pop_receipt_return_line_receipt_return_no = null,
+		public string|null $pop_receipt_return_line_receipt_return_no = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $pop_receipt_return_line_receipt_return_date = null,
+		public string|null $pop_receipt_return_line_receipt_return_date = null,
 		#[Assert\Type('float')]
-		public ?float $pop_receipt_return_line_receipt_return_quantity = null,
+		public float|null  $pop_receipt_return_line_receipt_return_quantity = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_receipt_return_line_user_number = null,
+		public int|null    $pop_receipt_return_line_user_number = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $pop_receipt_return_line_user_name = null,
+		public string|null $pop_receipt_return_line_user_name = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_receipt_return_id = null,
+		public int|null    $pop_receipt_return_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $pop_receipt_return_supplier_document_no = null,
+		public string|null $pop_receipt_return_supplier_document_no = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_order_return_line_id = null,
+		public int|null    $pop_order_return_line_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $pop_order_return_line_buying_unit_description = null,
+		public string|null $pop_order_return_line_buying_unit_description = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_order_return_id = null,
+		public int|null    $pop_order_return_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $pop_order_return_invoice_credit_status_id = null,
+		public int|null    $pop_order_return_invoice_credit_status_id = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $pop_receipt_return_line_invoiced = null,
+		public string|null $pop_receipt_return_line_invoiced = null,
 	) {
 	}
 }

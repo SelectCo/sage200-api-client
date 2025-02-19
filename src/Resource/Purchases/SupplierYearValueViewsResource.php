@@ -28,7 +28,7 @@ class SupplierYearValueViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSupplierYearValueViews(?SageODataBuilder $queryParameters = null): Response
+	public function getSupplierYearValueViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSupplierYearValueViews($queryParameters));
 	}

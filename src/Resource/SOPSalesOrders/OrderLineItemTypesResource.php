@@ -28,7 +28,7 @@ class OrderLineItemTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getOrderLineItemTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getOrderLineItemTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetOrderLineItemTypes($queryParameters));
 	}

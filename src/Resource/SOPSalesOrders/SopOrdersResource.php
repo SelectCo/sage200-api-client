@@ -35,7 +35,7 @@ class SopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporders(?SageODataBuilder $queryParameters = null): Response
+	public function getSoporders(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporders($queryParameters));
 	}
@@ -60,7 +60,7 @@ class SopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporder(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSoporder(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporder($id, $queryParameters));
 	}
@@ -121,7 +121,7 @@ class SopOrdersResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSopordersForCustomer(float|int $customerId, ?SageODataBuilder $queryParameters = null): Response
+	public function getSopordersForCustomer(float|int $customerId, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSopordersForCustomer($customerId, $queryParameters));
 	}

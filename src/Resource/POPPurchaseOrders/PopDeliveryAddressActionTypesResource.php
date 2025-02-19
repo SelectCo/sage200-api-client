@@ -28,7 +28,7 @@ class PopDeliveryAddressActionTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPoppdeliveryAddressActionTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPoppdeliveryAddressActionTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPoppdeliveryAddressActionTypes($queryParameters));
 	}

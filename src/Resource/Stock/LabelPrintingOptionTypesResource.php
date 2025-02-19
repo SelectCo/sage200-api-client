@@ -28,7 +28,7 @@ class LabelPrintingOptionTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLabelPrintingOptionTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getLabelPrintingOptionTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLabelPrintingOptionTypes($queryParameters));
 	}

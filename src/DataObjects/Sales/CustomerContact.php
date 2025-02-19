@@ -12,45 +12,45 @@ class CustomerContact
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $salutation_id = null,
+		public int|null    $salutation_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 180)]
-		public ?string $name = null,
+		public string|null $name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $first_name = null,
+		public string|null $first_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $middle_name = null,
+		public string|null $middle_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $last_name = null,
+		public string|null $last_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 227)]
-		public ?string $default_telephone = null,
+		public string|null $default_telephone = null,
 		#[Assert\Type('string'), Assert\Length(max: 227)]
-		public ?string $default_email = null,
+		public string|null $default_email = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_default = null,
+		public bool|null   $is_default = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('object')]
-		public ?object $salutation = null,
+		public object|null $salutation = null,
 		#[Assert\Type('array')]
-		public ?array $emails = null,
+		public array|null  $emails = null,
 		#[Assert\Type('array')]
-		public ?array $telephones = null,
+		public array|null  $telephones = null,
 		#[Assert\Type('array')]
-		public ?array $mobiles = null,
+		public array|null  $mobiles = null,
 		#[Assert\Type('array')]
-		public ?array $faxes = null,
+		public array|null  $faxes = null,
 		#[Assert\Type('array')]
-		public ?array $websites = null,
+		public array|null  $websites = null,
 		#[Assert\Type('array')]
-		public ?array $roles = null,
+		public array|null  $roles = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

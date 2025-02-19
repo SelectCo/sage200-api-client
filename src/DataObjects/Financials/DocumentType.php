@@ -15,23 +15,23 @@ class DocumentType
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('string')]
-		public ?string $description = null,
+		public string|null $description = null,
 		#[Assert\Type('string')]
-		public ?string $value = null,
+		public string|null $value = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_mandatory = null,
+		public bool|null   $is_mandatory = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $trader_contact_role_id = null,
+		public int|null    $trader_contact_role_id = null,
 		#[Assert\Type('string')]
-		public ?string $used_in_module = null,
+		public string|null $used_in_module = null,
 		#[Assert\Type('object')]
-		public ?object $trader_contact_role = null,
+		public object|null $trader_contact_role = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

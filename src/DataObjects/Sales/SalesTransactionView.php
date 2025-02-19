@@ -16,75 +16,75 @@ class SalesTransactionView
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $posted_customer_transaction_id = null,
+		public int|null    $posted_customer_transaction_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $transaction_type = null,
+		public string|null $transaction_type = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $posted_date = null,
+		public string|null $posted_date = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $due_date = null,
+		public string|null $due_date = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $discount_days = null,
+		public int|null    $discount_days = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 1)]
-		public ?string $query = null,
+		public string|null $query = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $status = null,
+		public string|null $status = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $user_name = null,
+		public string|null $user_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $ledger_type = null,
+		public string|null $ledger_type = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $urn = null,
+		public int|null    $urn = null,
 		#[Assert\Type('float')]
-		public ?float $exchange_rate = null,
+		public float|null  $exchange_rate = null,
 		#[Assert\Type('bool')]
-		public ?bool $settled_immediately = null,
+		public bool|null   $settled_immediately = null,
 		#[Assert\Type('float')]
-		public ?float $base_goods_value = null,
+		public float|null  $base_goods_value = null,
 		#[Assert\Type('float')]
-		public ?float $base_gross_value = null,
+		public float|null  $base_gross_value = null,
 		#[Assert\Type('float')]
-		public ?float $base_discount_value = null,
+		public float|null  $base_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $base_tax_value = null,
+		public float|null  $base_tax_value = null,
 		#[Assert\Type('float')]
-		public ?float $base_tax_discount_value = null,
+		public float|null  $base_tax_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $base_allocated_value = null,
+		public float|null  $base_allocated_value = null,
 		#[Assert\Type('float')]
-		public ?float $base_outstanding_value = null,
+		public float|null  $base_outstanding_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_goods_value = null,
+		public float|null  $document_goods_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_gross_value = null,
+		public float|null  $document_gross_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_discount_value = null,
+		public float|null  $document_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_tax_value = null,
+		public float|null  $document_tax_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_tax_discount_value = null,
+		public float|null  $document_tax_discount_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_allocated_value = null,
+		public float|null  $document_allocated_value = null,
 		#[Assert\Type('float')]
-		public ?float $document_outstanding_value = null,
+		public float|null  $document_outstanding_value = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $customer_id = null,
+		public int|null    $customer_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 8)]
-		public ?string $customer_reference = null,
+		public string|null $customer_reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 60)]
-		public ?string $customer_name = null,
+		public string|null $customer_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 30)]
-		public ?string $currency_name = null,
+		public string|null $currency_name = null,
 		#[Assert\Type('string'), Assert\Length(max: 4)]
-		public ?string $currency_symbol = null,
+		public string|null $currency_symbol = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date_time_updated = null,
+		public string|null $transaction_date_time_updated = null,
 	) {
 	}
 }

@@ -12,11 +12,11 @@ class CashBookSettings
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $default_bank_account_id = null,
+		public int|null    $default_bank_account_id = null,
 		#[Assert\Type('object')]
-		public ?object $default_bank_account = null,
+		public object|null $default_bank_account = null,
 	) {
 	}
 }

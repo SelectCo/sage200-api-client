@@ -28,7 +28,7 @@ class ContactNumberTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getContactNumberTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getContactNumberTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetContactNumberTypes($queryParameters));
 	}

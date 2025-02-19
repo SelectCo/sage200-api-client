@@ -29,7 +29,7 @@ class TraderContactRolesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraderContactRoles(?SageODataBuilder $queryParameters = null): Response
+	public function getTraderContactRoles(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraderContactRoles($queryParameters));
 	}
@@ -43,7 +43,7 @@ class TraderContactRolesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getTraderContactRole(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getTraderContactRole(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetTraderContactRole($id, $queryParameters));
 	}

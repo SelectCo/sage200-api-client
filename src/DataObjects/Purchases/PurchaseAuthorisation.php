@@ -14,19 +14,19 @@ class PurchaseAuthorisation
 {
 	public function __construct(
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $reference = null,
+		public string|null $reference = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $second_reference = null,
+		public string|null $second_reference = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $transaction_date = null,
+		public string|null $transaction_date = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null    $supplier_id = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $oplock = null,
+		public string|null $oplock = null,
 		#[Assert\Type('object')]
-		public ?object $supplier = null,
+		public object|null $supplier = null,
 		#[Assert\Type('array')]
-		public ?array $nominal_analysis_items = null,
+		public array|null  $nominal_analysis_items = null,
 	) {
 	}
 }

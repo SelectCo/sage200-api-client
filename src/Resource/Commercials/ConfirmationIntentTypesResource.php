@@ -28,7 +28,7 @@ class ConfirmationIntentTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getConfirmationIntentTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getConfirmationIntentTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetConfirmationIntentTypes($queryParameters));
 	}

@@ -13,69 +13,69 @@ class PurchaseLedgerSettings
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('bool')]
-		public ?bool $electronic_bank_payments = null,
+		public bool|null   $electronic_bank_payments = null,
 		#[Assert\Type('bool')]
-		public ?bool $allow_batch_processing = null,
+		public bool|null   $allow_batch_processing = null,
 		#[Assert\Type('bool')]
-		public ?bool $auto_generate_account_numbers = null,
+		public bool|null   $auto_generate_account_numbers = null,
 		#[Assert\Type('int'), Assert\Length('32')]
-		public ?int $next_account_number = null,
+		public int|null    $next_account_number = null,
 		#[Assert\Type('bool')]
-		public ?bool $allow_additional_trans_analysis = null,
+		public bool|null   $allow_additional_trans_analysis = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_transaction_date_for_allocation = null,
+		public bool|null   $use_transaction_date_for_allocation = null,
 		#[Assert\Type('bool')]
-		public ?bool $capture_additional_transaction_details = null,
+		public bool|null   $capture_additional_transaction_details = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $early_settlement_discount_days = null,
+		public int|null    $early_settlement_discount_days = null,
 		#[Assert\Type('float')]
-		public ?float $early_settlement_discount_percent = null,
+		public float|null  $early_settlement_discount_percent = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $keep_transactions_for = null,
+		public int|null    $keep_transactions_for = null,
 		#[Assert\Type('bool')]
-		public ?bool $archive_transaction_after_keeping = null,
+		public bool|null   $archive_transaction_after_keeping = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $maximum_enquiry_transactions_to_display = null,
+		public int|null    $maximum_enquiry_transactions_to_display = null,
 		#[Assert\Type('bool')]
-		public ?bool $show_outstanding_transactions = null,
+		public bool|null   $show_outstanding_transactions = null,
 		#[Assert\Type('float')]
-		public ?float $max_cheque_value = null,
+		public float|null  $max_cheque_value = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $default_tax_code_id = null,
+		public int|null    $default_tax_code_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $default_terms_agreed = null,
+		public bool|null   $default_terms_agreed = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $no_of_reporting_periods = null,
+		public int|null    $no_of_reporting_periods = null,
 		#[Assert\Type('string'), Assert\Length(max: 20)]
-		public ?string $default_payment_terms_basis = null,
+		public string|null $default_payment_terms_basis = null,
 		#[Assert\Type('int'), Assert\Length('16')]
-		public ?int $default_payment_terms_days = null,
+		public int|null    $default_payment_terms_days = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_account_periods_as_trading_periods = null,
+		public bool|null   $use_account_periods_as_trading_periods = null,
 		#[Assert\Type('array')]
-		public ?array $ageing_periods = null,
+		public array|null  $ageing_periods = null,
 		#[Assert\Type('array')]
-		public ?array $overdue_periods = null,
+		public array|null  $overdue_periods = null,
 		#[Assert\Type('bool')]
-		public ?bool $revalue_foreign_entries = null,
+		public bool|null   $revalue_foreign_entries = null,
 		#[Assert\Type('bool')]
-		public ?bool $use_invoice_authorisation = null,
+		public bool|null   $use_invoice_authorisation = null,
 		#[Assert\Type('float')]
-		public ?float $authorisation_threshold_value = null,
+		public float|null  $authorisation_threshold_value = null,
 		#[Assert\Type('bool')]
-		public ?bool $all_accounts_use_same_payment_method = null,
+		public bool|null   $all_accounts_use_same_payment_method = null,
 		#[Assert\Type('object')]
-		public ?object $default_tax_code = null,
+		public object|null $default_tax_code = null,
 		#[Assert\Type('array')]
-		public ?array $payment_groups = null,
+		public array|null  $payment_groups = null,
 		#[Assert\Type('object')]
-		public ?object $organisation_supplier_payment_group = null,
+		public object|null $organisation_supplier_payment_group = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

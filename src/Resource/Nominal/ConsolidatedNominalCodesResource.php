@@ -29,7 +29,7 @@ class ConsolidatedNominalCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getConsolidatedNominalCodes(?SageODataBuilder $queryParameters = null): Response
+	public function getConsolidatedNominalCodes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetConsolidatedNominalCodes($queryParameters));
 	}
@@ -43,7 +43,7 @@ class ConsolidatedNominalCodesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getConsolidatedNominalCode(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getConsolidatedNominalCode(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetConsolidatedNominalCode($id, $queryParameters));
 	}

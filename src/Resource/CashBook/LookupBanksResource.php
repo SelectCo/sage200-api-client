@@ -28,7 +28,7 @@ class LookupBanksResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getLookupBanks(?SageODataBuilder $queryParameters = null): Response
+	public function getLookupBanks(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetLookupBanks($queryParameters));
 	}

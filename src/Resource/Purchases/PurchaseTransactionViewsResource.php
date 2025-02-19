@@ -28,7 +28,7 @@ class PurchaseTransactionViewsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPurchaseTransactionViews(?SageODataBuilder $queryParameters = null): Response
+	public function getPurchaseTransactionViews(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPurchaseTransactionViews($queryParameters));
 	}

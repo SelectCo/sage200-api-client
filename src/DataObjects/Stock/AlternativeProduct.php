@@ -14,23 +14,23 @@ class AlternativeProduct
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $id = null,
+		public int|null    $id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $product_id = null,
+		public int|null    $product_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $alternative_product_id = null,
+		public int|null    $alternative_product_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_preferred = null,
+		public bool|null   $is_preferred = null,
 		#[Assert\Type('bool')]
-		public ?bool $is_to_delete = null,
+		public bool|null   $is_to_delete = null,
 		#[Assert\Type('object')]
-		public ?object $alternative_product = null,
+		public object|null $alternative_product = null,
 		#[Assert\Type('object')]
-		public ?object $product = null,
+		public object|null $product = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_created = null,
+		public string|null $date_time_created = null,
 		#[Assert\Type('string'), Assert\DateTime(format: 'Y-m-d\TH:i:s\Z')]
-		public ?string $date_time_updated = null,
+		public string|null $date_time_updated = null,
 	) {
 	}
 }

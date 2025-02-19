@@ -25,8 +25,8 @@ class GetBinHoldingsForWarehouseHolding extends Request
 	 * @throws ODataInvalidArgumentException
 	 */
 	public function __construct(
-		protected float|int $warehouseHoldingId,
-		?SageODataBuilder $queryParameters = null,
+        protected float|int   $warehouseHoldingId,
+        SageODataBuilder|null $queryParameters = null,
 	) {
 		$this->endPoint = "/warehouse_holdings/{$this->warehouseHoldingId}/bin_holdings";
 		$this->queryString = '';
@@ -39,7 +39,7 @@ class GetBinHoldingsForWarehouseHolding extends Request
 	 * @return void
 	 * @throws ODataInvalidArgumentException
 	 */
-	public function setQueryParameters(?SageODataBuilder $queryParameters = null): void
+	public function setQueryParameters(SageODataBuilder|null $queryParameters = null): void
 	{
 		if ($queryParameters) {
 		    $this->queryString = $queryParameters->buildQueryString();

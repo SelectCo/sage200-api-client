@@ -28,7 +28,7 @@ class PopAuthorisationStatusTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopauthorisationStatusTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPopauthorisationStatusTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopauthorisationStatusTypes($queryParameters));
 	}

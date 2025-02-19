@@ -41,7 +41,7 @@ class CustomerMobilesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerMobiles(?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerMobiles(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerMobiles($queryParameters));
 	}
@@ -56,8 +56,8 @@ class CustomerMobilesResource
 	 * @return Response
 	 */
 	public function getCustomerMobilesForCustomerContact(
-		float|int $customerContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerMobilesForCustomerContact($customerContactId, $queryParameters));
@@ -86,9 +86,9 @@ class CustomerMobilesResource
 	 * @return Response
 	 */
 	public function getCustomerMobilesForCustomerAndCustomerContact(
-		float|int $customerId,
-		float|int $customerContactId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        float|int             $customerContactId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerMobilesForCustomerAndCustomerContact($customerId, $customerContactId, $queryParameters));
@@ -119,7 +119,7 @@ class CustomerMobilesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getCustomerMobile(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getCustomerMobile(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetCustomerMobile($id, $queryParameters));
 	}
@@ -159,9 +159,9 @@ class CustomerMobilesResource
 	 * @return Response
 	 */
 	public function getCustomerMobileForCustomerContact(
-		float|int $customerContactId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerContactId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerMobileForCustomerContact($customerContactId, $id, $queryParameters));
@@ -205,10 +205,10 @@ class CustomerMobilesResource
 	 * @return Response
 	 */
 	public function getCustomerMobileForCustomerAndCustomerContact(
-		float|int $customerId,
-		float|int $customerContactId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $customerId,
+        float|int             $customerContactId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetCustomerMobileForCustomerAndCustomerContact($customerId, $customerContactId, $id, $queryParameters));

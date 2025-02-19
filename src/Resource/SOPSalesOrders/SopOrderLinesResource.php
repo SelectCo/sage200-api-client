@@ -31,7 +31,7 @@ class SopOrderLinesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getSoporderline(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getSoporderline(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetSoporderline($id, $queryParameters));
 	}
@@ -46,8 +46,8 @@ class SopOrderLinesResource
 	 * @return Response
 	 */
 	public function getSoporderLinesForSoporder(
-		float|int $sopOrderId,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $sopOrderId,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSoporderLinesForSoporder($sopOrderId, $queryParameters));
@@ -64,9 +64,9 @@ class SopOrderLinesResource
 	 * @return Response
 	 */
 	public function getSoporderLineForSoporder(
-		float|int $sopOrderId,
-		float|int $id,
-		?SageODataBuilder $queryParameters = null,
+        float|int             $sopOrderId,
+        float|int             $id,
+        SageODataBuilder|null $queryParameters = null,
 	): Response
 	{
 		return $this->connector->send(new GetSoporderLineForSoporder($sopOrderId, $id, $queryParameters));

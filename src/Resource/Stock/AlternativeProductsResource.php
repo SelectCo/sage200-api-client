@@ -32,7 +32,7 @@ class AlternativeProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAlternativeProducts(?SageODataBuilder $queryParameters = null): Response
+	public function getAlternativeProducts(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAlternativeProducts($queryParameters));
 	}
@@ -57,7 +57,7 @@ class AlternativeProductsResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getAlternativeProduct(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getAlternativeProduct(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetAlternativeProduct($id, $queryParameters));
 	}

@@ -28,7 +28,7 @@ class LicenceResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function licence(?SageODataBuilder $queryParameters = null): Response
+	public function licence(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new LicenceRequest($queryParameters));
 	}

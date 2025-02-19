@@ -14,11 +14,11 @@ class PopOrderDuplicateFlags
 {
 	public function __construct(
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $source_id = null,
+		public int|null  $source_id = null,
 		#[Assert\Type('int'), Assert\Length('64')]
-		public ?int $supplier_id = null,
+		public int|null  $supplier_id = null,
 		#[Assert\Type('bool')]
-		public ?bool $prices_and_discounts = null,
+		public bool|null $prices_and_discounts = null,
 	) {
 	}
 }

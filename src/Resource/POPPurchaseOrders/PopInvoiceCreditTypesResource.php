@@ -28,7 +28,7 @@ class PopInvoiceCreditTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getPopinvoiceCreditTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getPopinvoiceCreditTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetPopinvoiceCreditTypes($queryParameters));
 	}

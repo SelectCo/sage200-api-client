@@ -28,7 +28,7 @@ class UpdateModesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getUpdateModes(?SageODataBuilder $queryParameters = null): Response
+	public function getUpdateModes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetUpdateModes($queryParameters));
 	}

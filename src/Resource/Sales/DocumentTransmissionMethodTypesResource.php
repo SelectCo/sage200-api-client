@@ -28,7 +28,7 @@ class DocumentTransmissionMethodTypesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getDocumentTransmissionMethodTypes(?SageODataBuilder $queryParameters = null): Response
+	public function getDocumentTransmissionMethodTypes(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetDocumentTransmissionMethodTypes($queryParameters));
 	}

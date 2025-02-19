@@ -29,7 +29,7 @@ class ProductSalesFiguresResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getProductSalesFigures(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getProductSalesFigures(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetProductSalesFigures($id, $queryParameters));
 	}

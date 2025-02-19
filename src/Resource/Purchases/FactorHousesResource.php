@@ -29,7 +29,7 @@ class FactorHousesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFactorHouses(?SageODataBuilder $queryParameters = null): Response
+	public function getFactorHouses(SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFactorHouses($queryParameters));
 	}
@@ -43,7 +43,7 @@ class FactorHousesResource
 	 * @throws RequestException
 	 * @return Response
 	 */
-	public function getFactorHouse(float|int $id, ?SageODataBuilder $queryParameters = null): Response
+	public function getFactorHouse(float|int $id, SageODataBuilder|null $queryParameters = null): Response
 	{
 		return $this->connector->send(new GetFactorHouse($id, $queryParameters));
 	}
