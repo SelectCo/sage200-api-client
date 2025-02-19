@@ -2,8 +2,11 @@
 
 namespace Selectco\SageApi\Requests\General\CompanyDetails;
 
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use Selectco\SageApi\DataObjects\General\CompanyDetails;
 use Selectco\SageApi\Exception\ODataInvalidArgumentException;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
@@ -54,4 +57,19 @@ class GetCompanyDetails extends Request
 	{
 		return $this->endPoint . $this->queryString;
 	}
+
+
+    /**
+     * @param Response $response
+     * @return CompanyDetails[]
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): array
+    {
+        $returnArray = [];
+        foreach ($response->json() as $data) {
+            $returnArray[] = new CompanyDetails(...$data);
+        }
+        return $returnArray;
+    }
 }
