@@ -255,6 +255,14 @@ class CompanyDetails
     }
 
     /**
+     * @return Address
+     */
+    public function getAddressDTO(): Address
+    {
+        return new Address(...$this);
+    }
+
+    /**
      * @return string|null
      */
     public function getDateTimeCreated(): string|null
