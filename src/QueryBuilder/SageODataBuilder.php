@@ -151,7 +151,7 @@ class SageODataBuilder
     public function orFilter(string $field, string $operator, string|int $value): self
     {
         $this->isOperatorValid($operator);
-        if (is_string($value)) {
+        if (is_string($value) && $value !== 'null') {
             $value = "'" . $value . "'";
         }
         if ($this->filterParameter === '') {
@@ -313,6 +313,14 @@ class SageODataBuilder
         if ($this->selectParameter !== '$select=')
         {
             $queryString .= $this->selectParameter;
+        }
+        if ($this->filterParameter !== '')
+        {
+            if ($queryString !== '?')
+            {
+                $queryString .= '&';
+            }
+            $queryString .= $this->filterParameter;
         }
         if ($this->orderByParameter !== '')
         {
