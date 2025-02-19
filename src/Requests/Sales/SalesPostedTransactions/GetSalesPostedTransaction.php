@@ -2,8 +2,11 @@
 
 namespace Selectco\SageApi\Requests\Sales\SalesPostedTransactions;
 
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use Selectco\SageApi\DataObjects\Sales\SalesPostedTransaction;
 use Selectco\SageApi\Exception\ODataInvalidArgumentException;
 use Selectco\SageApi\QueryBuilder\SageODataBuilder;
 
@@ -59,4 +62,14 @@ class GetSalesPostedTransaction extends Request
 	{
 		return $this->endPoint . $this->queryString;
 	}
+
+    /**
+     * @param Response $response
+     * @return SalesPostedTransaction
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): SalesPostedTransaction
+    {
+        return new SalesPostedTransaction(...$response->json());
+    }
 }
