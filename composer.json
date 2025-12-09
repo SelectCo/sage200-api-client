@@ -1,0 +1,19 @@
+{
+  "name": "select-co/sage200-api-client",
+  "description": "Sage200 PHP API client",
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/SelectCo/sage200-api-client/issues",
+    "source": "https://github.com/SelectCo/sage200-api-client"
+  },
+  "require": {
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SelectCo\\Sage200ApiClient\\": "src"
+    }
+  }
+}
